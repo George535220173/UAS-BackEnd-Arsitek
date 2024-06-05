@@ -6,7 +6,7 @@
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.style.display = (i === index) ? 'block' : 'none';
-                dots[i].style.backgroundColor = (i === index) ? '#717171' : '#bbb';
+                dots[i].style.backgroundColor = (i === index) ? '#ffc800' : '#bbb';
             });
         }
 
