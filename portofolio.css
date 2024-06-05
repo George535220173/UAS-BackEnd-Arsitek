@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*This is the header or navigation bar*/
+header {
+    background-color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.logo span {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.logo span::after {
+    content: '.';
+    color: #f0c14b;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.nav-links .dropdown-content li {
+    padding: 12px 16px;
+}
+
+.nav-links .dropdown-content li a {
+    color: white;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.cta button {
+    border: 2px solid #f0c14b;
+    background-color: transparent;
+    color: white;
+    padding: 8px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta button:hover {
+    background-color: #f0c14b;
+    color: #333;
+}
+
+
+/*This is the main content section*/
+/*Portfolio Details*/
+.portfolio-details {
+    text-align: center;
+    margin: 50px 20px;
+}
+
+.portfolio-details h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.portfolio-details p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/*Breadcrumb navigation helper*/
+.breadcrumb {
+    background-color: #f5f5f5;
+    padding: 30px 50px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.breadcrumb a {
+    color: #f0c14b;
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: #555;
+}
+
+/*Project Section*/
+.project-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.carousel {
+    flex: 2;
+    position: relative;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-indicators .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.project-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.info-box {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.info-box h2 {
+    margin-top: 0;
+}
+
+.info-box hr {
+    border: 1px solid #ddd;
+}
+
+.info-box p {
+    margin: 10px 0;
+}
+
+.info-box a {
+    color: #f0c14b;
+    text-decoration: none;
+}
+
+.project-info h3 {
+    margin-top: 20px;
+}
+
+.project-info p {
+    line-height: 1.6;
+}
