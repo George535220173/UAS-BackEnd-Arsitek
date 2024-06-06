@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Details</title>
-    <link rel="stylesheet" href="service.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
-</head>
+@section('content')
 
-<body>
-    <header>
+<div class="body-service">
+    <div class="header-service">
         <div class="container-header">
             <h1>Service Details</h1>
             <p>Odium et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequuntur at
                 a odio voluptas.</p>
         </div>
-    </header>
+    </div>
 
     <nav>
         <a href="#">Home</a> / <span>Service Details</span>
     </nav>
 
-    <main>
+    <div class="main-service">
 
         <aside>
             <h2>Services List</h2>
@@ -41,8 +34,8 @@
                 </ul>
             </div>
 
-            <div class="contact-box">
-                <div class="contact-text-cluster">
+            <div class="contact-box-service">
+                <div class="contact-text-cluster-service">
 
                     <img src="/img/headset.png" width="50px" height="50px">
                     <h3>CONTACT</h3>
@@ -68,9 +61,5 @@
             <p>Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque
                 consequatur. Voluptatem debitis veritatis natus dolores.</p>
         </section>
-    </main>
-
-    <script src="service.js"></script>
-</body>
-
-</html>
+    </div>
+    @endsection
