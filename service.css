@@ -1,20 +1,20 @@
-body {
+.body-service {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header {
+.header-service {
     text-align: center;
     padding: 50px;
 }
 
-header h1 {
+.header-service h1 {
     margin: 0;
     font-weight: 600;
 }
 
-header p {
+.header-service p {
     margin: 10px 0 0;
     color: #666;
 }
@@ -38,7 +38,7 @@ nav span {
     color: #666;
 }
 
-main {
+.main-service {
     display: flex;
     padding: 20px 300px;
 }
@@ -106,12 +106,12 @@ aside h2 {
     color: #666;
 }
 
-.contact-box{
+.contact-box-service{
     background-color: #fbd45e;
     padding: 40px 10px;
 }
 
-.contact-text-cluster{
+.contact-text-cluster-service{
     display: flex;
     flex-direction: column;
     align-items: center;
