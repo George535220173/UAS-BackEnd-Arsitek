@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Details</title>
-    <link rel="stylesheet" href="service.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
-</head>
-
-<body>
+@section('content')
     <header>
         <div class="container-header">
             <h1>Service Details</h1>
@@ -44,17 +35,17 @@
             <div class="contact-box">
                 <div class="contact-text-cluster">
 
-                    <img src="/img/headset.png" width="50px" height="50px">
+                <img src="{{ asset('img/headset.png') }}" alt="" width="50px" height="50px">
                     <h3>CONTACT</h3>
 
 
                     <div style="display: flex; align-items: center;">
-                        <img src="/img/mic.png" width="20px" height="20px" style="margin: 10px;">
+                        <img src="{{ asset('img/mic.png') }}" width="20px" height="20px" style="margin: 10px;">
                         <span>+62 21 31900081</span>
                     </div>
 
                     <div style="display: flex; align-items: center;">
-                        <img src="/img/mail.png" width="20px" height="20px" style="margin: 10px;">
+                        <img src="{{ asset('img/mail.png') }}" width="20px" height="20px" style="margin: 10px;">
                         <span>mrsarchitects@yahoo.com</span>
                     </div>
                 </div>
@@ -63,14 +54,11 @@
 
 
         <section class="service-details">
-            <img src="/img/amazin.PNG" alt="Service Image">
+            <img src="{{ asset('img/amazin.PNG') }}" alt="Service Image">
             <h3>Temporibus et in vero dicta aut</h3>
             <p>Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque
                 consequatur. Voluptatem debitis veritatis natus dolores.</p>
         </section>
     </main>
 
-    <script src="service.js"></script>
-</body>
-
-</html>
+@endsection
