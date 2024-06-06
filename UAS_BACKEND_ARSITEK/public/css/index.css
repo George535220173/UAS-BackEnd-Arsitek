@@ -3,13 +3,13 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100%;
-    color: #fff;
 }
 
 .hero-section {
     position: relative;
     height: 100vh;
     background: url('your-background-image.jpg') no-repeat center center/cover;
+    color: white;
 }
 
 .overlay {
