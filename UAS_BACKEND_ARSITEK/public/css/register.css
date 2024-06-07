@@ -1,0 +1,47 @@
+/* Add this to index.css or create register.css and include it in register.blade.php */
+.register-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+}
+
+.register-form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.register-form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.register-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.register-button {
+    background-color: #ff9c00;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.register-button:hover {
+    background-color: #333;
+}
