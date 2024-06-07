@@ -3,6 +3,10 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100%;
+    
+}
+html {
+    scroll-behavior: smooth;
 }
 
 .hero-section {
