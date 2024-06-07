@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="hero-section">
-    <div class="overlay"></div>
-    <div class="content">
+    <div class="overlay-index"></div>
+    <div class="content-index">
         <h1>Professional Architecture With MRS</h1>
         <p>We are a team of talented architects</p>
         <div class="services">

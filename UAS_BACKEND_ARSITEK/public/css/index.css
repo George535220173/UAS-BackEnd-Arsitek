@@ -12,7 +12,7 @@ body, html {
     color: white;
 }
 
-.overlay {
+.overlay-index {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@ body, html {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.content {
+.content-index {
     position: relative;
     z-index: 2;
     text-align: center;
