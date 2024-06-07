@@ -241,8 +241,10 @@
                 <p><i class="fas fa-envelope"></i> Email Us<br>3asrium@gmail.com</p>
             </div>
         </div>
+<!-- Contact Form -->
         <div class="contact-form">
-            <form action="#" method="post" role="form">
+            <form action="/send-email" method="POST">
+                @csrf
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -262,6 +264,7 @@
                 </div>
             </form>
         </div>
+
     </div>
 </section>
 @endsection
