@@ -1,16 +1,18 @@
 /* Add this to index.css or create register.css and include it in register.blade.php */
 .register-container {
-    max-width: 500px;
-    margin: 50px auto;
+    max-width: 1000px;
+    margin: 100px auto;
     padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #ededed;
+    border-radius: 20px;
     text-align: center;
+    height: 400px;
+
 }
 
-.register-container h2 {
-    margin-bottom: 20px;
+.register-container h1 {
+    margin-bottom: 30px;
+    font-size: 36px;
 }
 
 .register-form-group {
@@ -25,23 +27,55 @@
 
 .register-input {
     width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    font-size: 0.8rem;  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .register-button {
-    background-color: #ff9c00;
+    background-color: #333;
     color: white;
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .register-button:hover {
-    background-color: #333;
+    background-color: #616161;
+}
+
+
+.register-textcluster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 300px;
+}
+
+.register-textcluster input{
+    width: 290px;
+    height: 25px;
+}
+
+.register-insides-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.register-logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-logo img {
+    margin-bottom: 10px;
 }
