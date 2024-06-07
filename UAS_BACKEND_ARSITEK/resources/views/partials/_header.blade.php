@@ -7,7 +7,7 @@
             <div class="bar3"></div>
         </div>
         <div class="logo">
-            <span>GP.</span>
+            <a href="{{ url('/') }}" class="logo-area">GP.</a>
         </div>
         <ul class="nav-links">
             <li><a href="{{ url('/') }}">Home</a></li>
