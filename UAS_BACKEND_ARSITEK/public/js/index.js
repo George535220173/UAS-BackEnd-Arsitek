@@ -10,11 +10,19 @@ $(document).ready(function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.cta').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('#contact').scrollIntoView({
-            behavior: 'smooth'
+
+document.addEventListener('DOMContentLoaded', function () {
+    const getStartedButton = document.getElementById('getStartedButton');
+
+    if (getStartedButton) {
+        getStartedButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (window.location.pathname === '/') {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.location.href = '/#contact';
+            }
         });
-    });
+    }
 });

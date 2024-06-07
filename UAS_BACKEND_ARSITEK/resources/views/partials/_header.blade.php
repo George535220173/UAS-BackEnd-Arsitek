@@ -1,4 +1,3 @@
-<!-- Header -->
 <header>
     <nav class="navbar">
         <div id="hamburger-menu" class="hamburger-menu">
@@ -25,7 +24,13 @@
             </li>
             <li><a href="{{ url('/contact') }}">Contact</a></li>
         </ul>
-        <a href="#contact" class="cta"><button>Get Started</button></a>
+
+        @guest
+            <a href="{{ route('login') }}" class="cta"><button>Get Started</button></a>
+        @else
+            <a href="{{ url('/#contact') }}" class="cta"><button id="getStartedButton">Get Started</button></a>
+        @endguest
+
     </nav>
 </header>
 
