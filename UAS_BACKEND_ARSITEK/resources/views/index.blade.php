@@ -8,19 +8,19 @@
         <p>We are a team of talented architects</p>
         <div class="services">
             <div class="service">
-                <i class="fas fa-puzzle-piece"></i>
+                <i class="fas fa-puzzle-piece" style="color: #ff9c00;" ></i>
                 <h3>heheheha</h3>
             </div>
             <div class="service">
-                <i class="fas fa-bullseye"></i>
+                <i class="fas fa-bullseye" style="color: #ff9c00;"></i>
                 <h3>heheheha</h3>
             </div>
             <div class="service">
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search" style="color: #ff9c00;"> </i>
                 <h3>heheheha</h3>
             </div>
             <div class="service">
-                <i class="fas fa-gem"></i>
+                <i class="fas fa-gem" style="color: #ff9c00;"></i>
                 <h3>heheheha</h3>
             </div>
         </div>
@@ -176,11 +176,11 @@
             <p class="customer-name">Nnana Badman</p>
             <p class="customer-role">CEO of PT. Gagacor</p>
             <div class="star-rating">
-                <span class="fas fa-star"></span>
-                <span class="fas fa-star"></span>
-                <span class="fas fa-star"></span>
-                <span class="fas fa-star"></span>
-                <span class="fas fa-star"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
             </div>
             <p class="rating-text">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</p>
         </div>
@@ -189,11 +189,11 @@
             <p class="customer-name">Koroto Manhatty</p>
             <p class="customer-role">Owner of PT. Pasti Bisa</p>
             <div class="star-rating">
-                <span class="fas fa-star"></span>
-                <span class="fas fa-star"></span>
-                <span class="fas fa-star"></span>
-                <span class="fas fa-star"></span>
-                <span class="fas fa-star"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
+                <span class="fas fa-star" style="color: #ff9c00;"></span>
             </div>
             <p class="rating-text">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</p>
         </div>
