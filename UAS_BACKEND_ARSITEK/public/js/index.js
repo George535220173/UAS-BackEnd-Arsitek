@@ -10,6 +10,7 @@ $(document).ready(function () {
     });
 });
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const getStartedButton = document.getElementById('getStartedButton');
 
