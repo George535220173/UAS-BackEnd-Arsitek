@@ -228,7 +228,7 @@
     </div>
 </section>
 
-<section class="contact-section">
+<section class="contact-section" id="contact">
     <div class="contact-header">
         <h2>CONTACT US</h2>
     </div>

@@ -25,7 +25,7 @@
             </li>
             <li><a href="{{ url('/contact') }}">Contact</a></li>
         </ul>
-        <a href="#" class="cta"><button>Get Started</button></a>
+        <a href="#contact" class="cta"><button>Get Started</button></a>
     </nav>
 </header>
 
