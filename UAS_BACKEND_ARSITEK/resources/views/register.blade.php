@@ -1,29 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="register-container">
-        <h2>Register</h2>
-        <form method="POST" action="/register">
-            @csrf
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input id="name" type="text" name="name" required autofocus>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input id="email" type="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" type="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="password_confirmation">Confirm Password</label>
-                <input id="password_confirmation" type="password" name="password_confirmation" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="register-button">Register</button>
-            </div>
-        </form>
-    </div>
+    <h1>Register</h1>
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+            <label for="password_confirmation">Confirm Password</label>
+            <input type="password" name="password_confirmation" id="password_confirmation" required>
+        </div>
+        <button type="submit">Register</button>
+    </form>
     @endsection
