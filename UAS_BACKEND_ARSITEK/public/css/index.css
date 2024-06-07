@@ -550,3 +550,15 @@ p {
 .contact-form button:hover {
     background-color: #333;
 }
+
+.navbar .login-button,
+.navbar .register-button,
+.navbar .logout-button {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.navbar .logout-button {
+    cursor: pointer;
+}

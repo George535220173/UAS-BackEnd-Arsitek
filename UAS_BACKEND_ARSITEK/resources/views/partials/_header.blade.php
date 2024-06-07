@@ -19,6 +19,18 @@
                 </ul>
             </li>
             <li><a href="{{ url('/contact') }}">Contact</a></li>
+            @guest
+                <li><a href="{{ route('login') }}" class="login-button">Login</a></li>
+                <li><a href="{{ route('register') }}" class="register-button">Register</a></li>
+            @else
+                <li><a href="{{ route('profile') }}">Profile</a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="logout-button" style="background: none; border: none; padding: 0; cursor: pointer;">Logout</button>
+                    </form>
+                </li>
+            @endguest
         </ul>
         <a href="#" class="cta"><button>Get Started</button></a>
     </nav>
