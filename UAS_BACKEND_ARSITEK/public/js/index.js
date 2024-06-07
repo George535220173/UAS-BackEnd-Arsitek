@@ -9,3 +9,12 @@ $(document).ready(function () {
         arrows: false
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.cta').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#contact').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
