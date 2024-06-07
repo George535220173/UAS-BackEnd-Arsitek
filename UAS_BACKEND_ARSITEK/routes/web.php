@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\UserProfileController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\ProjectController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('index');
@@ -30,3 +32,9 @@ Route::get('/service', function () {
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
+
+Route::get('/admin', [ProjectController::class, 'index'])->name('admin.dashboard');
+Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
+
+
+Route::post('/send-email', [ContactController::class, 'sendEmail']);
