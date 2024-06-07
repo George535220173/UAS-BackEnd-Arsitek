@@ -19,3 +19,7 @@ Route::post('register', [RegisterController::class, 'register']);
 Route::get('/profile', [UserProfileController::class, 'show'])->name('profile')->middleware('auth');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+=======
+Route::get('/service', function () {
+    return view('service');
+});
