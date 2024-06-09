@@ -4,7 +4,7 @@
 <div class="admin-main">
     <div class="admin-container">
         <h1 class="admin-h1">Projects Addins</h1>
-        <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.all') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="admin-form-group">
                 <label for="project_name">Project Name</label>
@@ -63,7 +63,7 @@
 
     <div class="articles-container">
         <h1 class="admin-h1">Articles Addins</h1>
-        <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.all') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="admin-form-group">
                 <label for="project_name">Project Name</label>
@@ -101,19 +101,15 @@
                     <th class="admin-th">Client</th>
                     <th class="admin-th">Time Taken</th>
                     <th class="admin-th">Location</th>
-                    <th class="admin-th">Image</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($articles as $article)
                     <tr>
                         <td class="admin-td">{{ $loop->iteration }}</td>
-                        <td class="admin-td">{{ $articles->project_name }}</td>
-                        <td class="admin-td">{{ $articles->client }}</td>
-                        <td class="admin-td">{{ $articles->time_taken }}</td>
-                        <td class="admin-td">{{ $articles->location }}</td>
-                        <td class="admin-td"><img src="{{ asset('storage/' . $articles->image) }}" alt="Project Image"
-                                width="100"></td>
+                        <td class="admin-td">{{ $article->title }}</td>
+                        <td class="admin-td">{{ $article->author }}</td>
+                        <td class="admin-td">{{ $article->content }}</td>
                     </tr>
                 @endforeach
             </tbody>

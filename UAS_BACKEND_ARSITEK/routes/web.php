@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ProjectController;
 use App\Http\Controllers\Auth\ArticleController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Auth\AdminController;
 
 Route::get('/', function () {
     return view('index');
@@ -36,6 +37,18 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/admin', [ProjectController::class, 'index'])->name('admin.dashboard');
 Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
-Route::post('/article', [ArticleController::class, 'article'])->name('article.store');
+
+// Route to handle the projects
+Route::get('/admin/projects', [ProjectController::class, 'index'])->name('admin.projects');
+// Route to handle the articles
+Route::get('/admin/articles', [ArticleController::class, 'index'])->name('admin.articles');
+
+
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.all');
+
+Route::get('/admin/articles', [ArticleController::class, 'index'])->name('admin.articles');
+Route::post('/admin/articles', [ArticleController::class, 'store'])->name('admin.articles.store');
+
 
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
