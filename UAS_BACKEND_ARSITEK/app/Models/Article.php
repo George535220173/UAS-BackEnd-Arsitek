@@ -10,11 +10,8 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
-        'project_name',
-        'client',
-        'time_taken',
-        'location',
-        'description',
-        'image',
+        'title',
+        'author',
+        'content',
     ];
 }

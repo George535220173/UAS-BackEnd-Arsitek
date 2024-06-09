@@ -25,13 +25,12 @@ class ArticleController extends Controller
         ]);
 
         
-
         Article::create([
             'title' => $request->title,
             'author' => $request->author,
             'content' => $request->content,
         ]);
 
-        return redirect()->route('admin.articles');
+        return redirect()->route('admin.all');
     }
 }

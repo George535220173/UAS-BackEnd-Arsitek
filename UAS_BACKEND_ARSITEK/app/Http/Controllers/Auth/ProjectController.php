@@ -37,6 +37,6 @@ class ProjectController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.all');
     }
 }

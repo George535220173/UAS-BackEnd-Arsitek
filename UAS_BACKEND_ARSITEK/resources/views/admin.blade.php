@@ -66,28 +66,16 @@
         <form action="{{ route('admin.all') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="admin-form-group">
-                <label for="project_name">Project Name</label>
+                <label for="project_name">Title</label>
                 <input type="text" id="project_name" name="project_name" required>
             </div>
             <div class="admin-form-group">
-                <label for="client">Client</label>
+                <label for="client">Author</label>
                 <input type="text" id="client" name="client" required>
             </div>
             <div class="admin-form-group">
-                <label for="time_taken">Time Taken</label>
-                <input type="text" id="time_taken" name="time_taken" required>
-            </div>
-            <div class="admin-form-group">
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" required>
-            </div>
-            <div class="admin-form-group">
-                <label for="description">Description</label>
+                <label for="description">Content</label>
                 <textarea id="description" name="description" required></textarea>
-            </div>
-            <div class="admin-form-group">
-                <label for="image">Project Image</label>
-                <input type="file" id="image" name="image" accept="image/*" required>
             </div>
             <button type="submit" class="admin-button">Add Project</button>
         </form>
@@ -96,11 +84,9 @@
         <table class="admin-table">
             <thead>
                 <tr>
-                    <th class="admin-th">No</th>
-                    <th class="admin-th">Project Name</th>
-                    <th class="admin-th">Client</th>
-                    <th class="admin-th">Time Taken</th>
-                    <th class="admin-th">Location</th>
+                    <th class="admin-th">Title</th>
+                    <th class="admin-th">Author</th>
+                    <th class="admin-th">Content</th>
                 </tr>
             </thead>
             <tbody>

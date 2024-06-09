@@ -38,15 +38,14 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/admin', [ProjectController::class, 'index'])->name('admin.dashboard');
 Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
 
-// Route to handle the projects
-Route::get('/admin/projects', [ProjectController::class, 'index'])->name('admin.projects');
-// Route to handle the articles
-Route::get('/admin/articles', [ArticleController::class, 'index'])->name('admin.articles');
-
-
-
+// Route to display projects and articles
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.all');
 
+// Routes for managing projects
+Route::get('/admin/projects', [ProjectController::class, 'index'])->name('admin.projects');
+Route::post('/admin/projects', [ProjectController::class, 'store'])->name('admin.projects.store');
+
+// Routes for managing articles
 Route::get('/admin/articles', [ArticleController::class, 'index'])->name('admin.articles');
 Route::post('/admin/articles', [ArticleController::class, 'store'])->name('admin.articles.store');
 
