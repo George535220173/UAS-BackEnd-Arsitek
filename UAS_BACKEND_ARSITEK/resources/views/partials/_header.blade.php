@@ -11,8 +11,8 @@
         <ul class="nav-links">
             <li><a href="{{ url('/') }}">Home</a></li>
             <li><a href="{{ url('/about') }}">About</a></li>
-            <li><a href="{{ url('/services') }}">Services</a></li>
-            <li><a href="{{ url('/portfolio') }}">Portfolio</a></li>
+            <li><a href="{{ url('/service') }}">Services</a></li>
+            <li><a href="{{ url('/portofolio') }}">Portfolio</a></li>
             <li><a href="{{ url('/team') }}">Team</a></li>
             <li class="dropdown">
                 <a href="#">Dropdown <span>&#9662;</span></a>
@@ -40,8 +40,8 @@
     <ul>
         <li><a href="{{ url('/') }}">Home</a></li>
         <li><a href="{{ url('/about') }}">About</a></li>
-        <li><a href="{{ url('/services') }}">Services</a></li>
-        <li><a href="{{ url('/portfolio') }}">Portfolio</a></li>
+        <li><a href="{{ url('/service') }}">Services</a></li>
+        <li><a href="{{ url('/portofolio') }}">Portfolio</a></li>
         <li><a href="{{ url('/team') }}">Team</a></li>
         <li><a href="{{ url('/contact') }}">Contact</a></li>
         @guest
