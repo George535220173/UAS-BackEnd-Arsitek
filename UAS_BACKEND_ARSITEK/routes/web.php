@@ -22,7 +22,12 @@ Route::get('/service', function () {
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 
-Route::get('/profile', [UserProfileController::class, 'show'])->name('profile')->middleware('auth');
+Route::get('/profile', [UserProfileController::class, 'show'])->name('profile');
+Route::post('/profile/change-username', [UserProfileController::class, 'changeUsername'])->name('profile.change-username');
+Route::post('/profile/change-email', [UserProfileController::class, 'changeEmail'])->name('profile.change-email');
+Route::post('/profile/change-password', [UserProfileController::class, 'changePassword'])->name('profile.change-password');
+Route::post('/profile/send-auth-code', [UserProfileController::class, 'sendAuthCode'])->name('profile.send-auth-code');
+
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -38,3 +43,5 @@ Route::post('/projects', [ProjectController::class, 'store'])->name('projects.st
 
 
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
+
+
