@@ -16,7 +16,7 @@ class AdminController extends Controller
         return view('admin', compact('projects', 'articles'));
     }
 
-    public function store_article(Request $request)
+    public function store_articles(Request $request)
     {
         $request->validate([
             'article_title' => 'required|string|max:255',
@@ -25,12 +25,12 @@ class AdminController extends Controller
         ]);
 
         Article::create([
-            'title' => $request->article_title,
-            'author' => $request->article_author,
-            'content' => $request->article_content,
+            'article_title' => $request->article_title,
+            'article_author' => $request->article_author,
+            'article_content' => $request->article_content,
         ]);
 
-        return redirect()->route('admin.all');
+        return redirect()->route('admin.dashboard');
     }
 
     public function store_projects(Request $request)
@@ -55,7 +55,6 @@ class AdminController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('admin.all');
+        return redirect()->route('admin.dashboard');
     }
 }
-

@@ -4,7 +4,7 @@
 <div class="admin-main">
     <div class="admin-container">
         <h1 class="admin-h1">Projects Addins</h1>
-        <form action="{{ route('admin.all') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="admin-form-group">
                 <label for="project_name">Project Name</label>
@@ -53,8 +53,7 @@
                         <td class="admin-td">{{ $project->client }}</td>
                         <td class="admin-td">{{ $project->time_taken }}</td>
                         <td class="admin-td">{{ $project->location }}</td>
-                        <td class="admin-td"><img src="{{ asset('storage/' . $project->image) }}" alt="Project Image"
-                                width="100"></td>
+                        <td class="admin-td"><img src="{{ asset('storage/' . $project->image) }}" alt="Project Image" width="100"></td>
                     </tr>
                 @endforeach
             </tbody>
@@ -63,7 +62,7 @@
 
     <div class="articles-container">
         <h1 class="admin-h1">Articles Addins</h1>
-        <form action="{{ route('admin.all') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="admin-form-group">
                 <label for="article_title">Title</label>
@@ -77,13 +76,14 @@
                 <label for="article_content">Content</label>
                 <textarea id="article_content" name="article_content" required></textarea>
             </div>
-            <button type="submit" class="admin-button">Add Project</button>
+            <button type="submit" class="admin-button">Add Article</button>
         </form>
 
-        <h2 class="admin-h2">Projects List</h2>
+        <h2 class="admin-h2">Articles List</h2>
         <table class="admin-table">
             <thead>
                 <tr>
+                    <th class="admin-th">No</th>
                     <th class="admin-th">Title</th>
                     <th class="admin-th">Author</th>
                     <th class="admin-th">Content</th>
