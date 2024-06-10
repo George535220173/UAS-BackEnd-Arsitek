@@ -13,6 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
         return tokenElement ? tokenElement.getAttribute('content') : '';
     }
 
+    function showError(element, message) {
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error-message';
+        errorElement.innerText = message;
+        element.parentElement.appendChild(errorElement);
+    }
+
+    function clearErrors() {
+        document.querySelectorAll('.error-message').forEach(el => el.remove());
+    }
+
     function openPopup(title, inputsHTML, formAction, authCodeRoute) {
         popupTitle.innerText = title;
         popupInputs.innerHTML = inputsHTML;
@@ -34,11 +45,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Error:', error);
             });
         };
+
+        const confirmBtn = document.getElementById('confirm-btn');
+        confirmBtn.onclick = function (event) {
+            clearErrors();
+            const authCode = document.getElementById('auth-code');
+            const password = document.getElementById('password');
+            let hasError = false;
+
+            if (!authCode.value) {
+                showError(authCode, 'Authentication code is required.');
+                hasError = true;
+            }
+
+            if (!password.value) {
+                showError(password, 'Password is required.');
+                hasError = true;
+            }
+
+            if (hasError) {
+                event.preventDefault();
+            }
+        };
     }
 
     function closePopup() {
         popupModal.style.display = 'none';
         clearInterval(countdownInterval);
+        clearErrors();
     }
 
     changeUsernameBtn.onclick = function () {
@@ -58,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="button" id="send-code-btn" class="btn btn-secondary">Send Code</button>
+            <button type="submit" id="confirm-btn" class="btn btn-primary">Confirm</button>
         `, routeChangeUsername, routeSendAuthCode);
     };
 
@@ -78,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="button" id="send-code-btn" class="btn btn-secondary">Send Code</button>
+            <button type="submit" id="confirm-btn" class="btn btn-primary">Confirm</button>
         `, routeChangeEmail, routeSendAuthCode);
     };
 
@@ -94,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input type="text" id="auth-code" name="auth_code" required>
             </div>
             <button type="button" id="send-code-btn" class="btn btn-secondary">Send Code</button>
+            <button type="submit" id="confirm-btn" class="btn btn-primary">Confirm</button>
         `, routeChangePassword, routeSendAuthCode);
     };
 

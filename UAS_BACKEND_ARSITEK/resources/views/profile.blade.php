@@ -33,7 +33,6 @@
             <div id="popup-inputs">
                 <!-- Dynamic content goes here -->
             </div>
-            <button type="submit" id="confirm-btn" class="btn btn-primary">Confirm</button>
         </form>
     </div>
 </div>
