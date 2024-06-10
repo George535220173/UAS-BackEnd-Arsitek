@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="admin-main">
     <div class="admin-container">
-        <h1 class="admin-h1">Admin Dashboard</h1>
-        <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
+        <h1 class="admin-h1">Projects Addins</h1>
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="admin-form-group">
                 <label for="project_name">Project Name</label>
@@ -58,4 +59,47 @@
             </tbody>
         </table>
     </div>
+
+    <div class="articles-container">
+        <h1 class="admin-h1">Articles Addins</h1>
+        <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="admin-form-group">
+                <label for="article_title">Title</label>
+                <input type="text" id="article_title" name="article_title" required>
+            </div>
+            <div class="admin-form-group">
+                <label for="article_author">Author</label>
+                <input type="text" id="article_author" name="article_author" required>
+            </div>
+            <div class="admin-form-group">
+                <label for="article_content">Content</label>
+                <textarea id="article_content" name="article_content" required></textarea>
+            </div>
+            <button type="submit" class="admin-button">Add Article</button>
+        </form>
+
+        <h2 class="admin-h2">Articles List</h2>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th class="admin-th">No</th>
+                    <th class="admin-th">Title</th>
+                    <th class="admin-th">Author</th>
+                    <th class="admin-th">Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($articles as $article)
+                    <tr>
+                        <td class="admin-td">{{ $loop->iteration }}</td>
+                        <td class="admin-td">{{ $article->article_title }}</td>
+                        <td class="admin-td">{{ $article->article_author }}</td>
+                        <td class="admin-td">{{ $article->article_content }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection
