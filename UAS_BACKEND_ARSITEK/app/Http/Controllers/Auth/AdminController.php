@@ -19,16 +19,15 @@ class AdminController extends Controller
     public function store_article(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'author' => 'required|string|max:255',
-            'content' => 'required|string',
+            'article_title' => 'required|string|max:255',
+            'article_author' => 'required|string|max:255',
+            'article_content' => 'required|string',
         ]);
 
-        
         Article::create([
-            'title' => $request->title,
-            'author' => $request->author,
-            'content' => $request->content,
+            'title' => $request->article_title,
+            'author' => $request->article_author,
+            'content' => $request->article_content,
         ]);
 
         return redirect()->route('admin.all');
@@ -59,3 +58,4 @@ class AdminController extends Controller
         return redirect()->route('admin.all');
     }
 }
+

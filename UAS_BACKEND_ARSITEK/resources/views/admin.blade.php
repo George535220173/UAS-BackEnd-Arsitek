@@ -66,16 +66,16 @@
         <form action="{{ route('admin.all') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="admin-form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" required>
+                <label for="article_title">Title</label>
+                <input type="text" id="article_title" name="article_title" required>
             </div>
             <div class="admin-form-group">
-                <label for="author">Author</label>
-                <input type="text" id="author" name="author" required>
+                <label for="article_author">Author</label>
+                <input type="text" id="article_author" name="article_author" required>
             </div>
             <div class="admin-form-group">
-                <label for="content">Content</label>
-                <textarea id="content" name="content" required></textarea>
+                <label for="article_content">Content</label>
+                <textarea id="article_content" name="article_content" required></textarea>
             </div>
             <button type="submit" class="admin-button">Add Project</button>
         </form>
@@ -93,9 +93,9 @@
                 @foreach($articles as $article)
                     <tr>
                         <td class="admin-td">{{ $loop->iteration }}</td>
-                        <td class="admin-td">{{ $article->title }}</td>
-                        <td class="admin-td">{{ $article->author }}</td>
-                        <td class="admin-td">{{ $article->content }}</td>
+                        <td class="admin-td">{{ $article->article_title }}</td>
+                        <td class="admin-td">{{ $article->article_author }}</td>
+                        <td class="admin-td">{{ $article->article_content }}</td>
                     </tr>
                 @endforeach
             </tbody>

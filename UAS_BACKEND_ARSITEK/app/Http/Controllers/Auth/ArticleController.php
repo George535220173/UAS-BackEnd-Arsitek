@@ -20,16 +20,16 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'author' => 'required|string|max:255',
-            'content' => 'required|string',
+            'article_title' => 'required|string|max:255',
+            'article_author' => 'required|string|max:255',
+            'article_content' => 'required|string',
         ]);
 
         
         Article::create([
-            'title' => $request->title,
-            'author' => $request->author,
-            'content' => $request->content,
+            'article_title' => $request->article_title,
+            'article_author' => $request->article_author,
+            'article_content' => $request->article_content,
         ]);
 
         return redirect()->route('admin.all');
