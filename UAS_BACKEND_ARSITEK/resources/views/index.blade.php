@@ -131,41 +131,30 @@
         </div>
     </div>
 </section>
+
 <section class="portfolio-section">
     <div class="portfolio-header">
         <h2>CHECK OUR PORTFOLIO</h2>
-        <div class="portfolio-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="app">App</button>
-            <button class="filter-btn" data-filter="card">Card</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-        </div>
     </div>
-    <div class="portfolio-container">
-        <div class="portfolio-item" data-category="app">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
-        </div>
-        <div class="portfolio-item" data-category="card">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
-        </div>
-        <div class="portfolio-item" data-category="web">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
-        </div>
-        <div class="portfolio-item" data-category="app">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
-        </div>
-        <div class="portfolio-item" data-category="card">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
-        </div>
-        <div class="portfolio-item" data-category="web">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
-        </div>
-        <div class="portfolio-item" data-category="app">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
-        </div>
-        <div class="portfolio-item" data-category="card">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
-        </div>
+    <div class="carousel" id="portfolioCarousel">
+        @foreach($projects->chunk(4) as $chunk)
+            <div>
+                <div class="row">
+                    @foreach($chunk as $project)
+                        <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
+                            <a href="{{ route('portfolio.show', $project->id) }}" class="w-100">
+                                <div class="image-container">
+                                    <img src="{{ asset('storage/' . $project->image) }}" alt="Portfolio Item" class="img-fluid portfolio-image">
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endforeach
+    </div>
+    <div class="pagination-container">
+        {{ $projects->links() }}
     </div>
 </section>
 

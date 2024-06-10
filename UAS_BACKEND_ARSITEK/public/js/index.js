@@ -10,6 +10,16 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function(){
+    $('#portfolioCarousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: true,
+        prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     const getStartedButton = document.getElementById('getStartedButton');
