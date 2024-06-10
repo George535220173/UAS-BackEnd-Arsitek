@@ -27,7 +27,8 @@ Route::post('/profile/change-username', [UserProfileController::class, 'changeUs
 Route::post('/profile/change-email', [UserProfileController::class, 'changeEmail'])->name('profile.change-email');
 Route::post('/profile/change-password', [UserProfileController::class, 'changePassword'])->name('profile.change-password');
 Route::post('/profile/send-auth-code', [UserProfileController::class, 'sendAuthCode'])->name('profile.send-auth-code');
-
+Route::post('/profile/update-optional-fields', [UserProfileController::class, 'updateOptionalFields'])->name('profile.update-optional-fields');
+Route::post('/profile/delete-optional-fields', [UserProfileController::class, 'deleteOptionalFields'])->name('profile.delete-optional-fields');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

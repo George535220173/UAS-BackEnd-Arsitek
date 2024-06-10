@@ -89,4 +89,33 @@ class UserProfileController extends Controller
 
         return response()->json(['message' => 'Authentication code sent']);
     }
+
+    public function updateOptionalFields(Request $request)
+    {
+        $request->validate([
+            'phone' => 'nullable|digits:11',
+            'address' => 'nullable|string|max:255',
+            'gender' => 'nullable|in:male,female',
+        ]);
+
+        $user = Auth::user();
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->gender = $request->gender;
+        $user->save();
+
+        return redirect()->route('profile')->with('success', 'Profile updated successfully');
+    }
+
+    public function deleteOptionalFields()
+    {
+        $user = Auth::user();
+        $user->phone = null;
+        $user->address = null;
+        $user->gender = null;
+        $user->save();
+
+        return redirect()->route('profile')->with('success', 'Optional fields deleted successfully');
+    }
+    
 }
