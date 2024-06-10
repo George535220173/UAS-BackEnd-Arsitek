@@ -1,10 +1,11 @@
 <?php
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Project;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller

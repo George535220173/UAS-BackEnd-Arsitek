@@ -40,6 +40,8 @@ Route::post('/projects', [ProjectController::class, 'store'])->name('projects.st
 
 // Route to display projects and articles
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.all');
+Route::post('/admin', [AdminController::class, 'store_article'])->name('admin.all');
+Route::post('/admin', [AdminController::class, 'store_projects'])->name('admin.all');
 
 // Routes for managing projects
 Route::get('/admin/projects', [ProjectController::class, 'index'])->name('admin.projects');

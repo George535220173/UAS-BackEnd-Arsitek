@@ -66,16 +66,16 @@
         <form action="{{ route('admin.all') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="admin-form-group">
-                <label for="project_name">Title</label>
-                <input type="text" id="project_name" name="project_name" required>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
             </div>
             <div class="admin-form-group">
-                <label for="client">Author</label>
-                <input type="text" id="client" name="client" required>
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" required>
             </div>
             <div class="admin-form-group">
-                <label for="description">Content</label>
-                <textarea id="description" name="description" required></textarea>
+                <label for="content">Content</label>
+                <textarea id="content" name="content" required></textarea>
             </div>
             <button type="submit" class="admin-button">Add Project</button>
         </form>
