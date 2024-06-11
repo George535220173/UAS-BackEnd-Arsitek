@@ -137,111 +137,31 @@
         <h2>CHECK OUR PORTFOLIO</h2>
     </div>
     <div id="portfolioCarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
+        <div class="carousel-inner">
+            @foreach ($projects->chunk(4) as $chunk)
+                <div class="carousel-item @if ($loop->first) active @endif">
+                    <div class="container">
+                        <div class="row">
+                            @foreach ($chunk as $project)
+                                <div class="col-6 col-md-6 mb-3 d-flex align-items-stretch">
+                                    <div class="image-container">
+                                        <img src="{{ asset('storage/' . $project->image) }}" alt="Project Image" class="img-fluid portfolio-image">
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 d-flex align-items-stretch">
-                        <div class="image-container">
-                            <img src="{{ asset('img/asrul1.jpeg') }}" alt="Portfolio Item" class="img-fluid portfolio-image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#portfolioCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#portfolioCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-    <div class="pagination-container">
-        {{ $projects->links() }}
+        <a class="carousel-control-prev" href="#portfolioCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#portfolioCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </section>
 
