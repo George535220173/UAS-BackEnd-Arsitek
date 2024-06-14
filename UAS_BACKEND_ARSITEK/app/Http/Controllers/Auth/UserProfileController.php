@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -17,7 +18,8 @@ class UserProfileController extends Controller
     }
 
     public function changeUsername(Request $request)
-    {
+{
+    try {
         $request->validate([
             'new_username' => 'required|string|max:255',
             'auth_code' => 'required|string|max:5',
@@ -25,19 +27,22 @@ class UserProfileController extends Controller
         ]);
 
         if (!Hash::check($request->password, Auth::user()->password)) {
-            return back()->withErrors(['password' => 'Password is incorrect']);
+            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
         }
 
         if ($request->auth_code !== session('auth_code')) {
-            return back()->withErrors(['auth_code' => 'Authentication code is incorrect']);
+            return response()->json(['success' => false, 'errors' => ['auth_code' => 'Authentication code is incorrect']]);
         }
 
         $user = Auth::user();
         $user->name = $request->new_username;
         $user->save();
 
-        return redirect()->route('profile')->with('success', 'Username updated successfully');
+        return response()->json(['success' => true]);
+    } catch (\Exception $e) {
+        return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
     }
+}
 
     public function changeEmail(Request $request)
     {
@@ -48,18 +53,18 @@ class UserProfileController extends Controller
         ]);
 
         if (!Hash::check($request->password, Auth::user()->password)) {
-            return back()->withErrors(['password' => 'Password is incorrect']);
+            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
         }
 
         if ($request->auth_code !== session('auth_code')) {
-            return back()->withErrors(['auth_code' => 'Authentication code is incorrect']);
+            return response()->json(['success' => false, 'errors' => ['auth_code' => 'Authentication code is incorrect']]);
         }
 
         $user = Auth::user();
         $user->email = $request->new_email;
         $user->save();
 
-        return redirect()->route('profile')->with('success', 'Email updated successfully');
+        return response()->json(['success' => true]);
     }
 
     public function changePassword(Request $request)
@@ -70,14 +75,14 @@ class UserProfileController extends Controller
         ]);
 
         if ($request->auth_code !== session('auth_code')) {
-            return back()->withErrors(['auth_code' => 'Authentication code is incorrect']);
+            return response()->json(['success' => false, 'errors' => ['auth_code' => 'Authentication code is incorrect']]);
         }
 
         $user = Auth::user();
         $user->password = Hash::make($request->new_password);
         $user->save();
 
-        return redirect()->route('profile')->with('success', 'Password updated successfully');
+        return response()->json(['success' => true]);
     }
 
     public function sendAuthCode()
@@ -93,7 +98,7 @@ class UserProfileController extends Controller
     public function updateOptionalFields(Request $request)
     {
         $request->validate([
-            'phone' => 'nullable|digits:11',
+            'phone' => 'nullable|string|max:16',
             'address' => 'nullable|string|max:255',
             'gender' => 'nullable|in:male,female',
         ]);
@@ -107,15 +112,24 @@ class UserProfileController extends Controller
         return redirect()->route('profile')->with('success', 'Profile updated successfully');
     }
 
-    public function deleteOptionalFields()
+    public function deleteOptionalFields(Request $request)
     {
+        $request->validate([
+            'field' => 'required|string|in:phone,address,gender',
+        ]);
+
         $user = Auth::user();
-        $user->phone = null;
-        $user->address = null;
-        $user->gender = null;
+        $field = $request->input('field');
+
+        if ($field === 'phone') {
+            $user->phone = null;
+        } elseif ($field === 'address') {
+            $user->address = null;
+        } elseif ($field === 'gender') {
+            $user->gender = null;
+        }
         $user->save();
 
-        return redirect()->route('profile')->with('success', 'Optional fields deleted successfully');
+        return response()->json(['success' => true]);
     }
-    
 }

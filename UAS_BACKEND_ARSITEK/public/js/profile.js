@@ -47,26 +47,77 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         const confirmBtn = document.getElementById('confirm-btn');
-        confirmBtn.onclick = function (event) {
-            clearErrors();
-            const authCode = document.getElementById('auth-code');
-            const password = document.getElementById('password');
-            let hasError = false;
+confirmBtn.onclick = function (event) {
+    clearErrors();
+    const authCode = document.getElementById('auth-code');
+    const password = document.getElementById('password');
+    const newUsername = document.getElementById('new-username'); // Ensure this field is included
+    let hasError = false;
 
-            if (!authCode.value) {
-                showError(authCode, 'Authentication code is required.');
-                hasError = true;
-            }
+    if (!authCode.value) {
+        showError(authCode, 'Authentication code is required.');
+        hasError = true;
+    }
 
-            if (!password.value) {
-                showError(password, 'Password is required.');
-                hasError = true;
-            }
+    if (!password.value) {
+        showError(password, 'Password is required.');
+        hasError = true;
+    }
 
-            if (hasError) {
-                event.preventDefault();
+    if (!newUsername.value) { // Validate the new username field
+        showError(newUsername, 'New username is required.');
+        hasError = true;
+    }
+
+    if (hasError) {
+        event.preventDefault();
+        return;
+    }
+
+    fetch(document.getElementById('popup-form').action, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': getCSRFToken()
+        },
+        body: JSON.stringify({
+            auth_code: authCode.value,
+            password: password.value,
+            new_username: newUsername.value // Include the new username in the request body
+        })
+    }).then(response => {
+        console.log('Response status:', response.status);
+        return response.text(); // Get the raw response text for debugging
+    }).then(data => {
+        console.log('Response data:', data); // Log the entire response for debugging
+        try {
+            const jsonData = JSON.parse(data);
+            if (jsonData.success) {
+                location.reload();
+            } else {
+                if (jsonData.errors && jsonData.errors.auth_code) {
+                    showError(authCode, jsonData.errors.auth_code);
+                }
+                if (jsonData.errors && jsonData.errors.password) {
+                    showError(password, jsonData.errors.password);
+                }
+                if (jsonData.errors && jsonData.errors.new_username) {
+                    showError(newUsername, jsonData.errors.new_username);
+                }
             }
-        };
+        } catch (e) {
+            console.error('Parsing error:', e);
+            alert('An error occurred. Please try again.');
+        }
+    }).catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+
+    event.preventDefault();
+};
+
+        
     }
 
     function closePopup() {
