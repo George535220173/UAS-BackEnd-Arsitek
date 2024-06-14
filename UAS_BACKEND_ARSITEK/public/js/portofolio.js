@@ -42,10 +42,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     overlay.addEventListener('click', function () {
+        closeSidebar();
+    });
+
+    document.querySelectorAll('a[href="#team-section"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeSidebar();
+            document.querySelector('#team-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    function closeSidebar() {
         hamburger.classList.remove('active');
         sidebarMenu.classList.remove('active');
         overlay.classList.remove('active');
         document.body.classList.remove('no-scroll');
-    });
+    }
 });
 
