@@ -15,7 +15,7 @@
                 <input type="text" id="client" name="client" required>
             </div>
             <div class="admin-form-group">
-                <label for="time_taken">Time Taken</label>
+                <label for="time_taken">Project Duration</label>
                 <input type="text" id="time_taken" name="time_taken" required>
             </div>
             <div class="admin-form-group">
@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="admin-form-group">
                                             <label for="time_taken">Time Taken</label>
-                                            <input type="text" id="time_taken" name="time_taken" value="{{ $project->time_taken }}" required>
+                                            <input type="text" id="time_taken{{ $project->id }}" name="time_taken" value="{{ $project->time_taken }}" required>
                                         </div>
                                         <div class="admin-form-group">
                                             <label for="location">Location</label>
@@ -121,28 +121,28 @@
             <div class="admin-form-group">
                 <label for="article_title">Title</label>
                 <input type="text" id="article_title" name="article_title" required>
-                </div>
-                <div class="admin-form-group">
-                    <label for="article_author">Author</label>
-                    <input type="text" id="article_author" name="article_author" required>
-                </div>
-                <div class="admin-form-group">
-                    <label for="article_content">Content</label>
-                    <textarea id="article_content" name="article_content" required></textarea>
-                </div>
-                <button type="submit" class="admin-button">Add Article</button>
-            </form>
+            </div>
+            <div class="admin-form-group">
+                <label for="article_author">Author</label>
+                <input type="text" id="article_author" name="article_author" required>
+            </div>
+            <div class="admin-form-group">
+                <label for="article_content">Content</label>
+                <textarea id="article_content" name="article_content" required></textarea>
+            </div>
+            <button type="submit" class="admin-button">Add Article</button>
+        </form>
 
-            <h2 class="admin-h2">Articles List</h2>
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th class="admin-th">No</th>
-                        <th class="admin-th">Title</th>
-                        <th class="admin-th">Author</th>
-                        <th class="admin-th">Content</th>
-                        <th class="admin-th">Actions</th>
-                    </tr>
+        <h2 class="admin-h2">Articles List</h2>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th class="admin-th">No</th>
+                    <th class="admin-th">Title</th>
+                    <th class="admin-th">Author</th>
+                    <th class="admin-th">Content</th>
+                    <th class="admin-th">Actions</th>
+                </tr>
                 </thead>
                 <tbody>
                     @foreach($articles as $article)
@@ -199,4 +199,10 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var projectDates = @json($projects->mapWithKeys(function ($project) {
+        return [$project->id => $project->time_taken];
+    }));
+</script>
 @endsection

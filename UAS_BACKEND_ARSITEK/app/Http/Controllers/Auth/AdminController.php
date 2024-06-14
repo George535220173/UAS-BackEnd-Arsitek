@@ -38,14 +38,14 @@ class AdminController extends Controller
         $request->validate([
             'project_name' => 'required|string|max:255',
             'client' => 'required|string|max:255',
-            'time_taken' => 'required|string|max:255',
+            'time_taken' => 'required|string',
             'location' => 'required|string|max:255',
             'description' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
+    
         $imagePath = $request->file('image')->store('projects', 'public');
-
+    
         Project::create([
             'project_name' => $request->project_name,
             'client' => $request->client,
@@ -54,8 +54,8 @@ class AdminController extends Controller
             'description' => $request->description,
             'image' => $imagePath,
         ]);
-
-        return redirect()->route('admin.dashboard');
+    
+        return redirect()->route('admin.dashboard')->with('success', 'Project added successfully');
     }
 
     public function showProjects(Request $request)
@@ -124,24 +124,24 @@ public function favoriteProject(Request $request)
         $request->validate([
             'project_name' => 'required|string|max:255',
             'client' => 'required|string|max:255',
-            'time_taken' => 'required|string|max:255',
+            'time_taken' => 'required|string',
             'location' => 'required|string|max:255',
             'description' => 'required|string',
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
+    
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('projects', 'public');
             $project->image = $imagePath;
         }
-
+    
         $project->project_name = $request->project_name;
         $project->client = $request->client;
         $project->time_taken = $request->time_taken;
         $project->location = $request->location;
         $project->description = $request->description;
         $project->save();
-
+    
         return redirect()->route('admin.dashboard')->with('success', 'Project updated successfully');
     }
 
