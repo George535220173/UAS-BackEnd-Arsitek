@@ -86,26 +86,30 @@ class UserProfileController extends Controller
     }
 
     public function changePhone(Request $request)
-{
-    try {
-        $request->validate([
-            'new_value' => 'required|numeric|max:9999999999999999',
-            'password' => 'required|string',
-        ]);
-
-        if (!Hash::check($request->password, Auth::user()->password)) {
-            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+    {
+        try {
+            $numericPhone = str_replace('-', '', $request->new_value);
+            $request->merge(['new_value' => $numericPhone]);
+    
+            $request->validate([
+                'new_value' => 'required|numeric|digits_between:1,16',
+                'password' => 'required|string',
+            ]);
+    
+            if (!Hash::check($request->password, Auth::user()->password)) {
+                return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+            }
+    
+            $user = Auth::user();
+            $user->phone = $request->new_value;
+            $user->save();
+    
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
         }
-
-        $user = Auth::user();
-        $user->phone = $request->new_value;
-        $user->save();
-
-        return response()->json(['success' => true]);
-    } catch (\Exception $e) {
-        return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
     }
-}
+    
 
 public function changeAddress(Request $request)
 {

@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.error-message').forEach(el => el.remove());
     }
 
+    function formatPhoneNumber(value) {
+        return value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1-');
+    }
+
     function openPopup(title, inputsHTML, formAction, authCodeRoute = null) {
         popupTitle.innerText = title;
         popupInputs.innerHTML = inputsHTML;
@@ -57,9 +61,12 @@ document.addEventListener('DOMContentLoaded', function () {
             let hasError = false;
 
             if (newValue && newValue.name === 'new_value' && newValue.type === 'text') {
-                if (isNaN(newValue.value)) {
-                    showError(newValue, 'Phone number must be numeric.');
+                const numericPhone = newValue.value.replace(/-/g, '');
+                if (isNaN(numericPhone) || numericPhone.length > 16) {
+                    showError(newValue, 'Phone number must be numeric and not exceed 16 digits.');
                     hasError = true;
+                } else {
+                    newValue.value = formatPhoneNumber(numericPhone);
                 }
             }
 
@@ -86,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let requestBody = {
                 password: password.value
             };
-            requestBody[newValue.name] = newValue.value;
+            requestBody[newValue.name] = newValue.value.replace(/-/g, ''); // Send numeric value to server
             if (authCode) {
                 requestBody.auth_code = authCode.value;
             }
