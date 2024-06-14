@@ -257,4 +257,21 @@ document.addEventListener('DOMContentLoaded', function () {
             closePopup();
         }
     };
+
+    function startCountdown(seconds, sendCodeBtn) {
+        let remainingTime = seconds;
+        sendCodeBtn.disabled = true;
+        sendCodeBtn.textContent = `Resend code in ${remainingTime}s`;
+
+        countdownInterval = setInterval(() => {
+            remainingTime -= 1;
+            sendCodeBtn.textContent = `Resend code in ${remainingTime}s`;
+
+            if (remainingTime <= 0) {
+                clearInterval(countdownInterval);
+                sendCodeBtn.disabled = false;
+                sendCodeBtn.textContent = 'Send Code';
+            }
+        }, 1000);
+    }
 });

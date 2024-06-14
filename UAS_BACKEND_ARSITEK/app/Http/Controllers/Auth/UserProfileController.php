@@ -18,31 +18,31 @@ class UserProfileController extends Controller
     }
 
     public function changeUsername(Request $request)
-{
-    try {
-        $request->validate([
-            'new_username' => 'required|string|max:255',
-            'auth_code' => 'required|string|max:5',
-            'password' => 'required|string',
-        ]);
+    {
+        try {
+            $request->validate([
+                'new_username' => 'required|string|max:255',
+                'auth_code' => 'required|string|max:5',
+                'password' => 'required|string',
+            ]);
 
-        if (!Hash::check($request->password, Auth::user()->password)) {
-            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+            if (!Hash::check($request->password, Auth::user()->password)) {
+                return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+            }
+
+            if ($request->auth_code !== session('auth_code')) {
+                return response()->json(['success' => false, 'errors' => ['auth_code' => 'Authentication code is incorrect']]);
+            }
+
+            $user = Auth::user();
+            $user->name = $request->new_username;
+            $user->save();
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
         }
-
-        if ($request->auth_code !== session('auth_code')) {
-            return response()->json(['success' => false, 'errors' => ['auth_code' => 'Authentication code is incorrect']]);
-        }
-
-        $user = Auth::user();
-        $user->name = $request->new_username;
-        $user->save();
-
-        return response()->json(['success' => true]);
-    } catch (\Exception $e) {
-        return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
     }
-}
 
     public function changeEmail(Request $request)
     {
@@ -88,71 +88,68 @@ class UserProfileController extends Controller
     public function changePhone(Request $request)
     {
         try {
-            $numericPhone = str_replace('-', '', $request->new_value);
-            $request->merge(['new_value' => $numericPhone]);
-    
             $request->validate([
-                'new_value' => 'required|numeric|digits_between:1,16',
+                'new_value' => 'required|string|max:16',
                 'password' => 'required|string',
             ]);
-    
+
             if (!Hash::check($request->password, Auth::user()->password)) {
                 return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
             }
-    
+
             $user = Auth::user();
             $user->phone = $request->new_value;
             $user->save();
-    
+
             return response()->json(['success' => true]);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
         }
     }
-    
 
-public function changeAddress(Request $request)
-{
-    try {
-        $request->validate([
-            'new_value' => 'required|string|max:255',
-            'password' => 'required|string',
-        ]);
+    public function changeAddress(Request $request)
+    {
+        try {
+            $request->validate([
+                'new_value' => 'required|string|max:255',
+                'password' => 'required|string',
+            ]);
 
-        if (!Hash::check($request->password, Auth::user()->password)) {
-            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+            if (!Hash::check($request->password, Auth::user()->password)) {
+                return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+            }
+
+            $user = Auth::user();
+            $user->address = $request->new_value;
+            $user->save();
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
         }
-
-        $user = Auth::user();
-        $user->address = $request->new_value;
-        $user->save();
-
-        return response()->json(['success' => true]);
-    } catch (\Exception $e) {
-        return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
     }
-}
 
-public function changeGender(Request $request)
-{
-    try {
-        $request->validate([
-            'new_value' => 'required|string|in:male,female',
-            'password' => 'required|string',
-        ]);
+    public function changeGender(Request $request)
+    {
+        try {
+            $request->validate([
+                'new_value' => 'required|string|in:male,female',
+                'password' => 'required|string',
+            ]);
 
-        if (!Hash::check($request->password, Auth::user()->password)) {
-            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+            if (!Hash::check($request->password, Auth::user()->password)) {
+                return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+            }
+            
+            $user = Auth::user();
+            $user->gender = $request->new_value;
+            $user->save();
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
         }
-        $user = Auth::user();
-        $user->gender = $request->new_value;
-        $user->save();
-
-        return response()->json(['success' => true]);
-    } catch (\Exception $e) {
-        return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
     }
-}
 
     public function sendAuthCode()
     {
