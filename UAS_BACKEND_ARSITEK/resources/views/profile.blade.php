@@ -4,33 +4,20 @@
 <div class="container-profile">
     <h1>Profile</h1>
     <div class="profile-info">
-        <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
-        <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
-        <p><strong>Phone:</strong> {{ Auth::user()->phone }}</p>
-        <p><strong>Address:</strong> {{ Auth::user()->address }}</p>
-        <p><strong>Gender:</strong> {{ Auth::user()->gender }}</p>
-        <p><strong>Created At:</strong> {{ Auth::user()->created_at }}</p>
-    </div>
-
-    <form id="optional-fields-form" method="POST" action="{{ route('profile.update-optional-fields') }}">
+        <form id="optional-fields-form" method="POST" action="{{ route('profile.update-optional-fields') }}">
         @csrf
-        <div class="form-group">
-            <label for="phone">Phone:</label>
-            <input type="text" id="phone" name="phone" value="{{ Auth::user()->phone }}" maxlength="16">
+            <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
+            <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+            <p><strong>Phone: <input type="text" id="phone" name="phone" value="{{ Auth::user()->phone }}" maxlength="16"> </strong> {{ Auth::user()->phone }}</p>
+            <p><strong>Address: <input type="text" id="address" name="address" value="{{ Auth::user()->address }}"> </strong> {{ Auth::user()->address }}</p>
+            <p><strong>Gender:             <select id="gender" name="gender">
+                    <option value="" {{ Auth::user()->gender == null ? 'selected' : '' }}>Select Gender</option>
+                    <option value="male" {{ Auth::user()->gender == 'male' ? 'selected' : '' }}>Male</option>
+                    <option value="female" {{ Auth::user()->gender == 'female' ? 'selected' : '' }}>Female</option>
+                </select></strong> {{ Auth::user()->gender }}</p>
+            <p><strong>Created At:</strong> {{ Auth::user()->created_at }}</p>
+            <button type="submit" class="btn btn-primary">Update</button>
         </div>
-        <div class="form-group">
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" value="{{ Auth::user()->address }}">
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender">
-                <option value="" {{ Auth::user()->gender == null ? 'selected' : '' }}>Select Gender</option>
-                <option value="male" {{ Auth::user()->gender == 'male' ? 'selected' : '' }}>Male</option>
-                <option value="female" {{ Auth::user()->gender == 'female' ? 'selected' : '' }}>Female</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 
     @if(Auth::user()->phone || Auth::user()->address || Auth::user()->gender)
