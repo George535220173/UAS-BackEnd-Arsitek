@@ -35,7 +35,7 @@
                 <ul>
                     <li><i class="fas fa-check"></i> LOREM IPSUMMMMMMMMMMMMMMMMMMMM</li>
                     <li><i class="fas fa-check"></i> HEHEHEHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</li>
-                    <li><i class="fas fa-check"></i> WWKWKKWKWKWKWKWKWKWKKWKWKWKWKWKKWKWKWKWKWKWKWKWKWKWK</li>
+                    <li><i class="fas fa-check"></i> WWKWKKWKWKWKWKWKWKKWKWKWKWKWKKWKWKWKWKWKWKWKWKWKWK</li>
                 </ul>
                 <p>lorem ipsum lorem ipsum sampe kamu muntah muntah heheheha p p p p p balap pppppp</p>
             </div>
@@ -228,7 +228,7 @@
         </div>
     </section>
 
-    <section class="team-section">
+    <section class="team-section" id="team-section">
         <div class="team-header">
             <h2>OUR TEAM</h2>
         </div>
@@ -297,4 +297,23 @@
     </section>
 </div>
 
+<!-- Script for Smooth Scrolling -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const aboutLinks = document.querySelectorAll('#header-about-link, #sidebar-about-link');
+
+        aboutLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('#team-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // If the sidebar is open, close it
+                document.getElementById('sidebar-menu').classList.remove('open');
+                document.getElementById('overlay').classList.remove('open');
+            });
+        });
+    });
+</script>
 @endsection

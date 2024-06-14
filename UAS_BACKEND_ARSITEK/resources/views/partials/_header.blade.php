@@ -10,7 +10,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('/about') }}">About</a></li>
+            <li><a href="#team-section" id="header-about-link">About</a></li>
             <li><a href="{{ url('/service') }}">Services</a></li>
             <li><a href="{{ url('/projects') }}">Projects</a></li>
         </ul>
@@ -29,7 +29,7 @@
 <div id="sidebar-menu" class="sidebar-menu">
     <ul>
         <li><a href="{{ url('/') }}">Home</a></li>
-        <li><a href="{{ url('/about') }}">About</a></li>
+        <li><a href="#team-section" id="sidebar-about-link">About</a></li>
         <li><a href="{{ url('/service') }}">Services</a></li>
         <li><a href="{{ url('/projects') }}">Portfolio</a></li>
         @guest
