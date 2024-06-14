@@ -26,7 +26,7 @@
         </ul>
 
         @guest
-            <a href="{{ route('login') }}" class="cta"><button>Get Started</button></a>
+            <a href="{{ route('login') }}" class="cta"><button>Login</button></a>
         @else
             <a href="{{ url('/#contact') }}" class="cta"><button id="getStartedButton">Get Started</button></a>
         @endguest
