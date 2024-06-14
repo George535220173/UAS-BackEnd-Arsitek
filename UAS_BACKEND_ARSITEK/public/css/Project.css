@@ -1,0 +1,60 @@
+.form-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-inline .input-group.sort-group {
+    flex-shrink: 0;
+    width: 150px;
+}
+
+.form-inline .input-group.search-group {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.form-inline .input-group.search-group .form-control {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.form-inline .input-group-append .btn {
+    height: calc(2.25rem + 2px); /* Match the height of the input and button */
+}
+
+/* Ensure consistent card height */
+.card {
+    height: 350px; /* Adjust this value based on your design preference */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    height: 200px; /* Adjust this value based on your design preference */
+    object-fit: cover;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    flex: 1;
+    margin-bottom: 0.5rem;
+}
+
+.favorite-btn {
+    align-self: flex-end;
+}
