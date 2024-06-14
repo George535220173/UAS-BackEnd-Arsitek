@@ -46,5 +46,8 @@ Route::post('/send-email', [ContactController::class, 'sendEmail']);
 
 Route::get('/projects', [AdminController::class, 'showProjects'])->name('projects.index');
 Route::get('/projects/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.show');
+Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->name('projects.favorite');
 
+Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->name('projects.favorite');
+Route::get('/favorites', [AdminController::class, 'showFavorites'])->name('favorites.index');
 
