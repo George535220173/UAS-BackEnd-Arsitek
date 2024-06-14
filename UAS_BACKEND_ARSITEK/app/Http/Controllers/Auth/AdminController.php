@@ -68,4 +68,68 @@ class AdminController extends Controller
     {
         return view('project_details', compact('project'));
     }
+
+    public function destroyProject(Project $project)
+    {
+        $project->delete();
+        return redirect()->route('admin.dashboard')->with('success', 'Project deleted successfully');
+    }
+
+    public function destroyArticle(Article $article)
+    {
+        $article->delete();
+        return redirect()->route('admin.dashboard')->with('success', 'Article deleted successfully');
+    }
+
+    public function editProject(Project $project)
+    {
+        return view('admin.edit_project', compact('project'));
+    }
+
+    public function updateProject(Request $request, Project $project)
+    {
+        $request->validate([
+            'project_name' => 'required|string|max:255',
+            'client' => 'required|string|max:255',
+            'time_taken' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('projects', 'public');
+            $project->image = $imagePath;
+        }
+
+        $project->project_name = $request->project_name;
+        $project->client = $request->client;
+        $project->time_taken = $request->time_taken;
+        $project->location = $request->location;
+        $project->description = $request->description;
+        $project->save();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Project updated successfully');
+    }
+
+    public function editArticle(Article $article)
+    {
+        return view('admin.edit_article', compact('article'));
+    }
+
+    public function updateArticle(Request $request, Article $article)
+    {
+        $request->validate([
+            'article_title' => 'required|string|max:255',
+            'article_author' => 'required|string|max:255',
+            'article_content' => 'required|string',
+        ]);
+
+        $article->article_title = $request->article_title;
+        $article->article_author = $request->article_author;
+        $article->article_content = $request->article_content;
+        $article->save();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Article updated successfully');
+    }
 }
