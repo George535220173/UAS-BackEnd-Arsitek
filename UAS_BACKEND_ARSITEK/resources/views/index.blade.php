@@ -248,11 +248,6 @@
                 <h3>Uskhy Huss</h3>
                 <p>CTO</p>
             </div>
-            <div class="team-member">
-                <img src="{{ asset('img/husky.jpg') }}" alt="">
-                <h3>Hushie Huck</h3>
-                <p>Accountant</p>
-            </div>
         </div>
     </section>
 
