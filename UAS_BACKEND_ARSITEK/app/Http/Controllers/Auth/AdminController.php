@@ -58,14 +58,24 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard');
     }
 
-    public function showProjects()
-    {
-        $projects = Project::all();
-        return view('projects', compact('projects'));
-    }
+    public function showProjects(Request $request)
+{
+    $search = $request->input('search');
+    
+    $projects = Project::when($search, function ($query, $search) {
+        return $query->where('project_name', 'LIKE', "%{$search}%")
+                     ->orWhere('client', 'LIKE', "%{$search}%")
+                     ->orWhere('location', 'LIKE', "%{$search}%")
+                     ->orWhere('description', 'LIKE', "%{$search}%");
+    })->paginate(8);
+    
+    return view('projects', compact('projects'));
+}
+
 
     public function showProjectDetails(Project $project)
     {
         return view('project_details', compact('project'));
     }
 }
+
