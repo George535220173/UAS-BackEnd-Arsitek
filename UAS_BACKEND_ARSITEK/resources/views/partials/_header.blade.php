@@ -12,17 +12,7 @@
             <li><a href="{{ url('/') }}">Home</a></li>
             <li><a href="{{ url('/about') }}">About</a></li>
             <li><a href="{{ url('/service') }}">Services</a></li>
-            <li><a href="{{ url('/projects') }}">Portfolio</a></li>
-            <li><a href="{{ url('/team') }}">Team</a></li>
-            <li class="dropdown">
-                <a href="#">Dropdown <span>&#9662;</span></a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ url('/contact') }}">Contact</a></li>
+            <li><a href="{{ url('/projects') }}">Projects</a></li>
         </ul>
 
         @guest
