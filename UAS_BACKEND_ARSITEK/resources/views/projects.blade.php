@@ -4,11 +4,18 @@
 <div class="container">
     <h1 class="my-4">Our Projects</h1>
     
-    <!-- Search Form -->
-    <form method="GET" action="{{ route('projects.index') }}" class="mb-4">
-        <div class="input-group">
+    <!-- Search Form and Sorting Dropdown -->
+    <form method="GET" action="{{ route('projects.index') }}" class="mb-4 d-flex align-items-center form-inline">
+        <div class="input-group mr-2 sort-group">
+            <select name="sort" class="form-control">
+                <option value="">Sort by</option>
+                <option value="name_asc" {{ request('sort') == 'name_asc' ? 'selected' : '' }}>A-Z</option>
+                <option value="name_desc" {{ request('sort') == 'name_desc' ? 'selected' : '' }}>Z-A</option>
+            </select>
+        </div>
+        <div class="input-group flex-grow-1 search-group">
             <input type="text" name="search" class="form-control" placeholder="Search projects..." value="{{ request('search') }}">
-            <span class="input-group-btn">
+            <span class="input-group-append">
                 <button class="btn btn-primary" type="submit">Search</button>
             </span>
         </div>

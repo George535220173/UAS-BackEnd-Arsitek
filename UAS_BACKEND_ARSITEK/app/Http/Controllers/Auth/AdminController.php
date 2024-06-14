@@ -14,6 +14,7 @@ class AdminController extends Controller
         $projects = Project::all();
         $articles = Article::all();
         return view('admin', compact('projects', 'articles'));
+        
     }
 
     public function store_articles(Request $request)
@@ -59,18 +60,36 @@ class AdminController extends Controller
     }
 
     public function showProjects(Request $request)
-{
-    $search = $request->input('search');
+    {
+        $search = $request->input('search');
+        $sort = $request->input('sort');
     
-    $projects = Project::when($search, function ($query, $search) {
-        return $query->where('project_name', 'LIKE', "%{$search}%")
-                     ->orWhere('client', 'LIKE', "%{$search}%")
-                     ->orWhere('location', 'LIKE', "%{$search}%")
-                     ->orWhere('description', 'LIKE', "%{$search}%");
-    })->paginate(8);
+        $query = Project::query(); // Initialize the query
     
-    return view('projects', compact('projects'));
-}
+        // Apply search filter if provided
+        if ($search) {
+            $query->where(function($query) use ($search) {
+                $query->where('project_name', 'LIKE', "%{$search}%")
+                      ->orWhere('client', 'LIKE', "%{$search}%")
+                      ->orWhere('location', 'LIKE', "%{$search}%")
+                      ->orWhere('description', 'LIKE', "%{$search}%");
+            });
+        }
+    
+        // Apply sorting if provided
+        if ($sort) {
+            if ($sort === 'name_asc') {
+                $query->orderBy('project_name', 'asc');
+            } elseif ($sort === 'name_desc') {
+                $query->orderBy('project_name', 'desc');
+            }
+        }
+    
+        $projects = $query->paginate(8);
+    
+        return view('projects', compact('projects'));
+    }
+    
 
 public function favoriteProject(Request $request)
     {
@@ -96,6 +115,7 @@ public function favoriteProject(Request $request)
         $favorites = Project::whereIn('id', $favoriteIds)->get();
         return view('favorites', compact('favorites'));
     }
+
 
     public function showProjectDetails(Project $project)
     {
@@ -165,5 +185,6 @@ public function favoriteProject(Request $request)
 
         return redirect()->route('admin.dashboard')->with('success', 'Article updated successfully');
     }
+    
 }
 
