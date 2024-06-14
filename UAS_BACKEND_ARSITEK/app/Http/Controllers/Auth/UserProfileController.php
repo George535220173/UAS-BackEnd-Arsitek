@@ -85,6 +85,71 @@ class UserProfileController extends Controller
         return response()->json(['success' => true]);
     }
 
+    public function changePhone(Request $request)
+{
+    try {
+        $request->validate([
+            'new_value' => 'required|numeric|max:9999999999999999',
+            'password' => 'required|string',
+        ]);
+
+        if (!Hash::check($request->password, Auth::user()->password)) {
+            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+        }
+
+        $user = Auth::user();
+        $user->phone = $request->new_value;
+        $user->save();
+
+        return response()->json(['success' => true]);
+    } catch (\Exception $e) {
+        return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
+    }
+}
+
+public function changeAddress(Request $request)
+{
+    try {
+        $request->validate([
+            'new_value' => 'required|string|max:255',
+            'password' => 'required|string',
+        ]);
+
+        if (!Hash::check($request->password, Auth::user()->password)) {
+            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+        }
+
+        $user = Auth::user();
+        $user->address = $request->new_value;
+        $user->save();
+
+        return response()->json(['success' => true]);
+    } catch (\Exception $e) {
+        return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
+    }
+}
+
+public function changeGender(Request $request)
+{
+    try {
+        $request->validate([
+            'new_value' => 'required|string|in:male,female',
+            'password' => 'required|string',
+        ]);
+
+        if (!Hash::check($request->password, Auth::user()->password)) {
+            return response()->json(['success' => false, 'errors' => ['password' => 'Password is incorrect']]);
+        }
+        $user = Auth::user();
+        $user->gender = $request->new_value;
+        $user->save();
+
+        return response()->json(['success' => true]);
+    } catch (\Exception $e) {
+        return response()->json(['success' => false, 'errors' => ['server' => 'Server error: ' . $e->getMessage()]]);
+    }
+}
+
     public function sendAuthCode()
     {
         $authCode = strtoupper(Str::random(5));
