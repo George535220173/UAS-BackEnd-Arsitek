@@ -57,4 +57,15 @@ class AdminController extends Controller
 
         return redirect()->route('admin.dashboard');
     }
+
+    public function showProjects()
+    {
+        $projects = Project::all();
+        return view('projects', compact('projects'));
+    }
+
+    public function showProjectDetails(Project $project)
+    {
+        return view('project_details', compact('project'));
+    }
 }

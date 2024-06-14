@@ -40,7 +40,7 @@
                     <th class="admin-th">No</th>
                     <th class="admin-th">Project Name</th>
                     <th class="admin-th">Client</th>
-                    <th class="admin-th">Time Taken</th>
+                    <th class="admin-th">Project Duration</th>
                     <th class="admin-th">Location</th>
                     <th class="admin-th">Image</th>
                 </tr>

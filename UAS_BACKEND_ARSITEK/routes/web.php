@@ -33,3 +33,7 @@ Route::post('/admin/projects', [AdminController::class, 'store_projects'])->name
 Route::post('/admin/articles', [AdminController::class, 'store_articles'])->name('admin.articles.store');
 
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
+
+Route::get('/projects', [AdminController::class, 'showProjects'])->name('projects.index');
+Route::get('/projects/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.show');
+
