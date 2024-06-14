@@ -72,6 +72,30 @@ class AdminController extends Controller
     return view('projects', compact('projects'));
 }
 
+public function favoriteProject(Request $request)
+    {
+        $projectId = $request->input('project_id');
+        $favorites = session('favorites', []);
+
+        if (in_array($projectId, $favorites)) {
+            // Remove from favorites
+            $favorites = array_diff($favorites, [$projectId]);
+            session(['favorites' => $favorites]);
+            return response()->json(['status' => 'removed']);
+        } else {
+            // Add to favorites
+            $favorites[] = $projectId;
+            session(['favorites' => $favorites]);
+            return response()->json(['status' => 'added']);
+        }
+    }
+
+    public function showFavorites()
+    {
+        $favoriteIds = session('favorites', []);
+        $favorites = Project::whereIn('id', $favoriteIds)->get();
+        return view('favorites', compact('favorites'));
+    }
 
     public function showProjectDetails(Project $project)
     {

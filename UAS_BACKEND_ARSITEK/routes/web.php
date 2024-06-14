@@ -46,6 +46,10 @@ Route::post('/send-email', [ContactController::class, 'sendEmail']);
 
 Route::get('/projects', [AdminController::class, 'showProjects'])->name('projects.index');
 Route::get('/projects/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.show');
+Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->name('projects.favorite');
+
+Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->name('projects.favorite');
+Route::get('/favorites', [AdminController::class, 'showFavorites'])->name('favorites.index');
 
 Route::delete('/admin/projects/{project}', [AdminController::class, 'destroyProject'])->name('admin.projects.destroy');
 Route::delete('/admin/articles/{article}', [AdminController::class, 'destroyArticle'])->name('admin.articles.destroy');
@@ -55,4 +59,5 @@ Route::put('/admin/projects/{project}', [AdminController::class, 'updateProject'
 
 Route::get('/admin/articles/{article}/edit', [AdminController::class, 'editArticle'])->name('admin.articles.edit');
 Route::put('/admin/articles/{article}', [AdminController::class, 'updateArticle'])->name('admin.articles.update');
+
 
