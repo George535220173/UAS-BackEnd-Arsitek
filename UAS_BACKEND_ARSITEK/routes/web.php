@@ -51,3 +51,13 @@ Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->
 Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->name('projects.favorite');
 Route::get('/favorites', [AdminController::class, 'showFavorites'])->name('favorites.index');
 
+Route::delete('/admin/projects/{project}', [AdminController::class, 'destroyProject'])->name('admin.projects.destroy');
+Route::delete('/admin/articles/{article}', [AdminController::class, 'destroyArticle'])->name('admin.articles.destroy');
+
+Route::get('/admin/projects/{project}/edit', [AdminController::class, 'editProject'])->name('admin.projects.edit');
+Route::put('/admin/projects/{project}', [AdminController::class, 'updateProject'])->name('admin.projects.update');
+
+Route::get('/admin/articles/{article}/edit', [AdminController::class, 'editArticle'])->name('admin.articles.edit');
+Route::put('/admin/articles/{article}', [AdminController::class, 'updateArticle'])->name('admin.articles.update');
+
+
