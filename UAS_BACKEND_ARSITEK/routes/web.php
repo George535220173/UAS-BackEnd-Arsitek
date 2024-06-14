@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\UserProfileController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\ProjectController;
 use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
@@ -35,17 +34,17 @@ Route::post('/profile/delete-optional-fields', [UserProfileController::class, 'd
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/service', function () {
-    return view('service');
-});
-
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
-Route::get('/admin', [ProjectController::class, 'index'])->name('admin.dashboard');
-Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
-
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+Route::post('/admin/projects', [AdminController::class, 'store_projects'])->name('admin.projects.store');
+Route::post('/admin/articles', [AdminController::class, 'store_articles'])->name('admin.articles.store');
 
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
+
+
+Route::get('/projects', [AdminController::class, 'showProjects'])->name('projects.index');
+Route::get('/projects/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.show');
 
 

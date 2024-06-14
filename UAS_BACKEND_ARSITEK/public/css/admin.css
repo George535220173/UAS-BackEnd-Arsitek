@@ -1,6 +1,6 @@
 .admin-container {
-    max-width: 800px;
-    margin: 50px auto;
+    width: 700px;
+    margin: 30px;
     padding: 20px;
     background: #f9f9f9;
     border-radius: 10px;
@@ -51,4 +51,18 @@
 .admin-th, .admin-td {
     padding: 10px;
     text-align: left;
+}
+
+.admin-main {
+    display: flex;
+    justify-content: center;
+}
+
+.articles-container {
+    width: 700px;
+    margin: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

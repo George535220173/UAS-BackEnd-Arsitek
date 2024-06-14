@@ -5,17 +5,35 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Article;
 
-class ProjectController extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
         $projects = Project::all();
-        return view('admin', compact('projects'));
+        $articles = Article::all();
+        return view('admin', compact('projects', 'articles'));
     }
 
-    public function store(Request $request)
+    public function store_articles(Request $request)
+    {
+        $request->validate([
+            'article_title' => 'required|string|max:255',
+            'article_author' => 'required|string|max:255',
+            'article_content' => 'required|string',
+        ]);
+
+        Article::create([
+            'article_title' => $request->article_title,
+            'article_author' => $request->article_author,
+            'article_content' => $request->article_content,
+        ]);
+
+        return redirect()->route('admin.dashboard');
+    }
+
+    public function store_projects(Request $request)
     {
         $request->validate([
             'project_name' => 'required|string|max:255',
@@ -38,5 +56,16 @@ class ProjectController extends Controller
         ]);
 
         return redirect()->route('admin.dashboard');
+    }
+
+    public function showProjects()
+    {
+        $projects = Project::all();
+        return view('projects', compact('projects'));
+    }
+
+    public function showProjectDetails(Project $project)
+    {
+        return view('project_details', compact('project'));
     }
 }
