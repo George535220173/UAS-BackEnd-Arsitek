@@ -44,7 +44,11 @@ class AdminController extends Controller
             'description' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-    
+
+        $dateRange = explode(' - ', $request->time_taken);
+    if (!\Carbon\Carbon::createFromFormat('d F Y', $dateRange[0] ?? null) || !\Carbon\Carbon::createFromFormat('d F Y', $dateRange[1] ?? null)) {
+        return redirect()->back()->withErrors(['time_taken' => 'Invalid date format. Please use "DD MMMM YYYY - DD MMMM YYYY".']);
+    }
         $imagePath = $request->file('image')->store('projects', 'public');
     
         Project::create([
@@ -62,35 +66,30 @@ class AdminController extends Controller
     public function showProjects(Request $request)
     {
         $search = $request->input('search');
-        $sort = $request->input('sort');
+        $sort = $request->input('sort', 'asc');
     
-        $query = Project::query(); // Initialize the query
-    
-        // Apply search filter if provided
-        if ($search) {
-            $query->where(function($query) use ($search) {
-                $query->where('project_name', 'LIKE', "%{$search}%")
-                      ->orWhere('client', 'LIKE', "%{$search}%")
-                      ->orWhere('location', 'LIKE', "%{$search}%")
-                      ->orWhere('description', 'LIKE', "%{$search}%");
-            });
-        }
-    
-        // Apply sorting if provided
-        if ($sort) {
-            if ($sort === 'name_asc') {
-                $query->orderBy('project_name', 'asc');
-            } elseif ($sort === 'name_desc') {
-                $query->orderBy('project_name', 'desc');
+        $projects = Project::when($search, function ($query, $search) {
+            return $query->where('project_name', 'LIKE', "%{$search}%")
+                         ->orWhere('client', 'LIKE', "%{$search}%")
+                         ->orWhere('location', 'LIKE', "%{$search}%")
+                         ->orWhere('description', 'LIKE', "%{$search}%");
+        })
+        ->when($sort, function ($query, $sort) {
+            if ($sort === 'asc') {
+                return $query->orderBy('project_name', 'asc');
+            } elseif ($sort === 'desc') {
+                return $query->orderBy('project_name', 'desc');
+            } elseif ($sort === 'oldest') {
+                return $query->orderBy('created_at', 'asc');
+            } elseif ($sort === 'latest') {
+                return $query->orderBy('created_at', 'desc');
             }
-        }
-    
-        $projects = $query->paginate(8);
+        })
+        ->paginate(8);
     
         return view('projects', compact('projects'));
     }
     
-
 public function favoriteProject(Request $request)
     {
         $projectId = $request->input('project_id');
