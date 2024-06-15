@@ -27,34 +27,36 @@
 
 /* Ensure consistent card height */
 .card {
-    height: 350px; /* Adjust this value based on your design preference */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    height: 100%;
 }
 
 .card-img-top {
-    height: 200px; /* Adjust this value based on your design preference */
+    max-height: 200px;
     object-fit: cover;
 }
 
 .card-body {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex-grow: 1;
 }
 
-.card-title {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-text {
-    flex: 1;
-    margin-bottom: 0.5rem;
+.card-body .mt-auto {
+    margin-top: auto;
 }
 
 .favorite-btn {
-    align-self: flex-end;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
+
+.card .card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
