@@ -25,7 +25,7 @@
     <div class="row">
         @foreach($projects as $project)
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 d-flex flex-column">
                     <a href="{{ route('projects.show', $project->id) }}">
                         <img class="card-img-top" src="{{ asset('storage/' . $project->image) }}" alt="Project Image">
                     </a>
