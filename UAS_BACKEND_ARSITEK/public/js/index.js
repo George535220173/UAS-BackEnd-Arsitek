@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.carousel-container').slick({
+    $('.index-carousel-container').slick({
         dots: true,
         infinite: true,
         slidesToShow: 1,
@@ -9,7 +9,6 @@ $(document).ready(function () {
         arrows: false
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const getStartedButton = document.getElementById('getStartedButton');
@@ -25,4 +24,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutLinks = document.querySelectorAll('#header-about-link, #sidebar-about-link');
+
+    aboutLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#team-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            // If the sidebar is open, close it
+            document.getElementById('sidebar-menu').classList.remove('open');
+            document.getElementById('overlay').classList.remove('open');
+        });
+    });
 });

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\UserProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('index');
@@ -58,4 +59,4 @@ Route::put('/admin/projects/{project}', [AdminController::class, 'updateProject'
 Route::get('/admin/articles/{article}/edit', [AdminController::class, 'editArticle'])->name('admin.articles.edit');
 Route::put('/admin/articles/{article}', [AdminController::class, 'updateArticle'])->name('admin.articles.update');
 
-
+Route::get('/', [HomeController::class, 'index'])->name('home');

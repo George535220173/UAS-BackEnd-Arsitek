@@ -5,18 +5,18 @@ body, html {
     height: 100%;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-.hero-section {
+.index-hero-section {
     position: relative;
     height: 100vh;
     background: url('your-background-image.jpg') no-repeat center center/cover;
     color: white;
 }
 
-.overlay-index {
+.index-overlay-index {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,7 +25,7 @@ html{
     background: rgba(0, 0, 0, 0.5);
 }
 
-.content-index {
+.index-content-index {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -33,24 +33,24 @@ html{
     transform: translateY(-50%);
 }
 
-h1 {
+.index-h1 {
     font-size: 3rem;
     margin-bottom: 10px;
 }
 
-p {
+.index-p {
     font-size: 1.2rem;
     margin-bottom: 50px;
 }
 
-.services {
+.index-services {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.service {
+.index-service {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
@@ -60,18 +60,18 @@ p {
     max-width: 200px;
 }
 
-.service i {
+.index-service i {
     font-size: 2rem;
     color: #ff9c00;
     margin-bottom: 10px;
 }
 
-.service h3 {
+.index-h3 {
     font-size: 1rem;
     color: #fff;
 }
 
-.info-section {
+.index-info-section {
     display: flex;
     padding: 100px;
     background-color: #f9f9f9;
@@ -79,31 +79,31 @@ p {
     gap: 40px;
 }
 
-.text-container {
+.index-text-container {
     flex: 1;
     padding-right: 20px;
 }
 
-.text-container h2 {
+.index-text-container h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333; /* Ensure the heading is black */
 }
 
-.text-container p {
+.index-text-container p {
     font-size: 1rem;
     margin-bottom: 20px;
     line-height: 1.5;
     color: #333; /* Ensure the paragraphs are black */
 }
 
-.text-container ul {
+.index-text-container ul {
     list-style: none;
     padding: 0;
     margin-bottom: 20px;
 }
 
-.text-container ul li {
+.index-text-container ul li {
     font-size: 1rem;
     margin-bottom: 10px;
     display: flex;
@@ -111,21 +111,21 @@ p {
     color: #333; /* Ensure the list items are black */
 }
 
-.text-container ul li i {
+.index-text-container ul li i {
     color: #ff9c00;
     margin-right: 10px;
 }
 
-.image-container {
+.index-image-container {
     flex: 1;
 }
 
-.image-container img {
+.index-image-container img {
     width: 100%;
     border-radius: 10px;
 }
 
-.clients-section {
+.index-clients-section {
     padding: 50px;
     background-color: #fff;
     text-align: center;
@@ -136,87 +136,87 @@ p {
     align-items: center; /* Center logos vertically */
 }
 
-.clients-logos {
+.index-clients-logos {
     display: flex;
     align-items: center;
     width: 1000px;
 }
 
-.clients-logos img {
+.index-clients-logos img {
     max-width: 150px; /* Increase the size of the logos */
     margin: 20px;
     display: inline-block; /* Keep images in a single line */
 }
 
-.feature-section {
+.index-feature-section {
     display: flex;
     padding: 100px;
     background-color: #fff;
     color: #333;
 }
 
-.feature-image-container {
+.index-feature-image-container {
     flex: 1;
     padding-right: 20px;
 }
 
-.feature-image-container img {
+.index-feature-image-container img {
     width: 100%;
     border-radius: 10px;
 }
 
-.feature-text-container {
+.index-feature-text-container {
     flex: 1;
     padding-left: 20px;
 }
 
-.feature-text-container h2 {
+.index-feature-text-container h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.feature-text-container p {
+.index-feature-text-container p {
     font-size: 1rem;
     margin-bottom: 20px;
     line-height: 1.5;
 }
 
-.feature-item {
+.index-feature-item {
     display: flex;
     align-items: flex-start;
     margin-bottom: 20px;
 }
 
-.feature-item i {
+.index-feature-item i {
     font-size: 2rem;
     color: #ff9c00;
     margin-right: 20px;
 }
 
-.feature-item h3 {
+.index-feature-item h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
 
-.feature-item p {
+.index-feature-item p {
     font-size: 1rem;
     line-height: 1.5;
 }
 
-.services-section {
+.index-services-section {
     padding: 50px 100px;
     background-color: #fff;
     text-align: center;
     color: #333;
 }
 
-.services-header h2 {
+.index-services-header h2 {
     font-size: 2rem;
     margin-bottom: 50px;
     position: relative;
 }
 
-.services-header h2::before {
+.index-services-header h2::before {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -227,13 +227,13 @@ p {
     background-color: #ff9c00;
 }
 
-.services-container {
+.index-services-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
     gap: 20px;
 }
 
-.service-box {
+.index-service-box {
     background-color: #f9f9f9;
     padding: 30px;
     border-radius: 10px;
@@ -241,41 +241,41 @@ p {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.service-box i {
+.index-service-box i {
     font-size: 3rem;
     color: #ff9c00;
     margin-bottom: 20px;
 }
 
-.service-box h3 {
+.index-service-box h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: #333;
 }
 
-.service-box p {
+.index-service-box p {
     font-size: 1rem;
     line-height: 1.5;
     color: #555;
 }
 
-.portfolio-section {
+.index-portfolio-section {
     padding: 50px 100px;
     background-color: #fff;
     text-align: center;
     color: #333;
 }
 
-.portfolio-header {
+.index-portfolio-header {
     margin-bottom: 50px;
 }
 
-.portfolio-header h2 {
+.index-portfolio-header h2 {
     font-size: 2rem;
     position: relative;
 }
 
-.portfolio-header h2::before {
+.index-portfolio-header h2::before {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -286,11 +286,11 @@ p {
     background-color: #ff9c00;
 }
 
-.portfolio-filters {
+.index-portfolio-filters {
     margin-top: 20px;
 }
 
-.filter-btn {
+.index-filter-btn {
     border: none;
     background-color: #ff9c00;
     color: white;
@@ -301,46 +301,46 @@ p {
     transition: background-color 0.3s;
 }
 
-.filter-btn.active {
+.index-filter-btn.active {
     background-color: #333;
 }
 
-.portfolio-container {
+.index-portfolio-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.portfolio-item {
+.index-portfolio-item {
     overflow: hidden;
     border-radius: 10px;
     position: relative;
 }
 
-.portfolio-item img {
+.index-portfolio-item img {
     width: 100%;
     transition: transform 0.3s;
 }
 
-.portfolio-item:hover img {
+.index-portfolio-item:hover img {
     transform: scale(1.1);
 }
 
-.rating-carousel {
+.index-rating-carousel {
     background: url('your-background-image.jpg') no-repeat center center/cover;
     padding: 50px 0;
     position: relative;
     color: #fff;
 }
 
-.carousel-container {
+.index-carousel-container {
     max-width: 800px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
 }
 
-.rating-item {
+.index-rating-item {
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -351,33 +351,33 @@ p {
     text-align: center;
 }
 
-.customer-avatar {
+.index-customer-avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 20px;
 }
 
-.customer-name {
+.index-customer-name {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.customer-role {
+.index-customer-role {
     font-size: 1rem;
     color: #bbb;
     margin-bottom: 10px;
 }
 
-.star-rating {
+.index-star-rating {
     margin-bottom: 20px;
 }
 
-.star-rating .fas {
+.index-star-rating .fas {
     color: #ff9c00 ;
 }
 
-.rating-text {
+.index-rating-text {
     font-size: 1rem;
     line-height: 1.5;
     font-style: italic;
@@ -391,24 +391,24 @@ p {
     color: #fff;
 }
 
-.team-section {
+.index-team-section {
     padding: 50px 0;
     background-color: #fff;
     text-align: center;
     color: #333;
 }
 
-.team-header {
+.index-team-header {
     margin-bottom: 30px;
 }
 
-.team-header h2 {
+.index-team-header h2 {
     font-size: 2rem;
     position: relative;
     display: inline-block;
 }
 
-.team-header h2::before {
+.index-team-header h2::before {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -419,14 +419,14 @@ p {
     background-color: #ff9c00;
 }
 
-.team-container {
+.index-team-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.team-member {
+.index-team-member {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
@@ -435,42 +435,42 @@ p {
     width: 15%; /* Adjusted to fit 4 members in a row with gap */
 }
 
-.team-member img {
+.index-team-member img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
 }
 
-.team-member h3 {
+.index-team-member h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #333;
 }
 
-.team-member p {
+.index-team-member p {
     font-size: 1rem;
     color: #555;
 }
 
-.contact-section {
+.index-contact-section {
     padding: 50px 0;
     background-color: #f9f9f9;
     text-align: center;
     color: #333;
 }
 
-.contact-header {
+.index-contact-header {
     margin-bottom: 30px;
 }
 
-.contact-header h2 {
+.index-contact-header h2 {
     font-size: 2rem;
     position: relative;
     display: inline-block;
 }
 
-.contact-header h2::before {
+.index-contact-header h2::before {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -481,24 +481,24 @@ p {
     background-color: #ff9c00;
 }
 
-.contact-container {
+.index-contact-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
 }
 
-.contact-info {
+.index-contact-info {
     flex: 1;
     min-width: 300px;
     margin: 20px;
 }
 
-.contact-info .mapouter {
+.index-contact-info .mapouter {
     width: 100%;
 }
 
-.contact-info .gmap_canvas iframe {
+.index-contact-info .gmap_canvas iframe {
     width: 100%;
     height: 300px;
     border: 0;
@@ -506,32 +506,32 @@ p {
     margin-bottom: 20px;
 }
 
-.contact-details {
+.index-contact-details {
     text-align: left;
 }
 
-.contact-details p {
+.index-contact-details p {
     font-size: 1rem;
     margin-bottom: 20px;
 }
 
-.contact-details i {
+.index-contact-details i {
     font-size: 1.2rem;
     color: #ff9c00;
     margin-right: 10px;
 }
 
-.contact-form {
+.index-contact-form {
     flex: 1;
     min-width: 300px;
     margin: 20px;
 }
 
-.contact-form .form-group {
+.index-contact-form .form-group {
     margin-bottom: 15px;
 }
 
-.contact-form .form-control {
+.index-contact-form .form-control {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
@@ -539,11 +539,11 @@ p {
     border: 1px solid #ccc;
 }
 
-.contact-form .text-center {
+.index-contact-form .text-center {
     margin-top: 20px;
 }
 
-.contact-form button {
+.index-contact-form button {
     background-color: #ff9c00;
     color: white;
     padding: 10px 20px;
@@ -553,7 +553,7 @@ p {
     cursor: pointer;
 }
 
-.contact-form button:hover {
+.index-contact-form button:hover {
     background-color: #333;
 }
 
@@ -569,39 +569,64 @@ p {
     cursor: pointer;
 }
 
-.main-content-container {
+.index-main-content-container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
 
-.content-and-sidebar {
+.index-content-and-sidebar {
     display: flex;
-    width: 75%;
+    width: 100%;
 }
 
-.sidebar {
+.index-sidebar {
     width: 25%;
     padding: 20px;
     background-color: #f1f1f1;
     border-left: 1px solid #ccc;
 }
 
-.sidebar h3 {
+.index-sidebar h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-.article-snippet {
+.index-articles-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.index-article-snippet {
+    display: flex;
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 
-.article-snippet h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.index-article-snippet img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    margin-right: 10px;
 }
 
-.article-snippet p {
+.index-article-snippet div {
+    overflow: hidden;
+}
+
+.index-article-snippet h4 {
     font-size: 1rem;
+    margin: 0;
+}
+
+.index-article-snippet h4 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.index-article-snippet p {
+    font-size: 0.875rem;
     color: #555;
+    margin: 0;
 }
