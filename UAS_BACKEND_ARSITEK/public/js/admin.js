@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Initialize date range picker for the main input
     $('#time_taken').daterangepicker({
         locale: {
             format: 'DD MMMM YYYY'
@@ -7,6 +8,7 @@ $(document).ready(function() {
         showDropdowns: true
     });
 
+    // Initialize date range pickers for each project edit form
     $.each(projectDates, function(id, dateRange) {
         $('#time_taken' + id).daterangepicker({
             locale: {
@@ -27,6 +29,7 @@ $(document).ready(function() {
         });
     });
 
+    // Validate date range for the main input
     $('#time_taken').on('apply.daterangepicker', function(ev, picker) {
         var startDate = picker.startDate;
         var endDate = picker.endDate;

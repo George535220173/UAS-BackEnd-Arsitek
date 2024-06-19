@@ -12,7 +12,8 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('article_title');
             $table->string('article_author');
-            $table->text('article_content');
+            $table->string('thumbnail')->nullable();
+            $table->string('article_link')->nullable();
             $table->timestamps();
         });
     }
