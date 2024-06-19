@@ -66,11 +66,11 @@
                     </tr>
 
                     <!-- Edit Project Modal -->
-                    <div class="modal fade" id="editProjectModal{{ $project->id }}" tabindex="-1" role="dialog" aria-labelledby="editProjectModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="editProjectModal{{ $project->id }}" tabindex="-1" role="dialog" aria-labelledby="editProjectModalLabel{{ $project->id }}" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="editProjectModalLabel">Edit Project</h5>
+                                    <h5 class="modal-title" id="editProjectModalLabel{{ $project->id }}">Edit Project</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -80,28 +80,28 @@
                                         @csrf
                                         @method('PUT')
                                         <div class="admin-form-group">
-                                            <label for="project_name">Project Name</label>
-                                            <input type="text" id="project_name" name="project_name" value="{{ $project->project_name }}" required>
+                                            <label for="project_name{{ $project->id }}">Project Name</label>
+                                            <input type="text" id="project_name{{ $project->id }}" name="project_name" value="{{ $project->project_name }}" required>
                                         </div>
                                         <div class="admin-form-group">
-                                            <label for="client">Client</label>
-                                            <input type="text" id="client" name="client" value="{{ $project->client }}" required>
+                                            <label for="client{{ $project->id }}">Client</label>
+                                            <input type="text" id="client{{ $project->id }}" name="client" value="{{ $project->client }}" required>
                                         </div>
                                         <div class="admin-form-group">
-                                            <label for="time_taken">Time Taken</label>
+                                            <label for="time_taken{{ $project->id }}">Time Taken</label>
                                             <input type="text" id="time_taken{{ $project->id }}" name="time_taken" value="{{ $project->time_taken }}" required>
                                         </div>
                                         <div class="admin-form-group">
-                                            <label for="location">Location</label>
-                                            <input type="text" id="location" name="location" value="{{ $project->location }}" required>
+                                            <label for="location{{ $project->id }}">Location</label>
+                                            <input type="text" id="location{{ $project->id }}" name="location" value="{{ $project->location }}" required>
                                         </div>
                                         <div class="admin-form-group">
-                                            <label for="description">Description</label>
-                                            <textarea id="description" name="description" required>{{ $project->description }}</textarea>
+                                            <label for="description{{ $project->id }}">Description</label>
+                                            <textarea id="description{{ $project->id }}" name="description" required>{{ $project->description }}</textarea>
                                         </div>
                                         <div class="admin-form-group">
-                                            <label for="image">Project Image</label>
-                                            <input type="file" id="image" name="image" accept="image/*">
+                                            <label for="image{{ $project->id }}">Project Image</label>
+                                            <input type="file" id="image{{ $project->id }}" name="image" accept="image/*">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Update Project</button>
                                     </form>
@@ -127,8 +127,12 @@
                 <input type="text" id="article_author" name="article_author" required>
             </div>
             <div class="admin-form-group">
-                <label for="article_content">Content</label>
-                <textarea id="article_content" name="article_content" required></textarea>
+                <label for="thumbnail">Thumbnail Image</label>
+                <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
+            </div>
+            <div class="admin-form-group">
+                <label for="article_link">Article Link</label>
+                <input type="text" id="article_link" name="article_link" required>
             </div>
             <button type="submit" class="admin-button">Add Article</button>
         </form>
@@ -138,65 +142,70 @@
             <thead>
                 <tr>
                     <th class="admin-th">No</th>
+                    <th class="admin-th">Thumbnail</th>
                     <th class="admin-th">Title</th>
                     <th class="admin-th">Author</th>
-                    <th class="admin-th">Content</th>
+                    <th class="admin-th">Link</th>
                     <th class="admin-th">Actions</th>
                 </tr>
-                </thead>
-                <tbody>
-                    @foreach($articles as $article)
-                        <tr>
-                            <td class="admin-td">{{ $loop->iteration }}</td>
-                            <td class="admin-td">{{ $article->article_title }}</td>
-                            <td class="admin-td">{{ $article->article_author }}</td>
-                            <td class="admin-td">{{ $article->article_content }}</td>
-                            <td class="admin-td">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editArticleModal{{ $article->id }}">Edit</button>
-                                <form action="{{ route('admin.articles.destroy', $article->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
+            </thead>
+            <tbody>
+                @foreach($articles as $article)
+                    <tr>
+                        <td class="admin-td">{{ $loop->iteration }}</td>
+                        <td class="admin-td"><img src="{{ asset('storage/' . $article->thumbnail) }}" alt="Thumbnail Image" width="100"></td>
+                        <td class="admin-td"><a href="{{ $article->article_link }}" target="_blank">{{ $article->article_title }}</a></td>
+                        <td class="admin-td">{{ $article->article_author }}</td>
+                        <td class="admin-td"><a href="{{ $article->article_link }}" target="_blank">{{ $article->article_link }}</a></td>
+                        <td class="admin-td">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editArticleModal{{ $article->id }}">Edit</button>
+                            <form action="{{ route('admin.articles.destroy', $article->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
 
-                        <!-- Edit Article Modal -->
-                        <div class="modal fade" id="editArticleModal{{ $article->id }}" tabindex="-1" role="dialog" aria-labelledby="editArticleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="editArticleModalLabel">Edit Article</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="{{ route('admin.articles.update', $article->id) }}" method="POST">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="admin-form-group">
-                                                <label for="article_title">Title</label>
-                                                <input type="text" id="article_title" name="article_title" value="{{ $article->article_title }}" required>
-                                            </div>
-                                            <div class="admin-form-group">
-                                                <label for="article_author">Author</label>
-                                                <input type="text" id="article_author" name="article_author" value="{{ $article->article_author }}" required>
-                                            </div>
-                                            <div class="admin-form-group">
-                                                <label for="article_content">Content</label>
-                                                <textarea id="article_content" name="article_content" required>{{ $article->article_content }}</textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Update Article</button>
-                                        </form>
-                                    </div>
+                    <!-- Edit Article Modal -->
+                    <div class="modal fade" id="editArticleModal{{ $article->id }}" tabindex="-1" role="dialog" aria-labelledby="editArticleModalLabel{{ $article->id }}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editArticleModalLabel{{ $article->id }}">Edit Article</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{ route('admin.articles.update', $article->id) }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="admin-form-group">
+                                            <label for="article_title{{ $article->id }}">Title</label>
+                                            <input type="text" id="article_title{{ $article->id }}" name="article_title" value="{{ $article->article_title }}" required>
+                                        </div>
+                                        <div class="admin-form-group">
+                                            <label for="article_author{{ $article->id }}">Author</label>
+                                            <input type="text" id="article_author{{ $article->id }}" name="article_author" value="{{ $article->article_author }}" required>
+                                        </div>
+                                        <div class="admin-form-group">
+                                            <label for="thumbnail{{ $article->id }}">Thumbnail Image</label>
+                                            <input type="file" id="thumbnail{{ $article->id }}" name="thumbnail" accept="image/*">
+                                        </div>
+                                        <div class="admin-form-group">
+                                            <label for="article_link{{ $article->id }}">Article Link</label>
+                                            <input type="text" id="article_link{{ $article->id }}" name="article_link" value="{{ $article->article_link }}" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update Article</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+                    </div>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -205,4 +214,5 @@
         return [$project->id => $project->time_taken];
     }));
 </script>
+
 @endsection

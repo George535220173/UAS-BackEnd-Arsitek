@@ -14,7 +14,6 @@ class AdminController extends Controller
         $projects = Project::all();
         $articles = Article::all();
         return view('admin', compact('projects', 'articles'));
-        
     }
 
     public function store_articles(Request $request)
@@ -22,16 +21,20 @@ class AdminController extends Controller
         $request->validate([
             'article_title' => 'required|string|max:255',
             'article_author' => 'required|string|max:255',
-            'article_content' => 'required|string',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'article_link' => 'required|string|max:255',
         ]);
+
+        $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
 
         Article::create([
             'article_title' => $request->article_title,
             'article_author' => $request->article_author,
-            'article_content' => $request->article_content,
+            'thumbnail' => $thumbnailPath,
+            'article_link' => $request->article_link,
         ]);
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.dashboard')->with('success', 'Article added successfully');
     }
 
     public function store_projects(Request $request)
@@ -46,11 +49,12 @@ class AdminController extends Controller
         ]);
 
         $dateRange = explode(' - ', $request->time_taken);
-    if (!\Carbon\Carbon::createFromFormat('d F Y', $dateRange[0] ?? null) || !\Carbon\Carbon::createFromFormat('d F Y', $dateRange[1] ?? null)) {
-        return redirect()->back()->withErrors(['time_taken' => 'Invalid date format. Please use "DD MMMM YYYY - DD MMMM YYYY".']);
-    }
+        if (!\Carbon\Carbon::createFromFormat('d F Y', $dateRange[0] ?? null) || !\Carbon\Carbon::createFromFormat('d F Y', $dateRange[1] ?? null)) {
+            return redirect()->back()->withErrors(['time_taken' => 'Invalid date format. Please use "DD MMMM YYYY - DD MMMM YYYY".']);
+        }
+
         $imagePath = $request->file('image')->store('projects', 'public');
-    
+
         Project::create([
             'project_name' => $request->project_name,
             'client' => $request->client,
@@ -59,7 +63,7 @@ class AdminController extends Controller
             'description' => $request->description,
             'image' => $imagePath,
         ]);
-    
+
         return redirect()->route('admin.dashboard')->with('success', 'Project added successfully');
     }
 
@@ -67,7 +71,7 @@ class AdminController extends Controller
     {
         $search = $request->input('search');
         $sort = $request->input('sort', 'asc');
-    
+
         $projects = Project::when($search, function ($query, $search) {
             return $query->where('project_name', 'LIKE', "%{$search}%")
                          ->orWhere('client', 'LIKE', "%{$search}%")
@@ -86,11 +90,11 @@ class AdminController extends Controller
             }
         })
         ->paginate(8);
-    
+
         return view('projects', compact('projects'));
     }
-    
-public function favoriteProject(Request $request)
+
+    public function favoriteProject(Request $request)
     {
         $projectId = $request->input('project_id');
         $favorites = session('favorites', []);
@@ -114,7 +118,6 @@ public function favoriteProject(Request $request)
         $favorites = Project::whereIn('id', $favoriteIds)->get();
         return view('favorites', compact('favorites'));
     }
-
 
     public function showProjectDetails(Project $project)
     {
@@ -148,19 +151,19 @@ public function favoriteProject(Request $request)
             'description' => 'required|string',
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-    
+
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('projects', 'public');
             $project->image = $imagePath;
         }
-    
+
         $project->project_name = $request->project_name;
         $project->client = $request->client;
         $project->time_taken = $request->time_taken;
         $project->location = $request->location;
         $project->description = $request->description;
         $project->save();
-    
+
         return redirect()->route('admin.dashboard')->with('success', 'Project updated successfully');
     }
 
@@ -174,16 +177,20 @@ public function favoriteProject(Request $request)
         $request->validate([
             'article_title' => 'required|string|max:255',
             'article_author' => 'required|string|max:255',
-            'article_content' => 'required|string',
+            'thumbnail' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'article_link' => 'required|string|max:255',
         ]);
+
+        if ($request->hasFile('thumbnail')) {
+            $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+            $article->thumbnail = $thumbnailPath;
+        }
 
         $article->article_title = $request->article_title;
         $article->article_author = $request->article_author;
-        $article->article_content = $request->article_content;
+        $article->article_link = $request->article_link;
         $article->save();
 
         return redirect()->route('admin.dashboard')->with('success', 'Article updated successfully');
     }
-    
 }
-
