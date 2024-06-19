@@ -13,6 +13,9 @@
             <li><a href="#team-section" id="header-about-link">About</a></li>
             <li><a href="{{ url('/service') }}">Services</a></li>
             <li><a href="{{ url('/projects') }}">Projects</a></li>
+            @auth
+                <li><a href="{{ url('/favorites') }}">Favorites</a></li>
+            @endauth
         </ul>
 
         @guest
@@ -32,10 +35,8 @@
         <li><a href="#team-section" id="sidebar-about-link">About</a></li>
         <li><a href="{{ url('/service') }}">Services</a></li>
         <li><a href="{{ url('/projects') }}">Portfolio</a></li>
-        @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
-        @else
+        @auth
+            <li><a href="{{ url('/favorites') }}">Favorites</a></li>
             <li><a href="{{ route('profile') }}">Profile</a></li>
             <li>
                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
@@ -43,6 +44,9 @@
                     <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">Logout</button>
                 </form>
             </li>
+        @else
+            <li><a href="{{ route('login') }}">Login</a></li>
+            <li><a href="{{ route('register') }}">Register</a></li>
         @endguest
     </ul>
 </div>
