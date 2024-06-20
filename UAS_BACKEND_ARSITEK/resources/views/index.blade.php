@@ -30,14 +30,16 @@
     <section class="index-info-section">
         <div class="index-content-and-sidebar">
             <div class="index-text-container">
-                <h2>Best Architecture Company LOL</h2>
-                <p>lorem ipsum lorem ipsum sampe kamu muntah muntah heheheha</p>
+                <h2>MRS architects</h2>
+                <p>PT. MEDIA RANCANG STUDIO is a firm of experienced Professionals undertaking works in the following fields:</p>
                 <ul>
-                    <li><i class="fas fa-check"></i> LOREM IPSUMMMMMMMMMMMMMMMMMMMM</li>
-                    <li><i class="fas fa-check"></i> HEHEHEHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</li>
-                    <li><i class="fas fa-check"></i> WWKWKKWKWKWKWKWKWKKWKWKWKWKWKKWKWKWKWKWKWKWKWKWKWK</li>
+                    <li><i class="fas fa-check"></i> Feasibility study of a Project, including analysis of its type, market potentials, financial projections and project phasing.</li>
+                    <li><i class="fas fa-check"></i> Architectural Services analyze available building sites, generate & develop design concepts, set up & lead a multi-disciplinary design team, co-ordinate production of construction documents, assist in tendering process and provide periodic site inspections.</li>
+                    <li><i class="fas fa-check"></i> Regional Planning & Urban Design analyze project site, conceptual zoning options and master planning.</li>
+                    <li><i class="fas fa-check"></i> Interior Design services, analyze base building options, space programming & adjacency diagram, physical lay-outing, fit-out construction detailing, assist in tendering process and provide periodic site inspections</li>
+                    <li><i class="fas fa-check"></i> MRS Architects' most valuable resources are its professional manpower, consisting of senior architects, architects, urban planners, and the supporting technical & non-technical staff.</li>
+                    <li><i class="fas fa-check"></i> MRS Architects' work experience includes all types of design and construction projects from single individual houses to large master planning projects with mixed usages of residential, commercial, hotel and institutional developments.</li>
                 </ul>
-                <p>lorem ipsum lorem ipsum sampe kamu muntah muntah heheheha p p p p p balap pppppp</p>
             </div>
             <div class="index-image-container">
                 <img src="{{ asset('img/husky.jpg') }}" alt="">
