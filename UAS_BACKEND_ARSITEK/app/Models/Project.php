@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,6 +14,16 @@ class Project extends Model
         'time_taken',
         'location',
         'description',
-        'image',
+        'category_id',
     ];
+
+    public function images()
+    {
+        return $this->hasMany(ProjectImage::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(ProjectCategory::class);
+    }
 }

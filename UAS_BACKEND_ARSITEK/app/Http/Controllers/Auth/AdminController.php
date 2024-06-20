@@ -1,19 +1,21 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\ProjectImage;
 use App\Models\Article;
+use App\Models\ProjectCategory;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::with('images', 'category')->get();
         $articles = Article::all();
-        return view('admin', compact('projects', 'articles'));
+        $categories = ProjectCategory::all();
+        return view('admin', compact('projects', 'articles', 'categories'));
     }
 
     public function store_articles(Request $request)
@@ -45,26 +47,34 @@ class AdminController extends Controller
             'time_taken' => 'required|string',
             'location' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'required|exists:project_categories,id',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $dateRange = explode(' - ', $request->time_taken);
-        if (!\Carbon\Carbon::createFromFormat('d F Y', $dateRange[0] ?? null) || !\Carbon\Carbon::createFromFormat('d F Y', $dateRange[1] ?? null)) {
-            return redirect()->back()->withErrors(['time_taken' => 'Invalid date format. Please use "DD MMMM YYYY - DD MMMM YYYY".']);
+        $project = Project::create($request->only('project_name', 'client', 'time_taken', 'location', 'description', 'category_id'));
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('projects', 'public');
+                ProjectImage::create([
+                    'project_id' => $project->id,
+                    'path' => $path,
+                ]);
+            }
         }
 
-        $imagePath = $request->file('image')->store('projects', 'public');
+        return redirect()->route('admin.dashboard')->with('success', 'Project added successfully');
+    }
 
-        Project::create([
-            'project_name' => $request->project_name,
-            'client' => $request->client,
-            'time_taken' => $request->time_taken,
-            'location' => $request->location,
-            'description' => $request->description,
-            'image' => $imagePath,
+    public function storeCategory(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|unique:project_categories'
         ]);
 
-        return redirect()->route('admin.dashboard')->with('success', 'Project added successfully');
+        ProjectCategory::create($request->all());
+
+        return redirect()->route('admin.dashboard')->with('success', 'Category added successfully');
     }
 
     public function showProjects(Request $request)
@@ -138,7 +148,8 @@ class AdminController extends Controller
 
     public function editProject(Project $project)
     {
-        return view('admin.edit_project', compact('project'));
+        $categories = ProjectCategory::all();
+        return view('admin.edit_project', compact('project', 'categories'));
     }
 
     public function updateProject(Request $request, Project $project)
@@ -149,20 +160,21 @@ class AdminController extends Controller
             'time_taken' => 'required|string',
             'location' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'required|exists:project_categories,id',
+            'images.*' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('projects', 'public');
-            $project->image = $imagePath;
-        }
+        $project->update($request->only('project_name', 'client', 'time_taken', 'location', 'description', 'category_id'));
 
-        $project->project_name = $request->project_name;
-        $project->client = $request->client;
-        $project->time_taken = $request->time_taken;
-        $project->location = $request->location;
-        $project->description = $request->description;
-        $project->save();
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('projects', 'public');
+                ProjectImage::create([
+                    'project_id' => $project->id,
+                    'path' => $path,
+                ]);
+            }
+        }
 
         return redirect()->route('admin.dashboard')->with('success', 'Project updated successfully');
     }
@@ -186,10 +198,7 @@ class AdminController extends Controller
             $article->thumbnail = $thumbnailPath;
         }
 
-        $article->article_title = $request->article_title;
-        $article->article_author = $request->article_author;
-        $article->article_link = $request->article_link;
-        $article->save();
+        $article->update($request->only('article_title', 'article_author', 'article_link'));
 
         return redirect()->route('admin.dashboard')->with('success', 'Article updated successfully');
     }

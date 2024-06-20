@@ -1,5 +1,4 @@
-<?php
-
+<?php   
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\UserProfileController;
@@ -39,24 +38,21 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
-Route::post('/admin/projects', [AdminController::class, 'store_projects'])->name('admin.projects.store');
 Route::post('/admin/articles', [AdminController::class, 'store_articles'])->name('admin.articles.store');
+Route::post('/admin/projects', [AdminController::class, 'store_projects'])->name('admin.projects.store');
+Route::post('/admin/categories', [AdminController::class, 'storeCategory'])->name('admin.categories.store'); // Add this line
+Route::delete('/admin/projects/{project}', [AdminController::class, 'destroyProject'])->name('admin.projects.destroy');
+Route::delete('/admin/articles/{article}', [AdminController::class, 'destroyArticle'])->name('admin.articles.destroy');
+Route::get('/admin/projects/{project}/edit', [AdminController::class, 'editProject'])->name('admin.projects.edit');
+Route::put('/admin/projects/{project}', [AdminController::class, 'updateProject'])->name('admin.projects.update');
+Route::get('/admin/articles/{article}/edit', [AdminController::class, 'editArticle'])->name('admin.articles.edit');
+Route::put('/admin/articles/{article}', [AdminController::class, 'updateArticle'])->name('admin.articles.update');
 
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
-
 
 Route::get('/projects', [AdminController::class, 'showProjects'])->name('projects.index');
 Route::get('/projects/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.show');
 Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->name('projects.favorite');
 Route::get('/favorites', [AdminController::class, 'showFavorites'])->name('favorites.index');
-
-Route::delete('/admin/projects/{project}', [AdminController::class, 'destroyProject'])->name('admin.projects.destroy');
-Route::delete('/admin/articles/{article}', [AdminController::class, 'destroyArticle'])->name('admin.articles.destroy');
-
-Route::get('/admin/projects/{project}/edit', [AdminController::class, 'editProject'])->name('admin.projects.edit');
-Route::put('/admin/projects/{project}', [AdminController::class, 'updateProject'])->name('admin.projects.update');
-
-Route::get('/admin/articles/{article}/edit', [AdminController::class, 'editArticle'])->name('admin.articles.edit');
-Route::put('/admin/articles/{article}', [AdminController::class, 'updateArticle'])->name('admin.articles.update');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
