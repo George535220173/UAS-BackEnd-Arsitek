@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Project.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/hamburger.css') }}">
     @stack('styles')
 </head>
 <body>
@@ -53,6 +54,7 @@
     <script src="{{ asset('js/profile.js') }}"></script>
     <script src="{{ asset('js/Project.js') }}"></script>
     <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('js/hamburger.js') }}"></script>
     @stack('scripts')
 </body>
 </html>
