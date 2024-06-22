@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     overlay.addEventListener('click', function() {
         hamburgerMenu.classList.remove('active');
         sidebarMenu.classList.remove('active');
-        projectsSubmenu.classList.remove('active');
+        projectsSubmenu.classList.remove('show');
         this.classList.remove('active');
         document.body.classList.remove('no-scroll');
     });
@@ -22,18 +22,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const projectsMenu = document.querySelector('.projects-menu');
     projectsMenu.addEventListener('mouseenter', function() {
         projectsSubmenu.style.left = sidebarMenu.getBoundingClientRect().right + 'px';
-        projectsSubmenu.style.display = 'block';
+        projectsSubmenu.classList.add('show');
     });
 
     projectsMenu.addEventListener('mouseleave', function() {
-        projectsSubmenu.style.display = 'none';
+        projectsSubmenu.classList.remove('show');
     });
 
     projectsSubmenu.addEventListener('mouseenter', function() {
-        this.style.display = 'block';
+        this.classList.add('show');
     });
 
     projectsSubmenu.addEventListener('mouseleave', function() {
-        this.style.display = 'none';
+        this.classList.remove('show');
     });
 });

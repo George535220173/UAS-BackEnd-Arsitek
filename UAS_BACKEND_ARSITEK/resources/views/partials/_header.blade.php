@@ -19,14 +19,16 @@
     </nav>
 </header>
 
-<!-- Overlay and Sidebar Menus -->
+<!-- Overlay -->
 <div id="overlay" class="overlay"></div>
+
+<!-- Main Sidebar Menu -->
 <div id="sidebar-menu" class="sidebar-menu">
     <ul>
         <li><a href="{{ url('/') }}">Home</a></li>
         <li><a href="{{ url('/service') }}">Services</a></li>
         <li class="projects-menu">
-            <a href="{{ url('/projects') }}">Projects</a>
+            <a href="#" id="projectsButton">Projects</a>
         </li>
         @auth
             <li><a href="{{ url('/favorites') }}">Favorites</a></li>
@@ -47,8 +49,7 @@
 <!-- Secondary Sidebar Menu -->
 <div id="projects-submenu" class="projects-submenu">
     <ul>
-        <li><a href="{{ url('/projects/project1') }}">Project 1</a></li>
-        <li><a href="{{ url('/projects/project2') }}">Project 2</a></li>
-        <li><a href="{{ url('/projects/project3') }}">Project 3</a></li>
+        <li><a href="{{ url('/projects/project1') }}">Architecture</a></li>
+        <li><a href="{{ url('/projects/project2') }}">Interior Design</a></li>
     </ul>
 </div>

@@ -60,11 +60,11 @@
     top: 60px; /* Adjust this value to the height of your navbar */
     left: -250px;
     width: 180px;
-    height: calc(100% - 60px); /* Adjust this value to the height of your navbar */
+    height: calc(55% - 60px); /* Adjust this value to the height of your navbar */
     background-color: #333;
     color: white;
     transition: left 0.3s;
-    z-index: 1000;
+    z-index: 1001; /* Main sidebar */
     padding-top: 20px; /* Adjust as needed for spacing */
     overflow-y: auto; /* Ensure it is scrollable if content exceeds the height */
     border: 1px solid #444;
@@ -95,25 +95,23 @@
     left: 0;
 }
 
-.projects-menu:hover + .projects-submenu {
-    display: block; /* Show submenu on hover */
-}
-
 .projects-submenu {
     position: fixed;
     top: 60px; /* Adjust this value to the height of your navbar */
-    left: -250px;
+    left: 180px; /* Position to the right of the main sidebar */
     width: 180px;
-    height: calc(100% - 60px); /* Adjust this value to the height of your navbar */
+    height: calc(55% - 60px); /* Adjust this value to the height of your navbar */
     background-color: #444;
     color: white;
-    transition: left 0.3s;
-    z-index: 1000;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 1000; /* Ensure it is just below the main sidebar */
     padding-top: 20px; /* Adjust as needed for spacing */
     overflow-y: auto; /* Ensure it is scrollable if content exceeds the height */
     border: 1px solid #555;
     border-radius: 3%;
-    display: none; /* Initially hidden */
+    opacity: 0; /* Initial opacity */
+    pointer-events: none; /* Make it not interactable */
+    transform: translateX(-250px); /* Hide off screen initially */
 }
 
 .projects-submenu ul {
@@ -136,6 +134,12 @@
     background-color: #555;
 }
 
+.projects-submenu.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0); /* Slide into view */
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -146,7 +150,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
-    z-index: 999;
+    z-index: 999; /* Overlay */
 }
 
 .overlay.active {
