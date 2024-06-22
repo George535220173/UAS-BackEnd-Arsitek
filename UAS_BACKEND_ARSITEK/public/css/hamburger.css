@@ -1,0 +1,211 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    z-index: 2000; /* Ensure the navbar has a higher z-index than the sidebar menu and overlay */
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-menu {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-right: 20px; /* Add some space between the hamburger menu and the logo */
+}
+
+.hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s;
+    transform-origin: center center; /* Ensure the transform is centered */
+}
+
+.hamburger-menu.active .bar1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .bar2 {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logo .logo-area {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.logo .logo-area::after {
+    content: '.';
+    color: #f0c14b;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 60px; /* Adjust this value to the height of your navbar */
+    left: -250px;
+    width: 180px;
+    height: calc(55% - 60px); /* Adjust this value to the height of your navbar */
+    background-color: #333;
+    color: white;
+    transition: left 0.3s;
+    z-index: 1001; /* Main sidebar */
+    padding-top: 20px; /* Adjust as needed for spacing */
+    overflow-y: auto; /* Ensure it is scrollable if content exceeds the height */
+    border: 1px solid #444;
+    border-radius: 3%;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu ul li {
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block; /* Make the link cover the entire li area */
+}
+
+.sidebar-menu ul li:hover {
+    background-color: #444; /* Change to a brighter color on hover */
+}
+
+.sidebar-menu.active {
+    left: 0;
+}
+
+.projects-submenu {
+    position: fixed;
+    left: 180px; /* Position to the right of the main sidebar */
+    width: 180px;
+    background-color: #444;
+    color: white;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 1000; /* Ensure it is just below the main sidebar */
+    padding-top: 0; /* Remove padding to ensure full height coverage */
+    overflow-y: auto; /* Ensure it is scrollable if content exceeds the height */
+    border: 1px solid #555;
+    border-radius: 3%;
+    opacity: 0; /* Initial opacity */
+    pointer-events: none; /* Make it not interactable */
+    transform: translateX(-250px); /* Hide off screen initially */
+    height: calc(31% - 120px); /* Increase the height of the secondary sidebar */
+}
+
+.projects-submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove margin to ensure full height coverage */
+    height: 100%; /* Ensure the ul takes the full height of the sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start items from the top */
+}
+
+.projects-submenu ul li {
+    flex: none; /* Make each item take a fixed height */
+    height: 50px; /* Adjust the height of each item */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.projects-submenu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center; /* Center the text */
+    height: 100%; /* Ensure the link covers the full height of the li */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text vertically */
+}
+
+.projects-submenu ul li:hover {
+    background-color: #555;
+}
+
+.projects-submenu.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0); /* Slide into view */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 999; /* Overlay */
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cta button {
+    border: 2px solid #f0c14b;
+    background-color: transparent;
+    color: white;
+    padding: 8px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta button:hover {
+    background-color: #f0c14b;
+    color: #333;
+}
+
+/* Animation for the hover effect */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f0c14b;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
