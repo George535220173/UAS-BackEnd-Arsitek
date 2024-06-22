@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sidebarMenu = document.querySelector('#sidebar-menu');
     const projectsSubmenu = document.querySelector('#projects-submenu');
     const overlay = document.querySelector('#overlay');
+    const projectsMenuItem = document.querySelector('.projects-menu');
 
     hamburgerMenu.addEventListener('click', function() {
         this.classList.toggle('active');
@@ -19,13 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.remove('no-scroll');
     });
 
-    const projectsMenu = document.querySelector('.projects-menu');
-    projectsMenu.addEventListener('mouseenter', function() {
+    projectsMenuItem.addEventListener('mouseenter', function() {
+        const projectsMenuTop = projectsMenuItem.getBoundingClientRect().top;
+        projectsSubmenu.style.top = `${projectsMenuTop}px`;
         projectsSubmenu.style.left = sidebarMenu.getBoundingClientRect().right + 'px';
         projectsSubmenu.classList.add('show');
     });
 
-    projectsMenu.addEventListener('mouseleave', function() {
+    projectsMenuItem.addEventListener('mouseleave', function() {
         projectsSubmenu.classList.remove('show');
     });
 
