@@ -7,9 +7,20 @@ use App\Models\Project;
 use App\Models\ProjectImage;
 use App\Models\Article;
 use App\Models\ProjectCategory;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if (Auth::check() && Auth::user()->email == 'mrsadminteam@gmail.com') {
+                return $next($request);
+            }
+            return redirect('/login')->with('error', 'Unauthorized access');
+        });
+    }
+
     public function index()
     {
         $projects = Project::with('images', 'category')->get();
