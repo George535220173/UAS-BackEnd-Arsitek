@@ -1,33 +1,39 @@
-/*Hamburger animation*/
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburger-menu');
-    const sidebarMenu = document.getElementById('sidebar-menu');
-    const overlay = document.getElementById('overlay');
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const sidebarMenu = document.querySelector('#sidebar-menu');
+    const projectsSubmenu = document.querySelector('#projects-submenu');
+    const overlay = document.querySelector('#overlay');
 
-    hamburger.addEventListener('click', function () {
-        hamburger.classList.toggle('active');
+    hamburgerMenu.addEventListener('click', function() {
+        this.classList.toggle('active');
         sidebarMenu.classList.toggle('active');
         overlay.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
     });
 
-    overlay.addEventListener('click', function () {
-        closeSidebar();
-    });
-
-    document.querySelectorAll('a[href="#team-section"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            closeSidebar();
-            document.querySelector('#team-section').scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    function closeSidebar() {
-        hamburger.classList.remove('active');
+    overlay.addEventListener('click', function() {
+        hamburgerMenu.classList.remove('active');
         sidebarMenu.classList.remove('active');
-        overlay.classList.remove('active');
+        projectsSubmenu.classList.remove('active');
+        this.classList.remove('active');
         document.body.classList.remove('no-scroll');
-    }
-});
+    });
 
+    const projectsMenu = document.querySelector('.projects-menu');
+    projectsMenu.addEventListener('mouseenter', function() {
+        projectsSubmenu.style.left = sidebarMenu.getBoundingClientRect().right + 'px';
+        projectsSubmenu.style.display = 'block';
+    });
+
+    projectsMenu.addEventListener('mouseleave', function() {
+        projectsSubmenu.style.display = 'none';
+    });
+
+    projectsSubmenu.addEventListener('mouseenter', function() {
+        this.style.display = 'block';
+    });
+
+    projectsSubmenu.addEventListener('mouseleave', function() {
+        this.style.display = 'none';
+    });
+});
