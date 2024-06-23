@@ -92,6 +92,7 @@ class AdminController extends Controller
     {
         $search = $request->input('search');
         $sort = $request->input('sort', 'asc');
+        $category = $request->input('category');
 
         $projects = Project::when($search, function ($query, $search) {
             return $query->where('project_name', 'LIKE', "%{$search}%")
@@ -110,9 +111,14 @@ class AdminController extends Controller
                 return $query->orderBy('created_at', 'desc');
             }
         })
+        ->when($category, function ($query, $category) {
+            return $query->where('category_id', $category);
+        })
         ->paginate(8);
 
-        return view('projects', compact('projects'));
+        $categories = ProjectCategory::all();
+
+        return view('projects', compact('projects', 'categories'));
     }
 
     public function favoriteProject(Request $request)

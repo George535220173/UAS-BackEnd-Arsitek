@@ -1,13 +1,17 @@
 .form-inline {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .form-inline .input-group.sort-group {
     flex-shrink: 0;
     width: 150px;
+}
+
+.form-inline .d-flex.w-100.mb-2 {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .form-inline .input-group.search-group {
@@ -23,6 +27,14 @@
 
 .form-inline .input-group-append .btn {
     height: calc(2.25rem + 2px); /* Match the height of the input and button */
+}
+
+.form-inline .input-group.category-group {
+    flex-shrink: 0;
+    width: 150px;
+    margin-top: 10px; /* Add some spacing to separate from the search input */
+    margin-left: auto; /* Align it to the right */
+    margin-right: 10px; /* Add some space from the right edge */
 }
 
 /* Ensure consistent card height */
@@ -59,4 +71,3 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
