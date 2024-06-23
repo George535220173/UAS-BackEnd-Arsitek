@@ -5,25 +5,7 @@
     <div class="index-overlay-index"></div>
     <div class="index-content-index">
         <h1 class="index-h1">Professional Architecture With MRS</h1>
-        <p class="index-p">We are a team of talented architects</p>
-        <div class="index-services">
-            <div class="index-service">
-                <i class="fas fa-puzzle-piece" style="color: #ff9c00;"></i>
-                <h3 class="index-h3">heheheha</h3>
-            </div>
-            <div class="index-service">
-                <i class="fas fa-bullseye" style="color: #ff9c00;"></i>
-                <h3 class="index-h3">heheheha</h3>
-            </div>
-            <div class="index-service">
-                <i class="fas fa-search" style="color: #ff9c00;"></i>
-                <h3 class="index-h3">heheheha</h3>
-            </div>
-            <div class="index-service">
-                <i class="fas fa-gem" style="color: #ff9c00;"></i>
-                <h3 class="index-h3">heheheha</h3>
-            </div>
-        </div>
+        <p class="index-p">"To promote the achievement of exellence in the building industry through professionalism in expediting our sevices at every stage and level of the project to satisfactory completion"</p>
     </div>
 </div>
 <div class="index-main-content-container">
@@ -61,57 +43,40 @@
         </div>
     </section>
 </div>
+<h3>Our Clients</h3>
 <section class="index-clients-section">
     <div class="index-clients-logos">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
-        <img src="{{ asset('img/husky.jpg') }}" alt="">
+        <img src="{{ asset('img/Adaro.png') }}" alt="">
+        <img src="{{ asset('img/AW.png') }}" alt="">
+        <img src="{{ asset('img/bank syariah mandiri.png') }}" alt="">
+        <img src="{{ asset('img/BSI.png') }}" alt="">
+        <img src="{{ asset('img/cakra bumi energi.png') }}" alt="">
+        <img src="{{ asset('img/cempaka bersama maju.png') }}" alt="">
+        <img src="{{ asset('ciputra.png') }}" alt="">
+        <img src="{{ asset('img/departemen luar negeri.png') }}" alt="">
+        <img src="{{ asset('img/Dowa.png') }}" alt="">
+        <img src="{{ asset('img/HSI.png') }}" alt="">
+        <img src="{{ asset('img/IAPI.png') }}" alt="">
+        <img src="{{ asset('img/IKEA.png') }}" alt="">
+        <img src="{{ asset('img/Indosat.png') }}" alt="">
+        <img src="{{ asset('img/krakatau steel indonesia.png') }}" alt="">
+        <img src="{{ asset('img/LEMIGAS.png') }}" alt="">
+        <img src="{{ asset('img/luhribu nagajaya.png') }}" alt="">
+        <img src="{{ asset('img/magdatama multi industri.png') }}" alt="">
+        <img src="{{ asset('img/mekar prana indah.png') }}" alt="">
+        <img src="{{ asset('img/nahdlatul ulama.png') }}" alt="">
+        <img src="{{ asset('img/pann multifinance.png') }}" alt="">
+        <img src="{{ asset('img/pondok indah group.png') }}" alt="">
+        <img src="{{ asset('img/PPBI.png') }}" alt="">
+        <img src="{{ asset('img/PPLI.png') }}" alt="">
+        <img src="{{ asset('img/RS jantung harapan kita.png') }}" alt="">
+        <img src="{{ asset('img/SAL.png') }}" alt="">
+        <img src="{{ asset('img/Surveyor indonesia.png') }}" alt="">
+        <img src="{{ asset('img/YKKBI.png') }}" alt="">
+        
     </div>
 </section>
-<section class="index-feature-section">
-    <div class="index-feature-image-container">
-        <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Feature Image">
-    </div>
-    <div class="index-feature-text-container">
-        <h2>Est labore ad</h2>
-        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip.</p>
-        <div class="index-feature-item">
-            <i class="fas fa-box"></i>
-            <div>
-                <h3>Est labore ad</h3>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip.</p>
-            </div>
-        </div>
-        <div class="index-feature-item">
-            <i class="fas fa-shopping-basket"></i>
-            <div>
-                <h3>Harum esse qui</h3>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-            </div>
-        </div>
-        <div class="index-feature-item">
-            <i class="fas fa-broadcast-tower"></i>
-            <div>
-                <h3>Aut occaecati</h3>
-                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere.</p>
-            </div>
-        </div>
-        <div class="index-feature-item">
-            <i class="fas fa-video"></i>
-            <div>
-                <h3>Beatae veritatis</h3>
-                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta.</p>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="index-services-section">
     <div class="index-services-header">
         <h2>CHECK OUR SERVICES</h2>
@@ -158,12 +123,6 @@
 <section class="index-portfolio-section">
     <div class="index-portfolio-header">
         <h2>CHECK OUR PORTFOLIO</h2>
-        <div class="index-portfolio-filters">
-            <button class="index-filter-btn active" data-filter="all">All</button>
-            <button class="index-filter-btn" data-filter="app">App</button>
-            <button class="index-filter-btn" data-filter="card">Card</button>
-            <button class="index-filter-btn" data-filter="web">Web</button>
-        </div>
     </div>
     <div class="index-portfolio-container">
         <div class="index-portfolio-item" data-category="app">
@@ -193,41 +152,6 @@
     </div>
 </section>
 
-<section class="index-rating-carousel">
-    <div class="index-carousel-container">
-        <div class="index-rating-item">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Customer Avatar" class="index-customer-avatar">
-            <p class="index-customer-name">Nnana Badman</p>
-            <p class="index-customer-role">CEO of PT. Gagacor</p>
-            <div class="index-star-rating">
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-            </div>
-            <p class="index-rating-text">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-            </p>
-        </div>
-        <div class="index-rating-item">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Customer Avatar" class="index-customer-avatar">
-            <p class="index-customer-name">Koroto Manhatty</p>
-            <p class="index-customer-role">Owner of PT. Pasti Bisa</p>
-            <div class="index-star-rating">
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-                <span class="fas fa-star" style="color: #ff9c00;"></span>
-            </div>
-            <p class="index-rating-text">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-            </p>
-        </div>
-    </div>
-</section>
-
 <section class="index-team-section" id="team-section">
     <div class="index-team-header">
         <h2>OUR TEAM</h2>
@@ -242,6 +166,11 @@
             <img src="{{ asset('img/husky.jpg') }}" alt="">
             <h3>Husk White</h3>
             <p>Product Manager</p>
+        </div>
+        <div class="index-team-member">
+            <img src="{{ asset('img/husky.jpg') }}" alt="">
+            <h3>Uskhy Huss</h3>
+            <p>CTO</p>
         </div>
         <div class="index-team-member">
             <img src="{{ asset('img/husky.jpg') }}" alt="">
