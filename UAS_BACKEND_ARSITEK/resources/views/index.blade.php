@@ -159,23 +159,23 @@
     <div class="index-team-container">
         <div class="index-team-member">
             <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Walter Husk</h3>
-            <p>Chief Executive Officer</p>
+            <h3>Maman Rachman Samadi, S.Ars.</h3>
+            <p>Principal Architect</p>
         </div>
         <div class="index-team-member">
             <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Husk White</h3>
-            <p>Product Manager</p>
+            <h3>Ir. Stefanus Harko Pradono</h3>
+            <p>Associate Director</p>
         </div>
         <div class="index-team-member">
             <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Uskhy Huss</h3>
-            <p>CTO</p>
+            <h3>Ir. Agus B Sulistyo</h3>
+            <p>Associate Director</p>
         </div>
         <div class="index-team-member">
             <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Uskhy Huss</h3>
-            <p>CTO</p>
+            <h3>Ir. Ambar Achiranto</h3>
+            <p>Interior Project Director</p>
         </div>
     </div>
 </section>

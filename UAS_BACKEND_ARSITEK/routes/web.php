@@ -52,6 +52,6 @@ Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->
 Route::get('/favorites', [AdminController::class, 'showFavorites'])->name('favorites.index');
 
 // Service route
-Route::get('/service', function () {
-    return view('service');
+Route::get('/team', function () {
+    return view('team');
 });
