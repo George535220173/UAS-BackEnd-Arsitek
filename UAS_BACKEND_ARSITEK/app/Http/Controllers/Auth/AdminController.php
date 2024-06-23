@@ -18,7 +18,7 @@ class AdminController extends Controller
                 return $next($request);
             }
             return redirect('/login')->with('error', 'Unauthorized access');
-        });
+        })->except(['showProjects', 'showProjectDetails', 'favoriteProject', 'showFavorites']);
     }
 
     public function index()
