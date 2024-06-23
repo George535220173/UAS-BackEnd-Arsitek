@@ -9,6 +9,7 @@ class CreateProjectCategoriesTable extends Migration
     {
         Schema::create('project_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('main_category');
             $table->string('name')->unique();
             $table->timestamps();
         });
@@ -19,3 +20,6 @@ class CreateProjectCategoriesTable extends Migration
         Schema::dropIfExists('project_categories');
     }
 }
+
+
+

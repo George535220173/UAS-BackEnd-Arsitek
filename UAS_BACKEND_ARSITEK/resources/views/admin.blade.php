@@ -20,6 +20,15 @@
                 <form action="{{ route('admin.categories.store') }}" method="POST">
                     @csrf
                     <div class="admin-form-group">
+                        <label for="add_main_category">Main Category</label>
+                        <select id="add_main_category" name="main_category" required>
+                            <option value="">Select Main Category</option>
+                            @foreach($mainCategories as $mainCategory)
+                                <option value="{{ $mainCategory }}">{{ $mainCategory }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
                         <label for="category_name">Category Name</label>
                         <input type="text" id="category_name" name="name" required>
                     </div>
@@ -50,10 +59,20 @@
                         <textarea id="description" name="description" required></textarea>
                     </div>
                     <div class="admin-form-group">
-                        <label for="category_id">Category</label>
-                        <select id="category_id" name="category_id" required>
+                        <label for="main_category_select">Main Category</label>
+                        <select id="main_category_select" name="main_category" required>
+                            <option value="">Select Main Category</option>
+                            @foreach($mainCategories as $mainCategory)
+                                <option value="{{ $mainCategory }}">{{ $mainCategory }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="sub_category_select">Sub Category</label>
+                        <select id="sub_category_select" name="category_id" required>
+                            <option value="">Select Sub Category</option>
                             @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" data-main-category="{{ $category->main_category }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -260,6 +279,30 @@
     var projectDates = @json($projects->mapWithKeys(function ($project) {
         return [$project->id => $project->time_taken];
     }));
+
+    // Dynamic Subcategories based on Main Category
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainCategorySelect = document.querySelector('#main_category_select');
+        const subCategorySelect = document.querySelector('#sub_category_select');
+
+        mainCategorySelect.addEventListener('change', function() {
+            const selectedMainCategory = this.value;
+            const options = subCategorySelect.querySelectorAll('option');
+
+            options.forEach(option => {
+                if (option.getAttribute('data-main-category') === selectedMainCategory || option.value === '') {
+                    option.style.display = 'block';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+
+            subCategorySelect.value = ''; // Reset subcategory selection
+        });
+
+        // Trigger change event to filter subcategories on page load
+        mainCategorySelect.dispatchEvent(new Event('change'));
+    });
 </script>
 
 @endsection

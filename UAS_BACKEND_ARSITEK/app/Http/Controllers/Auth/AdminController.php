@@ -26,8 +26,10 @@ class AdminController extends Controller
         $projects = Project::with('images', 'category')->get();
         $articles = Article::all();
         $categories = ProjectCategory::all();
-        return view('admin', compact('projects', 'articles', 'categories'));
+        $mainCategories = ['Architecture', 'Interior Design']; // Define main categories here
+        return view('admin', compact('projects', 'articles', 'categories', 'mainCategories'));
     }
+    
 
     public function store_articles(Request $request)
     {
@@ -80,13 +82,18 @@ class AdminController extends Controller
     public function storeCategory(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:project_categories'
+            'main_category' => 'required|string|max:255',
+            'name' => 'required|unique:project_categories|string|max:255',
         ]);
-
-        ProjectCategory::create($request->all());
-
+    
+        ProjectCategory::create([
+            'main_category' => $request->main_category,
+            'name' => $request->name,
+        ]);
+    
         return redirect()->route('admin.dashboard')->with('success', 'Category added successfully');
     }
+    
 
     public function showProjects(Request $request)
     {
