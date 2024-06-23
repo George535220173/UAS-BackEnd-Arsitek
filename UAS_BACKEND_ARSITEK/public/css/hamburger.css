@@ -40,21 +40,6 @@
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.logo {
-    display: inline-block;
-}
-
-.logo .logo-area {
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.logo .logo-area::after {
-    content: '.';
-    color: #f0c14b;
-}
-
 .sidebar-menu {
     position: fixed;
     top: 60px; /* Adjust this value to the height of your navbar */
