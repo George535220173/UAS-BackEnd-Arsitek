@@ -55,6 +55,7 @@ Route::get('/projects/architecture/{project}', [AdminController::class, 'showPro
 Route::get('/projects/interiordesign', [AdminController::class, 'showInteriorDesignProjects'])->name('projects.interiordesign');
 Route::get('/projects/interiordesign/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.interiordesign.show');
 
+Route::get('/projects/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.show');
 Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->name('projects.favorite');
 Route::get('/favorites', [AdminController::class, 'showFavorites'])->name('favorites.index');
 

@@ -92,9 +92,6 @@
                     const projectId = button.getAttribute('data-project-id');
                     const icon = button.querySelector('i, svg');
 
-                    console.log('Button clicked:', button);
-                    console.log('Icon element:', icon);
-
                     fetch('{{ route("projects.favorite") }}', {
                         method: 'POST',
                         headers: {
@@ -105,7 +102,6 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Response data:', data);
                         if (icon) {
                             if (data.status === 'added') {
                                 icon.classList.remove('text-muted');
@@ -114,8 +110,6 @@
                                 icon.classList.remove('text-warning');
                                 icon.classList.add('text-muted');
                             }
-                        } else {
-                            console.error('Icon element not found for button:', button);
                         }
                     })
                     .catch(error => console.error('Error:', error));
@@ -126,4 +120,6 @@
         });
     });
 </script>
+
+
 @endsection

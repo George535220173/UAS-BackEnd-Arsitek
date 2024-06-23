@@ -7,7 +7,10 @@
         @foreach($favorites as $project)
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card">
-                    <a href="{{ route('projects.show', $project->id) }}">
+                    @php
+                        $categoryRoute = strtolower(str_replace(' ', '', $project->category->main_category));
+                    @endphp
+                    <a href="{{ route('projects.' . $categoryRoute . '.show', $project->id) }}">
                         @if($project->images->isNotEmpty())
                             <img class="card-img-top" src="{{ asset('storage/' . $project->images->first()->path) }}" alt="Project Image">
                         @else

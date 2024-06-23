@@ -133,19 +133,22 @@ class AdminController extends Controller
     {
         $projectId = $request->input('project_id');
         $favorites = session('favorites', []);
-
+    
         if (in_array($projectId, $favorites)) {
             // Remove from favorites
             $favorites = array_diff($favorites, [$projectId]);
             session(['favorites' => $favorites]);
+    
             return response()->json(['status' => 'removed']);
         } else {
             // Add to favorites
             $favorites[] = $projectId;
             session(['favorites' => $favorites]);
+    
             return response()->json(['status' => 'added']);
         }
     }
+    
 
     public function showFavorites()
     {
