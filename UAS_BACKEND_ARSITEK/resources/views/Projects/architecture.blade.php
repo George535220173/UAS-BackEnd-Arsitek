@@ -2,14 +2,42 @@
 
 @section('content')
 <div class="container">
-    <h1 class="my-4">Architecture Projects</h1>
-    @include('projects.partials.search', ['categories' => $categories])
+    <h1 class="my-4">{{ $mainCategory }} Projects</h1>
     
+    <form method="GET" action="{{ url()->current() }}" class="mb-4 d-flex flex-column form-inline">
+        <div class="d-flex w-100 mb-2">
+            <div class="input-group mr-2 sort-group">
+                <select name="sort" class="form-control" onchange="this.form.submit()">
+                    <option value="asc" {{ request('sort') == 'asc' ? 'selected' : '' }}>A-Z</option>
+                    <option value="desc" {{ request('sort') == 'desc' ? 'selected' : '' }}>Z-A</option>
+                    <option value="oldest" {{ request('sort') == 'oldest' ? 'selected' : '' }}>Oldest to Latest</option>
+                    <option value="latest" {{ request('sort') == 'latest' ? 'selected' : '' }}>Latest to Oldest</option>
+                </select>
+            </div>
+            <div class="input-group flex-grow-1 search-group">
+                <input type="text" name="search" class="form-control" placeholder="Search projects..." value="{{ request('search') }}">
+                <span class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </span>
+            </div>
+        </div>
+        <div class="input-group category-group mt-2">
+            <select name="category" class="form-control" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+    </form>
+
     <div class="row">
         @foreach($projects as $project)
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100 d-flex flex-column">
-                    <a href="{{ route('projects.show', $project->id) }}">
+                    <a href="{{ route('projects.' . strtolower($mainCategory) . '.show', $project->id) }}">
                         <img class="card-img-top" src="{{ asset('storage/' . $project->image) }}" alt="Project Image">
                     </a>
                     <div class="card-body d-flex flex-column">
@@ -25,7 +53,6 @@
                         @else
                             <p class="card-text">Invalid Date</p>
                         @endif
-                        <!-- Favorite Icon -->
                         <div class="mt-auto">
                             <button class="favorite-btn" data-project-id="{{ $project->id }}">
                                 @if(in_array($project->id, session('favorites', [])))
@@ -41,9 +68,6 @@
         @endforeach
     </div>
     
-    <!-- Pagination Links -->
     {{ $projects->links() }}
 </div>
-
-@include('projects.partials.favorite-script')
 @endsection

@@ -46,8 +46,13 @@ Route::post('/profile/delete-optional-fields', [UserProfileController::class, 'd
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
 
 Route::get('/projects', [AdminController::class, 'showProjects'])->name('projects.index');
+// Architecture Projects
 Route::get('/projects/architecture', [AdminController::class, 'showArchitectureProjects'])->name('projects.architecture');
+Route::get('/projects/architecture/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.architecture.show');
+
+// Interior Design Projects
 Route::get('/projects/interiordesign', [AdminController::class, 'showInteriorDesignProjects'])->name('projects.interiordesign');
-Route::get('/projects/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.show');
+Route::get('/projects/interiordesign/{project}', [AdminController::class, 'showProjectDetails'])->name('projects.interiordesign.show');
+
 Route::post('/projects/favorite', [AdminController::class, 'favoriteProject'])->name('projects.favorite');
 Route::get('/favorites', [AdminController::class, 'showFavorites'])->name('favorites.index');
