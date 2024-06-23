@@ -18,7 +18,7 @@ class AdminController extends Controller
                 return $next($request);
             }
             return redirect('/login')->with('error', 'Unauthorized access');
-        })->except(['showProjects', 'showProjectDetails', 'favoriteProject', 'showFavorites']);
+        })->except(['showProjects', 'showProjectDetails', 'favoriteProject', 'showFavorites', 'showArchitectureProjects', 'showInteriorDesignProjects']);
     }
 
     public function index()
@@ -26,8 +26,11 @@ class AdminController extends Controller
         $projects = Project::with('images', 'category')->get();
         $articles = Article::all();
         $categories = ProjectCategory::all();
-        return view('admin', compact('projects', 'articles', 'categories'));
+        $mainCategories = ['Architecture', 'Interior Design']; // Add this line to define the main categories
+    
+        return view('admin', compact('projects', 'articles', 'categories', 'mainCategories'));
     }
+    
 
     public function store_articles(Request $request)
     {
@@ -80,18 +83,24 @@ class AdminController extends Controller
     public function storeCategory(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:project_categories'
+            'main_category' => 'required|string|max:255',
+            'name' => 'required|unique:project_categories|string|max:255',
         ]);
-
-        ProjectCategory::create($request->all());
-
+    
+        ProjectCategory::create([
+            'main_category' => $request->main_category,
+            'name' => $request->name,
+        ]);
+    
         return redirect()->route('admin.dashboard')->with('success', 'Category added successfully');
     }
+    
 
     public function showProjects(Request $request)
     {
         $search = $request->input('search');
         $sort = $request->input('sort', 'asc');
+        $category = $request->input('category');
 
         $projects = Project::when($search, function ($query, $search) {
             return $query->where('project_name', 'LIKE', "%{$search}%")
@@ -110,9 +119,14 @@ class AdminController extends Controller
                 return $query->orderBy('created_at', 'desc');
             }
         })
+        ->when($category, function ($query, $category) {
+            return $query->where('category_id', $category);
+        })
         ->paginate(8);
 
-        return view('projects', compact('projects'));
+        $categories = ProjectCategory::all();
+
+        return view('projects', compact('projects', 'categories'));
     }
 
     public function favoriteProject(Request $request)
@@ -140,10 +154,12 @@ class AdminController extends Controller
         return view('favorites', compact('favorites'));
     }
 
-    public function showProjectDetails(Project $project)
+    public function showProjectDetails($id)
     {
-        return view('project_details', compact('project'));
+        $project = Project::findOrFail($id);
+        return view('projects.project_details', compact('project'));
     }
+    
 
     public function destroyProject(Project $project)
     {
@@ -213,4 +229,85 @@ class AdminController extends Controller
 
         return redirect()->route('admin.dashboard')->with('success', 'Article updated successfully');
     }
+
+    // AdminController.php
+
+    public function showArchitectureProjects(Request $request)
+    {
+        $search = $request->input('search');
+        $sort = $request->input('sort', 'asc');
+        $category = $request->input('category');
+    
+        $projects = Project::whereHas('category', function ($query) {
+            $query->where('main_category', 'Architecture');
+        })
+        ->when($search, function ($query, $search) {
+            return $query->where(function ($query) use ($search) {
+                $query->whereRaw('LOWER(project_name) LIKE ?', ['%' . strtolower($search) . '%'])
+                      ->orWhereRaw('LOWER(client) LIKE ?', ['%' . strtolower($search) . '%'])
+                      ->orWhereRaw('LOWER(location) LIKE ?', ['%' . strtolower($search) . '%'])
+                      ->orWhereRaw('LOWER(description) LIKE ?', ['%' . strtolower($search) . '%']);
+            });
+        })
+        ->when($sort, function ($query, $sort) {
+            if ($sort === 'asc') {
+                return $query->orderBy('project_name', 'asc');
+            } elseif ($sort === 'desc') {
+                return $query->orderBy('project_name', 'desc');
+            } elseif ($sort === 'oldest') {
+                return $query->orderBy('created_at', 'asc');
+            } elseif ($sort === 'latest') {
+                return $query->orderBy('created_at', 'desc');
+            }
+        })
+        ->when($category, function ($query, $category) {
+            return $query->where('category_id', $category);
+        })
+        ->paginate(8);
+    
+        $categories = ProjectCategory::where('main_category', 'Architecture')->get();
+        $mainCategory = 'Architecture';
+    
+        return view('projects.architecture', compact('projects', 'categories', 'mainCategory'));
+    }
+    
+    public function showInteriorDesignProjects(Request $request)
+    {
+        $search = $request->input('search');
+        $sort = $request->input('sort', 'asc');
+        $category = $request->input('category');
+    
+        $projects = Project::whereHas('category', function ($query) {
+            $query->where('main_category', 'Interior Design');
+        })
+        ->when($search, function ($query, $search) {
+            return $query->where(function ($query) use ($search) {
+                $query->whereRaw('LOWER(project_name) LIKE ?', ['%' . strtolower($search) . '%'])
+                      ->orWhereRaw('LOWER(client) LIKE ?', ['%' . strtolower($search) . '%'])
+                      ->orWhereRaw('LOWER(location) LIKE ?', ['%' . strtolower($search) . '%'])
+                      ->orWhereRaw('LOWER(description) LIKE ?', ['%' . strtolower($search) . '%']);
+            });
+        })
+        ->when($sort, function ($query, $sort) {
+            if ($sort === 'asc') {
+                return $query->orderBy('project_name', 'asc');
+            } elseif ($sort === 'desc') {
+                return $query->orderBy('project_name', 'desc');
+            } elseif ($sort === 'oldest') {
+                return $query->orderBy('created_at', 'asc');
+            } elseif ($sort === 'latest') {
+                return $query->orderBy('created_at', 'desc');
+            }
+        })
+        ->when($category, function ($query, $category) {
+            return $query->where('category_id', $category);
+        })
+        ->paginate(8);
+    
+        $categories = ProjectCategory::where('main_category', 'Interior Design')->get();
+        $mainCategory = 'InteriorDesign';
+    
+        return view('projects.interiordesign', compact('projects', 'categories', 'mainCategory'));
+    }
+    
 }

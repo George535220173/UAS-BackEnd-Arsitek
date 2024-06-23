@@ -49,7 +49,7 @@
 <!-- Secondary Sidebar Menu -->
 <div id="projects-submenu" class="projects-submenu">
     <ul>
-        <li><a href="{{ url('/projects/project1') }}">Architecture</a></li>
-        <li><a href="{{ url('/projects/project2') }}">Interior Design</a></li>
+        <li><a href="{{ url('/projects/architecture') }}">Architecture</a></li>
+        <li><a href="{{ url('/projects/interiordesign') }}">Interior Design</a></li>
     </ul>
 </div>
