@@ -1,0 +1,11 @@
+.project-details-carousel-image {
+    height: 400px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures images are resized and cropped to fit */
+}
+.project-details-carousel-indicators li {
+    background-color: orange; /* Color for the bullets */
+}
+.project-details-carousel-control-prev-icon,
+.project-details-carousel-control-next-icon {
+    background-color: orange; /* Doesn't work right now */
+}
