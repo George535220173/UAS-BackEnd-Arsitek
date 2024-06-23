@@ -1,30 +1,27 @@
-.team-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
 .team-member {
-    flex: 1 1 45%;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
     text-align: center;
-}
-
-.team-member img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
     margin-bottom: 20px;
 }
 
-.team-member h3 {
-    margin-top: 10px;
-    font-size: 1.5em;
+.team-member img {
+    width: 100%;
+    height: auto;
 }
 
-.team-member p {
-    font-size: 1em;
+.team-member.full-width img {
+    max-width: 100%;
+    height: auto;
+}
+
+.full-width {
+    text-align: left;
+}
+
+.img-fluid {
+    max-width: 30%;
+    height: auto;
+}
+
+.team-member.d-flex {
+    justify-content: space-between;
 }
