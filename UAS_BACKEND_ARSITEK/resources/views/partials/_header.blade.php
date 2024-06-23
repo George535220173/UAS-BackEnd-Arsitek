@@ -26,7 +26,7 @@
 <div id="sidebar-menu" class="sidebar-menu">
     <ul>
         <li><a href="{{ url('/') }}">Home</a></li>
-        <li><a href="{{ url('/service') }}">Services</a></li>
+        <li><a href="{{ url('/team') }}">MRS Team</a></li>
         <li class="projects-menu">
             <a href="#" id="projectsButton">Projects</a>
         </li>

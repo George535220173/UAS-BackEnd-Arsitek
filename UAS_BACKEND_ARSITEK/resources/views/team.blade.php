@@ -2,68 +2,78 @@
 
 @section('content')
 
-<div class="body-service">
-    <div class="header-service">
+<div class="body-team">
+    <div class="header-team">
         <div class="container-header">
             <h1>Our Team</h1>
             <p>Meet the talented and dedicated team behind MRS Architects. Our team members are experts in their fields, bringing years of experience and a passion for architecture to every project.</p>
         </div>
     </div>
 
-    <nav>
-        <a href="#">Home</a> / <span>Our Team</span>
-    </nav>
-
-    <div class="main-service">
-
-        <aside>
-            <h2>Team Members</h2>
-            <ul id="team-list">
-                <li class="active">John Doe, S.Ars</li>
-                <li>Jane Smith, S.Ars</li>
-                <li>Robert Johnson, S.Ars</li>
-                <li>Emily Davis, S.Ars</li>
-            </ul>
-
-            <div class="contact-box-service">
-                <div class="contact-text-cluster-service">
-                    <img src="/img/headset.png" width="50px" height="50px">
-                    <h3>CONTACT</h3>
-                    <div style="display: flex; align-items: center;">
-                        <img src="/img/mic.png" width="20px" height="20px" style="margin: 10px;">
-                        <span>+62 21 31900081</span>
-                    </div>
-                    <div style="display: flex; align-items: center;">
-                        <img src="/img/mail.png" width="20px" height="20px" style="margin: 10px;">
-                        <span>mrsarchitects@yahoo.com</span>
+    <div class="main-team">  
+        <section class="team-details">
+            <div class="row">
+                <!-- Principal Architect -->
+                <div class="col-md-4">
+                    <div class="team-member full-width d-flex align-items-center">
+                        <div class="team-info">
+                            <h3>Maman Rachman Samadi, S.Ars.</h3>
+                            <p>...</p>
+                        </div>
+                        <img src="path/to/image.jpg" alt="" class="img-fluid">
                     </div>
                 </div>
-            </div>
-        </aside>
-
-        <section class="team-details">
-            <div class="team-member">
-                <img src="/img/john_doe.png" alt="John Doe">
-                <h3>John Doe, S.Ars</h3>
-                <p>John is the founder and principal architect of MRS Architects. With over 20 years of experience in the industry, John has led numerous successful projects and is known for his innovative designs and attention to detail.</p>
-            </div>
-
-            <div class="team-member">
-                <img src="/img/jane_smith.png" alt="Jane Smith">
-                <h3>Jane Smith, S.Ars</h3>
-                <p>Jane is a senior architect at MRS Architects. She specializes in sustainable design and has a keen eye for integrating green solutions into her projects. Jane has been with the firm for over 10 years.</p>
-            </div>
-
-            <div class="team-member">
-                <img src="/img/robert_johnson.png" alt="Robert Johnson">
-                <h3>Robert Johnson, S.Ars</h3>
-                <p>Robert is an architect at MRS Architects with a focus on commercial projects. He has a background in structural engineering and ensures that all designs are both functional and aesthetically pleasing.</p>
-            </div>
-
-            <div class="team-member">
-                <img src="/img/emily_davis.png" alt="Emily Davis">
-                <h3>Emily Davis, S.Ars</h3>
-                <p>Emily is a junior architect at MRS Architects. She brings fresh ideas and a modern approach to the team. Emily is passionate about residential design and creating spaces that are both beautiful and livable.</p>
+                <!-- Other Team Members -->
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="team-member d-flex align-items-center">
+                                <div class="team-info">
+                                    <h3>Ir. Stefanus Harko Pradono</h3>
+                                    <p>Jabatan : Associate Director</p>
+                                    <p>Tempat & Tanggal Lahir : Bandung, 22 Juli 1956</p>
+                                    <p>Pengalaman Perusahaan</p>
+                                    <li>PT Armekon Reka Tantra - Operation Director</li>
+                                    <li>PT Ardan Indera Destas - Operation Director</li>
+                                    <li>PT Intiland Development Tbk - Project Coordinator</li>
+                                    <li>Liberty Global Network Sdn Bhd - Senior Consultant</li>
+                                </div>
+                                <img src="img\Ir. Stefanus Harko Pradono.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="team-member d-flex align-items-center">
+                                <div class="team-info">
+                                    <h3>Ir. Agus B Sulistyo</h3>
+                                    <p>Jabatan : Associate Director</p>
+                                    <p>Tempat & Tanggal Lahir : Surabaya, 30 April 1961</p>
+                                    <p>Pengalaman Perusahaan</p>
+                                    <li>PT Armekon Reka Tantra - Operation Director</li>
+                                    <li>PT Atlantic Richfield North Bali - Resident Architect</li>
+                                    <li>PT Kajima Design Asia PTE - Chief Architect</li>
+                                    <li>PT Atria Jayakarsa Bangun Persada - Project Manager</li>
+                                    <li>PT Kajima Indonesia - Assistant Architectural Manager</li>
+                                </div>
+                                <img src="img\Ir. Agus B Sulistyo.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="team-member d-flex align-items-center">
+                                <div class="team-info">
+                                    <h3>Ir. Ambar Achiranto</h3>
+                                    <p>Jabatan : Interior Project Director</p>
+                                    <p>Tempat & Tanggal Lahir : Jakarta, 22 November 1964</p>
+                                    <p>Pengalaman Perusahaan</p>
+                                    <li>PT Graha Cipta Hadiprana - Interior Designer</li>
+                                    <li>PT Dutika Megah Interior - Interior Designer</li>
+                                    <li>PT Aditata Anindya - Project Manager</li>
+                                    <li>PT Bina Karya - Project Architect</li>
+                                </div>
+                                <img src="img\Ir. Ambar Achiranto.png" alt="E" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
