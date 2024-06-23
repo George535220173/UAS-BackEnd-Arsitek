@@ -38,7 +38,11 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100 d-flex flex-column">
                     <a href="{{ route('projects.' . strtolower($mainCategory) . '.show', $project->id) }}">
-                        <img class="card-img-top" src="{{ asset('storage/' . $project->image) }}" alt="Project Image">
+                    @if($project->images->isNotEmpty())
+                            <img class="card-img-top" src="{{ asset('storage/' . $project->images->first()->path) }}" alt="Project Image">
+                        @else
+                            <img class="card-img-top" src="path/to/default/image.jpg" alt="No Image Available">
+                        @endif
                     </a>
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ $project->project_name }}</h5>
