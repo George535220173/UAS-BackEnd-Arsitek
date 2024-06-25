@@ -79,44 +79,38 @@
 
 <section class="index-services-section">
     <div class="index-services-header">
-        <h2>CHECK OUR SERVICES</h2>
+        <h2>CHECK OUR AWARDS</h2>
     </div>
     <div class="index-services-container">
         <div class="index-service-box">
-            <i class="fas fa-heartbeat"></i>
-            <h3>Nesciunt Mete</h3>
-            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure
-                perferendis tempore et consequatur.</p>
+            <h3>1st Prize</h3>
+            <p>Kawasan Masjid Tugu Marunda</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Marunda2png.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
         </div>
         <div class="index-service-box">
-            <i class="fas fa-broadcast-tower"></i>
-            <h3>Eosle Commodi</h3>
-            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
-                nesciunt dolorem.</p>
+            <h3>1st Prize</h3>
+            <p>Rusunawa Kalimalang</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Rusunawa.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
         </div>
         <div class="index-service-box">
-            <i class="fas fa-tv"></i>
-            <h3>Ledo Markt</h3>
-            <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
-                eos earum corrupti.</p>
+            <h3>2nd Prize</h3>
+            <p>Stadiun Sunter</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/StadiunSunter.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
         </div>
         <div class="index-service-box">
-            <i class="fas fa-cube"></i>
-            <h3>Asperiores Commodit</h3>
-            <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
-                adipisci neque.</p>
+            <h3>3rd Prize</h3>
+            <p>Golf Clubhouse - Kemayoran</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/GolfClub.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
         </div>
         <div class="index-service-box">
-            <i class="fas fa-tasks"></i>
-            <h3>Velit Doloremque</h3>
-            <p>Cumque et suscipit saepe. Est maiores autem enim facilis aut ut ipsum corporis aut. Sed animi at
-                autem alias eius labore.</p>
+            <h3>4th Prize</h3>
+            <p>Bakrie Toll Gate and Rest Area</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Bakrie.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
         </div>
         <div class="index-service-box">
-            <i class="fas fa-comments"></i>
-            <h3>Dolori Architecto</h3>
-            <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
-                recusandae ducimus enim.</p>
+            <h3>Participant</h3>
+            <p>IA-ITB</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/IA-ITB.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
         </div>
     </div>
 </section>
