@@ -1,27 +1,91 @@
-.team-member {
-    text-align: center;
-    margin-bottom: 20px;
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.team-member img {
-    width: 100%;
-    height: auto;
+.team-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 15px;
 }
 
-.team-member.full-width img {
+.team-main-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 15px;
+}
+
+.team-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team-sub-column {
+    flex: 0 0 100%;
     max-width: 100%;
-    height: auto;
+    padding: 15px;
 }
 
-.full-width {
+.team-member-full-width {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row; /* Ensure items are in a row */
+}
+
+.team-member-full-width img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+.team-info {
+    flex: 1;
     text-align: left;
 }
 
-.img-fluid {
-    max-width: 30%;
-    height: auto;
+.team-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-.team-member.d-flex {
-    justify-content: space-between;
+.team-info p, .team-info ul {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.team-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.team-member-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* Ensure flex layout */
+    align-items: center; /* Center align items vertically */
+}
+
+.team-member-card img {
+    width: 150px;
+    height: auto;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.team-member-card .team-info {
+    text-align: left;
+    flex: 1;
 }
