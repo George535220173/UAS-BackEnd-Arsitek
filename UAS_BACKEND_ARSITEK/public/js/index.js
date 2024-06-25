@@ -74,3 +74,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    let currentSlide = 0;
+
+    function showNextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
+        });
+    }
+
+    setInterval(showNextSlide, 4000); // Change slide every 4 seconds
+});

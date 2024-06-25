@@ -2,12 +2,18 @@
 
 @section('content')
 <div class="index-hero-section">
+    <div class="carousel-background">
+        <div class="carousel-slide" style="background-image: url('img/MainPage/Foto1MainPage.png');"></div>
+        <div class="carousel-slide" style="background-image: url('img/MainPage/Margonda.jpg');"></div>
+        <div class="carousel-slide" style="background-image: url('img/MainPage/TabalongIslamic.jpg');"></div>
+    </div>
     <div class="index-overlay-index"></div>
     <div class="index-content-index">
         <h1 class="index-h1">Professional Architecture With MRS</h1>
         <p class="index-p">"To promote the achievement of exellence in the building industry through professionalism in expediting our sevices at every stage and level of the project to satisfactory completion"</p>
     </div>
 </div>
+
 <div class="index-main-content-container" id="article-section">
     <section class="index-info-section">
         <div class="index-content-and-sidebar">
