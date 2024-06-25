@@ -12,10 +12,10 @@
 
     <div class="main-team">  
         <section class="team-details">
-            <div class="row">
+            <div class="team-container">
                 <!-- Principal Architect -->
-                <div class="col-md-4">
-                    <div class="team-member full-width d-flex align-items-center">
+                <div class="team-column">
+                    <div class="team-member-full-width d-flex align-items-center">
                         <div class="team-info">
                             <h3>Ir. Maman R. Samadi, IAI</h3>
                             <p>...</p>
@@ -24,52 +24,58 @@
                     </div>
                 </div>
                 <!-- Other Team Members -->
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="team-member d-flex align-items-center">
+                <div class="team-main-column">
+                    <div class="team-row">
+                        <div class="team-sub-column">
+                            <div class="team-member-card d-flex align-items-center">
                                 <div class="team-info">
                                     <h3>Ir. Stefanus Harko Pradono</h3>
                                     <p>Jabatan : Associate Director</p>
                                     <p>Tempat & Tanggal Lahir : Bandung, 22 Juli 1956</p>
                                     <p>Pengalaman Perusahaan</p>
-                                    <li>PT Armekon Reka Tantra - Operation Director</li>
-                                    <li>PT Ardan Indera Destas - Operation Director</li>
-                                    <li>PT Intiland Development Tbk - Project Coordinator</li>
-                                    <li>Liberty Global Network Sdn Bhd - Senior Consultant</li>
+                                    <ul>
+                                        <li>PT Armekon Reka Tantra - Operation Director</li>
+                                        <li>PT Ardan Indera Destas - Operation Director</li>
+                                        <li>PT Intiland Development Tbk - Project Coordinator</li>
+                                        <li>Liberty Global Network Sdn Bhd - Senior Consultant</li>
+                                    </ul>
                                 </div>
-                                <img src="img\Ir. Stefanus Harko Pradono.png" alt="" class="img-fluid">
+                                <img src="img/Ir. Stefanus Harko Pradono.png" alt="" class="img-fluid">
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="team-member d-flex align-items-center">
+                        <div class="team-sub-column">
+                            <div class="team-member-card d-flex align-items-center">
                                 <div class="team-info">
                                     <h3>Ir. Agus B Sulistyo</h3>
                                     <p>Jabatan : Associate Director</p>
                                     <p>Tempat & Tanggal Lahir : Surabaya, 30 April 1961</p>
                                     <p>Pengalaman Perusahaan</p>
-                                    <li>PT Armekon Reka Tantra - Operation Director</li>
-                                    <li>PT Atlantic Richfield North Bali - Resident Architect</li>
-                                    <li>PT Kajima Design Asia PTE - Chief Architect</li>
-                                    <li>PT Atria Jayakarsa Bangun Persada - Project Manager</li>
-                                    <li>PT Kajima Indonesia - Assistant Architectural Manager</li>
+                                    <ul>
+                                        <li>PT Armekon Reka Tantra - Operation Director</li>
+                                        <li>PT Atlantic Richfield North Bali - Resident Architect</li>
+                                        <li>PT Kajima Design Asia PTE - Chief Architect</li>
+                                        <li>PT Atria Jayakarsa Bangun Persada - Project Manager</li>
+                                        <li>PT Kajima Indonesia - Assistant Architectural Manager</li>
+                                    </ul>
                                 </div>
-                                <img src="img\Ir. Agus B Sulistyo.png" alt="" class="img-fluid">
+                                <img src="img/Ir. Agus B Sulistyo.png" alt="" class="img-fluid">
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="team-member d-flex align-items-center">
+                        <div class="team-sub-column">
+                            <div class="team-member-card d-flex align-items-center">
                                 <div class="team-info">
                                     <h3>Ir. Ambar Achiranto</h3>
                                     <p>Jabatan : Interior Project Director</p>
                                     <p>Tempat & Tanggal Lahir : Jakarta, 22 November 1964</p>
                                     <p>Pengalaman Perusahaan</p>
-                                    <li>PT Graha Cipta Hadiprana - Interior Designer</li>
-                                    <li>PT Dutika Megah Interior - Interior Designer</li>
-                                    <li>PT Aditata Anindya - Project Manager</li>
-                                    <li>PT Bina Karya - Project Architect</li>
+                                    <ul>
+                                        <li>PT Graha Cipta Hadiprana - Interior Designer</li>
+                                        <li>PT Dutika Megah Interior - Interior Designer</li>
+                                        <li>PT Aditata Anindya - Project Manager</li>
+                                        <li>PT Bina Karya - Project Architect</li>
+                                    </ul>
                                 </div>
-                                <img src="img\Ir. Ambar Achiranto.png" alt="E" class="img-fluid">
+                                <img src="img/Ir. Ambar Achiranto.png" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
