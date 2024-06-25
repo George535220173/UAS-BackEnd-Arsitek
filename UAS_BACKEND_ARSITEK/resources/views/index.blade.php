@@ -76,7 +76,7 @@
         
     </div>
 </section>
-
+<!-- resources/views/index.blade.php -->
 <section class="index-services-section">
     <div class="index-services-header">
         <h2>CHECK OUR AWARDS</h2>
@@ -85,35 +85,42 @@
         <div class="index-service-box">
             <h3>1st Prize</h3>
             <p>Kawasan Masjid Tugu Marunda</p>
-            <img class="fixed-size-img" src="{{ asset('img/Awards/Marunda2png.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Marunda2png.png') }}" alt="Kawasan Masjid Tugu Marunda" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
             <h3>1st Prize</h3>
             <p>Rusunawa Kalimalang</p>
-            <img class="fixed-size-img" src="{{ asset('img/Awards/Rusunawa.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Rusunawa.png') }}" alt="Rusunawa Kalimalang" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
             <h3>2nd Prize</h3>
             <p>Stadiun Sunter</p>
-            <img class="fixed-size-img" src="{{ asset('img/Awards/StadiunSunter.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/StadiunSunter.png') }}" alt="Stadiun Sunter" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
             <h3>3rd Prize</h3>
             <p>Golf Clubhouse - Kemayoran</p>
-            <img class="fixed-size-img" src="{{ asset('img/Awards/GolfClub.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/GolfClub.png') }}" alt="Golf Clubhouse - Kemayoran" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
             <h3>4th Prize</h3>
             <p>Bakrie Toll Gate and Rest Area</p>
-            <img class="fixed-size-img" src="{{ asset('img/Awards/Bakrie.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Bakrie.png') }}" alt="Bakrie Toll Gate and Rest Area" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
             <h3>Participant</h3>
             <p>IA-ITB</p>
-            <img class="fixed-size-img" src="{{ asset('img/Awards/IA-ITB.png') }}" alt="Kawasan Masjid Tugu Marunda"></img>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/IA-ITB.png') }}" alt="IA-ITB" onclick="openFullscreen(this.src)">
         </div>
     </div>
 </section>
+
+<!-- Fullscreen Overlay -->
+<div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen()">
+    <span class="close-btn" onclick="closeFullscreen()">×</span>
+    <img id="fullscreen-image" class="fullscreen-image" src="">
+</div>
+
 <section class="index-portfolio-section">
     <div class="index-portfolio-header">
         <h2>CHECK OUR PORTFOLIO</h2>

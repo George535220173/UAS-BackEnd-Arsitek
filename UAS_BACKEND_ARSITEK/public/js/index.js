@@ -56,3 +56,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+function openFullscreen(src) {
+    document.getElementById('fullscreen-overlay').style.display = 'flex';
+    document.getElementById('fullscreen-image').src = src;
+}
+
+function closeFullscreen() {
+    document.getElementById('fullscreen-overlay').style.display = 'none';
+    document.getElementById('fullscreen-image').src = '';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('fullscreen-overlay').addEventListener('click', function (e) {
+        if (e.target === this) {
+            closeFullscreen();
+        }
+    });
+});
