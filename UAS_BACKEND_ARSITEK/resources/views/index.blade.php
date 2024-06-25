@@ -159,7 +159,7 @@
     <div class="index-team-container">
         <div class="index-team-member">
             <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Maman Rachman Samadi, S.Ars.</h3>
+            <h3>Ir. Maman R. Samadi, IAI</h3>
             <p>Principal Architect</p>
         </div>
         <div class="index-team-member">
