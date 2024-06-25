@@ -80,7 +80,7 @@ html {
 }
 
 .index-text-container {
-    flex: 1;
+    flex: 2;
     padding-right: 20px;
 }
 
@@ -103,27 +103,64 @@ html {
     margin-bottom: 20px;
 }
 
+
 .index-text-container ul li {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    color: #333; /* Ensure the list items are black */
+    position: relative; /* Needed to position the custom checkmark */
+    padding-left: 25px; /* Space for the custom checkmark */
+}
+
+.index-text-container ul li::before {
+    content: "\2713"; /* Unicode for checkmark */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px; /* Adjust the size as needed */
+    color: #ff9c00; /* Adjust the color as needed */
+    margin-top: 2px; /* Adjust to align the checkmark vertically */
 }
 
 .index-text-container ul li i {
-    color: #ff9c00;
-    margin-right: 10px;
+    margin-right: 20px !important; /* Use !important to prioritize this style */
 }
 
 .index-image-container {
-    flex: 1;
+    flex: 0 0 300px; /* Fixed width for the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px; /* Margin to create space around the image */
 }
 
 .index-image-container img {
     width: 100%;
+    max-width: 300px; /* Ensure the image doesn't exceed its container */
+    height: auto;
     border-radius: 10px;
 }
+
+.index-clients-header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.index-clients-header h2 {
+    display: inline-block; /* Make sure the h2 is inline-block for centering */
+    position: relative;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.index-clients-header h2::before {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Adjust to position the underline */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; /* Width of the underline */
+    height: 3px; /* Height of the underline */
+    background-color: #ff9c00; /* Color of the underline */
+}
+
 
 .index-clients-section {
     padding: 50px;

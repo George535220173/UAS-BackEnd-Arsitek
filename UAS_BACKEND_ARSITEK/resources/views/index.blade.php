@@ -15,16 +15,16 @@
                 <h2>MRS Architects</h2>
                 <p>PT. MEDIA RANCANG STUDIO is a firm of experienced Professionals undertaking works in the following fields:</p>
                 <ul>
-                    <li><i class="fas fa-check"></i> Feasibility study of a Project, including analysis of its type, market potentials, financial projections and project phasing.</li>
-                    <li><i class="fas fa-check"></i> Architectural Services analyze available building sites, generate & develop design concepts, set up & lead a multi-disciplinary design team, co-ordinate production of construction documents, assist in tendering process and provide periodic site inspections.</li>
-                    <li><i class="fas fa-check"></i> Regional Planning & Urban Design analyze project site, conceptual zoning options and master planning.</li>
-                    <li><i class="fas fa-check"></i> Interior Design services, analyze base building options, space programming & adjacency diagram, physical lay-outing, fit-out construction detailing, assist in tendering process and provide periodic site inspections</li>
-                    <li><i class="fas fa-check"></i> MRS Architects' most valuable resources are its professional manpower, consisting of senior architects, architects, urban planners, and the supporting technical & non-technical staff.</li>
-                    <li><i class="fas fa-check"></i> MRS Architects' work experience includes all types of design and construction projects from single individual houses to large master planning projects with mixed usages of residential, commercial, hotel and institutional developments.</li>
+                    <li> Feasibility study of a Project, including analysis of its type, market potentials, financial projections and project phasing.</li>
+                    <li> Architectural Services analyze available building sites, generate & develop design concepts, set up & lead a multi-disciplinary design team, co-ordinate production of construction documents, assist in tendering process and provide periodic site inspections.</li>
+                    <li> Regional Planning & Urban Design analyze project site, conceptual zoning options and master planning.</li>
+                    <li> Interior Design services, analyze base building options, space programming & adjacency diagram, physical lay-outing, fit-out construction detailing, assist in tendering process and provide periodic site inspections</li>
+                    <li> MRS Architects' most valuable resources are its professional manpower, consisting of senior architects, architects, urban planners, and the supporting technical & non-technical staff.</li>
+                    <li> MRS Architects' work experience includes all types of design and construction projects from single individual houses to large master planning projects with mixed usages of residential, commercial, hotel and institutional developments.</li>
                 </ul>
             </div>
             <div class="index-image-container">
-                <img src="{{ asset('img/husky.jpg') }}" alt="">
+                <img src="{{ asset('img/MRS1.png') }}" alt="">
             </div>
         </div>
         <div class="index-sidebar">
@@ -43,7 +43,7 @@
         </div>
     </section>
 </div>
-<h3>Our Clients</h3>
+<div class="index-clients-header"><h2>Our Clients</h2></div>
 <section class="index-clients-section">
     <div class="index-clients-logos">
         <img src="{{ asset('img/Adaro.png') }}" alt="">
