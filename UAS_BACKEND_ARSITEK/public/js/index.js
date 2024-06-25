@@ -42,3 +42,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Scrolling to section
+document.addEventListener('DOMContentLoaded', function () {
+    // Mendengarkan klik pada semua tautan jangkar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});

@@ -8,11 +8,11 @@
         <p class="index-p">"To promote the achievement of exellence in the building industry through professionalism in expediting our sevices at every stage and level of the project to satisfactory completion"</p>
     </div>
 </div>
-<div class="index-main-content-container">
+<div class="index-main-content-container" id="article-section">
     <section class="index-info-section">
         <div class="index-content-and-sidebar">
             <div class="index-text-container">
-                <h2>MRS architects</h2>
+                <h2>MRS Architects</h2>
                 <p>PT. MEDIA RANCANG STUDIO is a firm of experienced Professionals undertaking works in the following fields:</p>
                 <ul>
                     <li><i class="fas fa-check"></i> Feasibility study of a Project, including analysis of its type, market potentials, financial projections and project phasing.</li>

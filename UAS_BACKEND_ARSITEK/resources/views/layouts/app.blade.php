@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('css/Project.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hamburger.css') }}">
     <link rel="stylesheet" href="{{ asset('css/project_details.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     @stack('styles')
 </head>
 <body>
