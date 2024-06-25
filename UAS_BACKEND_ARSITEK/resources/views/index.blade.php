@@ -2,12 +2,18 @@
 
 @section('content')
 <div class="index-hero-section">
+    <div class="carousel-background">
+        <div class="carousel-slide" style="background-image: url('img/MainPage/Foto1MainPage.png');"></div>
+        <div class="carousel-slide" style="background-image: url('img/MainPage/Margonda.jpg');"></div>
+        <div class="carousel-slide" style="background-image: url('img/MainPage/TabalongIslamic.jpg');"></div>
+    </div>
     <div class="index-overlay-index"></div>
     <div class="index-content-index">
         <h1 class="index-h1">Professional Architecture With MRS</h1>
         <p class="index-p">"To promote the achievement of exellence in the building industry through professionalism in expediting our sevices at every stage and level of the project to satisfactory completion"</p>
     </div>
 </div>
+
 <div class="index-main-content-container" id="article-section">
     <section class="index-info-section">
         <div class="index-content-and-sidebar">
@@ -15,16 +21,16 @@
                 <h2>MRS Architects</h2>
                 <p>PT. MEDIA RANCANG STUDIO is a firm of experienced Professionals undertaking works in the following fields:</p>
                 <ul>
-                    <li><i class="fas fa-check"></i> Feasibility study of a Project, including analysis of its type, market potentials, financial projections and project phasing.</li>
-                    <li><i class="fas fa-check"></i> Architectural Services analyze available building sites, generate & develop design concepts, set up & lead a multi-disciplinary design team, co-ordinate production of construction documents, assist in tendering process and provide periodic site inspections.</li>
-                    <li><i class="fas fa-check"></i> Regional Planning & Urban Design analyze project site, conceptual zoning options and master planning.</li>
-                    <li><i class="fas fa-check"></i> Interior Design services, analyze base building options, space programming & adjacency diagram, physical lay-outing, fit-out construction detailing, assist in tendering process and provide periodic site inspections</li>
-                    <li><i class="fas fa-check"></i> MRS Architects' most valuable resources are its professional manpower, consisting of senior architects, architects, urban planners, and the supporting technical & non-technical staff.</li>
-                    <li><i class="fas fa-check"></i> MRS Architects' work experience includes all types of design and construction projects from single individual houses to large master planning projects with mixed usages of residential, commercial, hotel and institutional developments.</li>
+                    <li> Feasibility study of a Project, including analysis of its type, market potentials, financial projections and project phasing.</li>
+                    <li> Architectural Services analyze available building sites, generate & develop design concepts, set up & lead a multi-disciplinary design team, co-ordinate production of construction documents, assist in tendering process and provide periodic site inspections.</li>
+                    <li> Regional Planning & Urban Design analyze project site, conceptual zoning options and master planning.</li>
+                    <li> Interior Design services, analyze base building options, space programming & adjacency diagram, physical lay-outing, fit-out construction detailing, assist in tendering process and provide periodic site inspections</li>
+                    <li> MRS Architects' most valuable resources are its professional manpower, consisting of senior architects, architects, urban planners, and the supporting technical & non-technical staff.</li>
+                    <li> MRS Architects' work experience includes all types of design and construction projects from single individual houses to large master planning projects with mixed usages of residential, commercial, hotel and institutional developments.</li>
                 </ul>
             </div>
             <div class="index-image-container">
-                <img src="{{ asset('img/husky.jpg') }}" alt="">
+                <img src="{{ asset('img/MRS1.png') }}" alt="">
             </div>
         </div>
         <div class="index-sidebar">
@@ -43,7 +49,7 @@
         </div>
     </section>
 </div>
-<h3>Our Clients</h3>
+<div class="index-clients-header"><h2>Our Clients</h2></div>
 <section class="index-clients-section">
     <div class="index-clients-logos">
         <img src="{{ asset('img/Adaro.png') }}" alt="">
@@ -76,53 +82,54 @@
         
     </div>
 </section>
-
+<!-- resources/views/index.blade.php -->
 <section class="index-services-section">
     <div class="index-services-header">
-        <h2>CHECK OUR SERVICES</h2>
+        <h2>CHECK OUR AWARDS</h2>
     </div>
     <div class="index-services-container">
         <div class="index-service-box">
-            <i class="fas fa-heartbeat"></i>
-            <h3>Nesciunt Mete</h3>
-            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure
-                perferendis tempore et consequatur.</p>
+            <h3>1st Prize</h3>
+            <p>Kawasan Masjid Tugu Marunda</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Marunda2png.png') }}" alt="Kawasan Masjid Tugu Marunda" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
-            <i class="fas fa-broadcast-tower"></i>
-            <h3>Eosle Commodi</h3>
-            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
-                nesciunt dolorem.</p>
+            <h3>1st Prize</h3>
+            <p>Rusunawa Kalimalang</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Rusunawa.png') }}" alt="Rusunawa Kalimalang" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
-            <i class="fas fa-tv"></i>
-            <h3>Ledo Markt</h3>
-            <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
-                eos earum corrupti.</p>
+            <h3>2nd Prize</h3>
+            <p>Stadiun Sunter</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/StadiunSunter.png') }}" alt="Stadiun Sunter" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
-            <i class="fas fa-cube"></i>
-            <h3>Asperiores Commodit</h3>
-            <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
-                adipisci neque.</p>
+            <h3>3rd Prize</h3>
+            <p>Golf Clubhouse - Kemayoran</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/GolfClub.png') }}" alt="Golf Clubhouse - Kemayoran" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
-            <i class="fas fa-tasks"></i>
-            <h3>Velit Doloremque</h3>
-            <p>Cumque et suscipit saepe. Est maiores autem enim facilis aut ut ipsum corporis aut. Sed animi at
-                autem alias eius labore.</p>
+            <h3>4th Prize</h3>
+            <p>Bakrie Toll Gate and Rest Area</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/Bakrie.png') }}" alt="Bakrie Toll Gate and Rest Area" onclick="openFullscreen(this.src)">
         </div>
         <div class="index-service-box">
-            <i class="fas fa-comments"></i>
-            <h3>Dolori Architecto</h3>
-            <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
-                recusandae ducimus enim.</p>
+            <h3>Participant</h3>
+            <p>IA-ITB</p>
+            <img class="fixed-size-img" src="{{ asset('img/Awards/IA-ITB.png') }}" alt="IA-ITB" onclick="openFullscreen(this.src)">
         </div>
     </div>
 </section>
+
+<!-- Fullscreen Overlay -->
+<div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen()">
+    <span class="close-btn" onclick="closeFullscreen()">×</span>
+    <img id="fullscreen-image" class="fullscreen-image" src="">
+</div>
+
 <section class="index-portfolio-section">
     <div class="index-portfolio-header">
-        <h2>CHECK OUR PORTFOLIO</h2>
+        <h2>CHECK OUR PROJECTS</h2>
     </div>
     <div class="index-portfolio-container">
         <div class="index-portfolio-item" data-category="app">
@@ -157,28 +164,37 @@
         <h2>OUR TEAM</h2>
     </div>
     <div class="index-team-container">
-        <div class="index-team-member">
-            <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Ir. Maman R. Samadi, IAI</h3>
-            <p>Principal Architect</p>
-        </div>
-        <div class="index-team-member">
-            <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Ir. Stefanus Harko Pradono</h3>
-            <p>Associate Director</p>
-        </div>
-        <div class="index-team-member">
-            <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Ir. Agus B Sulistyo</h3>
-            <p>Associate Director</p>
-        </div>
-        <div class="index-team-member">
-            <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Ir. Ambar Achiranto</h3>
-            <p>Interior Project Director</p>
-        </div>
+        <a href="/team" class="index-team-link">
+            <div class="index-team-member">
+                <img src="{{ asset('img/PakMaman.png') }}" alt="">
+                <h3>Ir. Maman R. Samadi, IAI</h3>
+                <p>Principal Architect</p>
+            </div>
+        </a>
+        <a href="/team" class="index-team-link">
+            <div class="index-team-member">
+                <img src="{{ asset('img/Ir. Stefanus Harko Pradono.png') }}" alt="">
+                <h3>Ir. Stefanus Harko Pradono</h3>
+                <p>Associate Director</p>
+            </div>
+        </a>
+        <a href="/team" class="index-team-link">
+            <div class="index-team-member">
+                <img src="{{ asset('img/Ir. Agus B Sulistyo.png') }}" alt="">
+                <h3>Ir. Agus B Sulistyo</h3>
+                <p>Associate Director</p>
+            </div>
+        </a>
+        <a href="/team" class="index-team-link">
+            <div class="index-team-member">
+                <img src="{{ asset('img/Ir. Ambar Achiranto.png') }}" alt="">
+                <h3>Ir. Ambar Achiranto</h3>
+                <p>Interior Project Director</p>
+            </div>
+        </a>
     </div>
 </section>
+
 
 <section class="index-contact-section" id="contact">
     <div class="index-contact-header">
