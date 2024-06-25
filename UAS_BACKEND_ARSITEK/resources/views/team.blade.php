@@ -17,7 +17,7 @@
                 <div class="col-md-4">
                     <div class="team-member full-width d-flex align-items-center">
                         <div class="team-info">
-                            <h3>Maman Rachman Samadi, S.Ars.</h3>
+                            <h3>Ir. Maman R. Samadi, IAI</h3>
                             <p>...</p>
                         </div>
                         <img src="path/to/image.jpg" alt="" class="img-fluid">
