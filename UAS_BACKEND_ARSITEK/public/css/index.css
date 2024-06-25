@@ -471,6 +471,15 @@ html {
     color: #fff;
 }
 
+.index-team-link {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+    display: flex; /* Ensure the link wraps around the entire card */
+    flex: 1 0 21%; /* Adjust width and make it a flex item */
+    max-width: 21%; /* Ensure the cards stay within a reasonable width */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
 .index-team-section {
     padding: 50px 0;
     background-color: #fff;
@@ -512,7 +521,12 @@ html {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 15%; /* Adjusted to fit 4 members in a row with gap */
+    transition: transform 0.3s ease; /* Added transition for smooth zoom effect */
+    width: 100%; /* Ensure the team member div takes full width inside the link */
+}
+
+.index-team-member:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
 }
 
 .index-team-member img {
@@ -571,7 +585,7 @@ html {
 .index-contact-info {
     flex: 1;
     min-width: 300px;
-    margin: 20px;
+    margin: 10px;
 }
 
 .index-contact-info .mapouter {
@@ -588,6 +602,7 @@ html {
 
 .index-contact-details {
     text-align: left;
+    margin-left: 58px;
 }
 
 .index-contact-details p {

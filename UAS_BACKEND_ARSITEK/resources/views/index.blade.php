@@ -123,7 +123,7 @@
 
 <section class="index-portfolio-section">
     <div class="index-portfolio-header">
-        <h2>CHECK OUR PORTFOLIO</h2>
+        <h2>CHECK OUR PROJECTS</h2>
     </div>
     <div class="index-portfolio-container">
         <div class="index-portfolio-item" data-category="app">
@@ -158,28 +158,37 @@
         <h2>OUR TEAM</h2>
     </div>
     <div class="index-team-container">
-        <div class="index-team-member">
-            <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Ir. Maman R. Samadi, IAI</h3>
-            <p>Principal Architect</p>
-        </div>
-        <div class="index-team-member">
-            <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Ir. Stefanus Harko Pradono</h3>
-            <p>Associate Director</p>
-        </div>
-        <div class="index-team-member">
-            <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Ir. Agus B Sulistyo</h3>
-            <p>Associate Director</p>
-        </div>
-        <div class="index-team-member">
-            <img src="{{ asset('img/husky.jpg') }}" alt="">
-            <h3>Ir. Ambar Achiranto</h3>
-            <p>Interior Project Director</p>
-        </div>
+        <a href="/team" class="index-team-link">
+            <div class="index-team-member">
+                <img src="{{ asset('img/PakMaman.png') }}" alt="">
+                <h3>Ir. Maman R. Samadi, IAI</h3>
+                <p>Principal Architect</p>
+            </div>
+        </a>
+        <a href="/team" class="index-team-link">
+            <div class="index-team-member">
+                <img src="{{ asset('img/Ir. Stefanus Harko Pradono.png') }}" alt="">
+                <h3>Ir. Stefanus Harko Pradono</h3>
+                <p>Associate Director</p>
+            </div>
+        </a>
+        <a href="/team" class="index-team-link">
+            <div class="index-team-member">
+                <img src="{{ asset('img/Ir. Agus B Sulistyo.png') }}" alt="">
+                <h3>Ir. Agus B Sulistyo</h3>
+                <p>Associate Director</p>
+            </div>
+        </a>
+        <a href="/team" class="index-team-link">
+            <div class="index-team-member">
+                <img src="{{ asset('img/Ir. Ambar Achiranto.png') }}" alt="">
+                <h3>Ir. Ambar Achiranto</h3>
+                <p>Interior Project Director</p>
+            </div>
+        </a>
     </div>
 </section>
+
 
 <section class="index-contact-section" id="contact">
     <div class="index-contact-header">

@@ -20,7 +20,7 @@
                             <h3>Ir. Maman R. Samadi, IAI</h3>
                             <p>...</p>
                         </div>
-                        <img src="path/to/image.jpg" alt="" class="img-fluid">
+                        <img src="img/PakMaman.png" alt="" class="img-fluid">
                     </div>
                 </div>
                 <!-- Other Team Members -->
