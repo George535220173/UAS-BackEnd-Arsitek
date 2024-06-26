@@ -19,7 +19,7 @@
         <div class="index-content-and-sidebar">
             <div class="index-text-container">
                 <h2>MRS Architects</h2>
-                <p>PT. MEDIA RANCANG STUDIO is a firm of experien   ced Professionals undertaking works in the following fields:</p>
+                <p>PT. MEDIA RANCANG STUDIO is a firm of experienced Professionals undertaking works in the following fields:</p>
                 <ul>
                     <li> Feasibility study of a Project, including analysis of its type, market potentials, financial projections and project phasing.</li>
                     <li> Architectural Services analyze available building sites, generate & develop design concepts, set up & lead a multi-disciplinary design team, co-ordinate production of construction documents, assist in tendering process and provide periodic site inspections.</li>
