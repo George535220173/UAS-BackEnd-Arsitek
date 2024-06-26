@@ -7,7 +7,7 @@
                 <div class="bar3"></div>
             </div>
             <div class="logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('img/MRS1.png') }}" width="70px" height="70px"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('img/MRSwhite.png') }}" width="70px" height="70px"></a>
             </div>
         </div>
 
