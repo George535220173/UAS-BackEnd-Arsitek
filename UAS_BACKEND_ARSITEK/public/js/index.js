@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.carousel-slide');
     let currentSlide = 0;
@@ -86,4 +87,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     setInterval(showNextSlide, 4000); // Change slide every 4 seconds
+});
+
+// fade up animation
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.fade-up');
+    
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+        
+        elements.forEach(element => {
+            const boxTop = element.getBoundingClientRect().top;
+            
+            if(boxTop < triggerBottom) {
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
+});
+
+// fade in animation
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.fade-in');
+    
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+        
+        elements.forEach(element => {
+            const boxTop = element.getBoundingClientRect().top;
+            
+            if(boxTop < triggerBottom) {
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
 });
