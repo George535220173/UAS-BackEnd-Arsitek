@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="index-hero-section">
+<div class="index-hero-section fade-in">
     <div class="carousel-background">
         <div class="carousel-slide" style="background-image: url('img/MainPage/Foto1MainPage.png');"></div>
         <div class="carousel-slide" style="background-image: url('img/MainPage/Margonda.jpg');"></div>
@@ -14,12 +14,12 @@
     </div>
 </div>
 
-<div class="index-main-content-container" id="article-section">
+<div class="index-main-content-container fade-up" id="article-section">
     <section class="index-info-section">
         <div class="index-content-and-sidebar">
             <div class="index-text-container">
                 <h2>MRS Architects</h2>
-                <p>PT. MEDIA RANCANG STUDIO is a firm of experienced Professionals undertaking works in the following fields:</p>
+                <p>PT. MEDIA RANCANG STUDIO is a firm of experien   ced Professionals undertaking works in the following fields:</p>
                 <ul>
                     <li> Feasibility study of a Project, including analysis of its type, market potentials, financial projections and project phasing.</li>
                     <li> Architectural Services analyze available building sites, generate & develop design concepts, set up & lead a multi-disciplinary design team, co-ordinate production of construction documents, assist in tendering process and provide periodic site inspections.</li>
@@ -49,9 +49,9 @@
         </div>
     </section>
 </div>
-<div class="index-clients-header"><h2>Our Clients</h2></div>
+<div class="index-clients-header fade-up"><h2>Our Clients</h2></div>
 <section class="index-clients-section">
-    <div class="index-clients-logos">
+    <div class="index-clients-logos fade-up">
         <img src="{{ asset('img/Adaro.png') }}" alt="">
         <img src="{{ asset('img/AW.png') }}" alt="">
         <img src="{{ asset('img/bank syariah mandiri.png') }}" alt="">
@@ -88,32 +88,32 @@
         <h2>CHECK OUR AWARDS</h2>
     </div>
     <div class="index-services-container">
-        <div class="index-service-box">
+        <div class="index-service-box fade-up">
             <h3>1st Prize</h3>
             <p>Kawasan Masjid Tugu Marunda</p>
             <img class="fixed-size-img" src="{{ asset('img/Awards/Marunda2png.png') }}" alt="Kawasan Masjid Tugu Marunda" onclick="openFullscreen(this.src)">
         </div>
-        <div class="index-service-box">
+        <div class="index-service-box fade-up">
             <h3>1st Prize</h3>
             <p>Rusunawa Kalimalang</p>
             <img class="fixed-size-img" src="{{ asset('img/Awards/Rusunawa.png') }}" alt="Rusunawa Kalimalang" onclick="openFullscreen(this.src)">
         </div>
-        <div class="index-service-box">
+        <div class="index-service-box fade-up">
             <h3>2nd Prize</h3>
             <p>Stadiun Sunter</p>
             <img class="fixed-size-img" src="{{ asset('img/Awards/StadiunSunter.png') }}" alt="Stadiun Sunter" onclick="openFullscreen(this.src)">
         </div>
-        <div class="index-service-box">
+        <div class="index-service-box fade-up">
             <h3>3rd Prize</h3>
             <p>Golf Clubhouse - Kemayoran</p>
             <img class="fixed-size-img" src="{{ asset('img/Awards/GolfClub.png') }}" alt="Golf Clubhouse - Kemayoran" onclick="openFullscreen(this.src)">
         </div>
-        <div class="index-service-box">
+        <div class="index-service-box fade-up">
             <h3>4th Prize</h3>
             <p>Bakrie Toll Gate and Rest Area</p>
             <img class="fixed-size-img" src="{{ asset('img/Awards/Bakrie.png') }}" alt="Bakrie Toll Gate and Rest Area" onclick="openFullscreen(this.src)">
         </div>
-        <div class="index-service-box">
+        <div class="index-service-box fade-up">
             <h3>Participant</h3>
             <p>IA-ITB</p>
             <img class="fixed-size-img" src="{{ asset('img/Awards/IA-ITB.png') }}" alt="IA-ITB" onclick="openFullscreen(this.src)">
@@ -128,64 +128,64 @@
 </div>
 
 <section class="index-portfolio-section">
-    <div class="index-portfolio-header">
+    <div class="index-portfolio-header fade-up">
         <h2>CHECK OUR PROJECTS</h2>
     </div>
     <div class="index-portfolio-container">
-        <div class="index-portfolio-item" data-category="app">
+        <div class="index-portfolio-item fade-up" data-category="app">
             <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
         </div>
-        <div class="index-portfolio-item" data-category="card">
+        <div class="index-portfolio-item fade-up" data-category="card">
             <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
         </div>
-        <div class="index-portfolio-item" data-category="web">
+        <div class="index-portfolio-item fade-up" data-category="web">
             <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
         </div>
-        <div class="index-portfolio-item" data-category="app">
+        <div class="index-portfolio-item fade-up" data-category="app">
             <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
         </div>
-        <div class="index-portfolio-item" data-category="card">
+        <div class="index-portfolio-item fade-up" data-category="card">
             <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
         </div>
-        <div class="index-portfolio-item" data-category="web">
+        <div class="index-portfolio-item fade-up" data-category="web">
             <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
         </div>
-        <div class="index-portfolio-item" data-category="app">
+        <div class="index-portfolio-item fade-up" data-category="app">
             <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
         </div>
-        <div class="index-portfolio-item" data-category="card">
+        <div class="index-portfolio-item fade-up" data-category="card">
             <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
         </div>
     </div>
 </section>
 
 <section class="index-team-section" id="team-section">
-    <div class="index-team-header">
+    <div class="index-team-header fade-up">
         <h2>OUR TEAM</h2>
     </div>
     <div class="index-team-container">
-        <a href="/team" class="index-team-link">
+        <a href="/team" class="index-team-link fade-up">
             <div class="index-team-member">
                 <img src="{{ asset('img/PakMaman.png') }}" alt="">
                 <h3>Ir. Maman R. Samadi, IAI</h3>
                 <p>Principal Architect</p>
             </div>
         </a>
-        <a href="/team" class="index-team-link">
+        <a href="/team" class="index-team-link fade-up">
             <div class="index-team-member">
                 <img src="{{ asset('img/Ir. Stefanus Harko Pradono.png') }}" alt="">
                 <h3>Ir. Stefanus Harko Pradono</h3>
                 <p>Associate Director</p>
             </div>
         </a>
-        <a href="/team" class="index-team-link">
+        <a href="/team" class="index-team-link fade-up">
             <div class="index-team-member">
                 <img src="{{ asset('img/Ir. Agus B Sulistyo.png') }}" alt="">
                 <h3>Ir. Agus B Sulistyo</h3>
                 <p>Associate Director</p>
             </div>
         </a>
-        <a href="/team" class="index-team-link">
+        <a href="/team" class="index-team-link fade-up">
             <div class="index-team-member">
                 <img src="{{ asset('img/Ir. Ambar Achiranto.png') }}" alt="">
                 <h3>Ir. Ambar Achiranto</h3>
@@ -197,22 +197,22 @@
 
 
 <section class="index-contact-section" id="contact">
-    <div class="index-contact-header">
+    <div class="index-contact-header fade-up">
         <h2>CONTACT US</h2>
     </div>
     <div class="index-contact-container">
-        <div class="index-contact-info">
+        <div class="index-contact-info fade-up">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.2691352736101!2d106.83665174725442!3d-6.192477248919186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f43eba102577%3A0x68dccf60ded01bb9!2sJl.%20Cikini%20IV%20No.20%2C%20RT.15%2FRW.5%2C%20Cikini%2C%20Kec.%20Menteng%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010330!5e0!3m2!1sid!2sid!4v1717605164226!5m2!1sid!2sid"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <div class="index-contact-details">
+            <div class="index-contact-details fade-up">
                 <p><i class="fas fa-map-marker-alt"></i> Address<br>Jl. Cikini IV No.20</p>
                 <p><i class="fas fa-phone-alt"></i> Call Us<br>+62 812 3344 9292</p>
                 <p><i class="fas fa-envelope"></i> Email Us<br>3asrium@gmail.com</p>
             </div>
         </div>
         <!-- Contact Form -->
-        <div class="index-contact-form">
+        <div class="index-contact-form fade-up">
             <form action="/send-email" method="POST">
                 @csrf
                 <div class="form-row">

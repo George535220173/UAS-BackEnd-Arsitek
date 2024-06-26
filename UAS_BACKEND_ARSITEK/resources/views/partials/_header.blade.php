@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar">
+    <nav class="navbar fade-in">
         <div class="left-nav">
             <div id="hamburger-menu" class="hamburger-menu">
                 <div class="bar1"></div>
