@@ -98,28 +98,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($projects as $project)
-                            <tr>
-                                <td class="admin-td">{{ $loop->iteration }}</td>
-                                <td class="admin-td">{{ $project->project_name }}</td>
-                                <td class="admin-td">{{ $project->client }}</td>
-                                <td class="admin-td">{{ $project->time_taken }}</td>
-                                <td class="admin-td">{{ $project->location }}</td>
-                                <td class="admin-td">{{ $project->category->name }}</td>
-                                <td class="admin-td">
-                                    @foreach($project->images as $image)
-                                        <img src="{{ asset('storage/' . $image->path) }}" alt="Project Image" width="100">
-                                    @endforeach
-                                </td>
-                                <td class="admin-td">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editProjectModal{{ $project->id }}">Edit</button>
-                                    <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
+                    @foreach($projects as $project)
+                        <tr>
+                            <td class="admin-td">{{ $loop->iteration }}</td>
+                            <td class="admin-td">{{ $project->project_name }}</td>
+                            <td class="admin-td">{{ $project->client }}</td>
+                            <td class="admin-td">{{ $project->time_taken }}</td>
+                            <td class="admin-td">{{ $project->location }}</td>
+                            <td class="admin-td">{{ $project->category->name }}</td>
+                            <td class="admin-td">
+                                @foreach($project->images as $image)
+                                    <img src="{{ asset('img/Project/' . basename($image->path)) }}" alt="Project Image" width="100">
+                                @endforeach
+                            </td>
+                            <td class="admin-td">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editProjectModal{{ $project->id }}">Edit</button>
+                                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
 
                             <!-- Edit Project Modal -->
                             <div class="modal fade" id="editProjectModal{{ $project->id }}" tabindex="-1" role="dialog" aria-labelledby="editProjectModalLabel{{ $project->id }}" aria-hidden="true">
