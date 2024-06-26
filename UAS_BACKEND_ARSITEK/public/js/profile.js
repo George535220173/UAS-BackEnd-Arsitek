@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const authCode = document.getElementById('auth-code');
             let hasError = false;
 
-            if (newValue && newValue.name === 'new_value' && newValue.type === 'text') {
+            if (newValue && newValue.name === 'new_value' && newValue.type === 'text' && formAction.includes('phone')) {
                 const numericPhone = newValue.value.replace(/-/g, '');
                 if (isNaN(numericPhone) || numericPhone.length > 16) {
                     showError(newValue, 'Phone number must be numeric and not exceed 16 digits.');
