@@ -1,24 +1,40 @@
-<!-- resources/views/auth/login.blade.php -->
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<link href="{{ asset('css/register.css') }}" rel="stylesheet">
+
+<div class="register-container">
     <h1>Login</h1>
     <form method="POST" action="{{ route('login') }}">
-        @csrf
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" required autofocus>
+        <div class="register-insides-container">
+            <div class="register-logo">
+                <img src="{{ asset('img/MRS1.png') }}" width="100px" height="100px">
+                <span>please input your information</span>
+            </div>
+            
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <div class="register-textcluster">
+                @csrf
+                <div class="register-input">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required autofocus>
+                </div>
+                <div class="register-input">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="register-button">Login</button>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" required>
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="remember" name="remember">
-            <label class="form-check-label" for="remember">Remember Me</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
     </form>
 </div>
 @endsection
