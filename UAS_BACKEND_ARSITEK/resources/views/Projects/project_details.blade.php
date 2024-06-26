@@ -40,13 +40,5 @@
         <p>{{ $project->description }}</p>
     </div>
     
-    <!-- Favorite Icon -->
-    <button class="favorite-btn project-details-favorite-btn" data-project-id="{{ $project->id }}">
-        @if(in_array($project->id, session('favorites', [])))
-            <i class="fa fa-star text-warning"></i>
-        @else
-            <i class="fa fa-star text-muted"></i>
-        @endif
-    </button>
 </div>
 @endsection
