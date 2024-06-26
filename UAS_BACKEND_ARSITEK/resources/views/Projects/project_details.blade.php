@@ -20,7 +20,7 @@
             <div class="carousel-inner project-details-carousel-inner">
                 @foreach($project->images as $key => $image)
                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                        <img src="{{ asset('storage/' . $image->path) }}" class="d-block w-100 project-details-carousel-image" alt="Project Image">
+                        <img src="{{ asset('img/Project/' . basename($image->path)) }}" class="d-block w-100 project-details-carousel-image" alt="Project Image">
                     </div>
                 @endforeach
             </div>
@@ -36,7 +36,6 @@
     @else
         <p>No images available for this project.</p>
     @endif
-    
     <div class="mt-4">
         <p>{{ $project->description }}</p>
     </div>

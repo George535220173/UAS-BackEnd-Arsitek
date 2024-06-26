@@ -40,18 +40,26 @@ class AdminController extends Controller
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'article_link' => 'required|string|max:255',
         ]);
-
-        $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
-
-        Article::create([
-            'article_title' => $request->article_title,
-            'article_author' => $request->article_author,
-            'thumbnail' => $thumbnailPath,
-            'article_link' => $request->article_link,
-        ]);
-
-        return redirect()->route('admin.dashboard')->with('success', 'Article added successfully');
-    }
+    
+        if ($request->hasFile('thumbnail')) {
+            $filename = $request->file('thumbnail')->getClientOriginalName();
+            $destinationPath = public_path('img/Article');
+            $request->file('thumbnail')->move($destinationPath, $filename);
+    
+            $thumbnailPath = 'img/Article/' . $filename;
+    
+            Article::create([
+                'article_title' => $request->article_title,
+                'article_author' => $request->article_author,
+                'thumbnail' => $thumbnailPath,
+                'article_link' => $request->article_link,
+            ]);
+    
+            return redirect()->route('admin.dashboard')->with('success', 'Article added successfully');
+        }
+    
+        return redirect()->route('admin.dashboard')->with('error', 'Failed to upload thumbnail');
+    }    
 
     public function store_projects(Request $request)
     {
@@ -64,22 +72,25 @@ class AdminController extends Controller
             'category_id' => 'required|exists:project_categories,id',
             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
+    
         $project = Project::create($request->only('project_name', 'client', 'time_taken', 'location', 'description', 'category_id'));
-
+    
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                $path = $image->store('projects', 'public');
+                $filename = $image->getClientOriginalName();
+                $destinationPath = public_path('img/Project');
+                $image->move($destinationPath, $filename);
+    
                 ProjectImage::create([
                     'project_id' => $project->id,
-                    'path' => $path,
+                    'path' => 'img/Project/' . $filename,
                 ]);
             }
         }
-
+    
         return redirect()->route('admin.dashboard')->with('success', 'Project added successfully');
     }
-
+    
     public function storeCategory(Request $request)
     {
         $request->validate([

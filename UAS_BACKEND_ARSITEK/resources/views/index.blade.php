@@ -38,7 +38,7 @@
             <div class="index-articles-container">
                 @foreach($articles as $article)
                     <div class="index-article-snippet">
-                        <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="{{ $article->article_title }}" style="width: 100px; height: 75px;">
+                        <img src="{{ asset('img/Article/' . basename($article->thumbnail)) }}" alt="{{ $article->article_title }}" style="width: 100px; height: 75px;">
                         <div>
                             <h4><a href="{{ $article->article_link }}" target="_blank">{{ $article->article_title }}</a></h4>
                             <p>by {{ $article->article_author }}</p>

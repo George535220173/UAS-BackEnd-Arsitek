@@ -12,7 +12,7 @@
                     @endphp
                     <a href="{{ route('projects.' . $categoryRoute . '.show', $project->id) }}">
                         @if($project->images->isNotEmpty())
-                            <img class="card-img-top" src="{{ asset('storage/' . $project->images->first()->path) }}" alt="Project Image">
+                            <img class="card-img-top" src="{{ asset('img/Project/' . basename($project->images->first()->path)) }}" alt="Project Image">
                         @else
                             <img class="card-img-top" src="path/to/default/image.jpg" alt="No Image Available">
                         @endif
