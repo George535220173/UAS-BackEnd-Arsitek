@@ -8,6 +8,9 @@
     flex: 0 0 50%;
     max-width: 50%;
     padding: 15px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 .team-main-column {
@@ -27,22 +30,23 @@
     padding: 15px;
 }
 
+/* Team Member Card Styles */
 .team-member-full-width {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-direction: row; /* Ensure items are in a row */
+    flex-direction: row;
+    width: 100%;
 }
 
 .team-member-full-width img {
-    width: 30%;
+    width: 50%;
     height: auto;
     border-radius: 8px;
     margin-left: 20px;
@@ -51,6 +55,9 @@
 .team-info {
     flex: 1;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .team-info h3 {
@@ -68,14 +75,81 @@
     padding-left: 20px;
 }
 
+.pa-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.pa-left, .pa-right {
+    flex: 1;
+    margin: 10px;
+}
+
+.pa-img {
+    align-items: center;
+    align-content: center;
+}
+
+.pa-right {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.pa-right img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.pa-left h4, .pa-right h4 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Skill and Language Bars */
+.skill-bar, .language-bar {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.skill-bar::after, .language-bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ffa200;
+}
+
+.skill-bar span, .language-bar span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #333;
+}
+
+.pa-skills p, .pa-languages p {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+/* Team Member Card Additional Styles */
 .team-member-card {
     background-color: #f9f9f9;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex; /* Ensure flex layout */
-    align-items: center; /* Center align items vertically */
+    display: flex;
+    align-items: center;
 }
 
 .team-member-card img {
@@ -88,4 +162,23 @@
 .team-member-card .team-info {
     text-align: left;
     flex: 1;
+}
+
+/* Additional Styling for a Polished Look */
+.pa-details, .pa-profile, .pa-employment, .pa-education, .pa-awards {
+    margin-bottom: 20px;
+}
+
+.pa-profile p, .pa-employment p, .pa-education p, .pa-awards p {
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-weight: bold;
+    color: #444;
+}
+
+h3 {
+    font-weight: bold;
+    color: #444;
 }
