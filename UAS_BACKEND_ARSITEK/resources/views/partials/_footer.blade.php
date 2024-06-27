@@ -14,15 +14,6 @@
                 <li><a href="{{ url('/#contact') }}">Contact Us</a></li>
             </ul>
         </div>
-        <div class="footer-section social-section">
-            <div class="socials">
-                <a href="#" class="social-box"><i class="fab fa-pinterest"></i></a>
-                <a href="#" class="social-box"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-box"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-box"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-box"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
     </div>
     <div class="footer-bottom">
         <p>MRS Architects Company Profile Website</p>
