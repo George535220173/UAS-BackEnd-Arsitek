@@ -14,23 +14,23 @@ class LoginController extends Controller
     | Login Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
+    | Controller ini mengatur autentikasi pengguna untuk aplikasi dan
+    | mengarahkan mereka ke halaman utama setelah login. Controller ini
+    | menggunakan trait untuk memudahkan penggunaannya.
     |
     */
 
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
+     * Lokasi redirect setelah login.
      *
      * @var string
      */
     protected $redirectTo = '/';
 
     /**
-     * Create a new controller instance.
+     * Buat instance controller baru.
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Show the application's login form.
+     * Tampilkan form login aplikasi.
      *
      * @return \Illuminate\View\View
      */
@@ -50,7 +50,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Handle a login request to the application.
+     * Handle permintaan login ke aplikasi.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
@@ -67,7 +67,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Validate the user login request.
+     * Validasi permintaan login pengguna.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return void
@@ -81,7 +81,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Send the response after the user was authenticated.
+     * Kirim respons setelah pengguna berhasil diautentikasi.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse

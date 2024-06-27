@@ -9,6 +9,7 @@ class Article extends Model
 {
     use HasFactory;
 
+    // Field yang bisa diisi secara massal
     protected $fillable = [
         'article_title',
         'article_author',
