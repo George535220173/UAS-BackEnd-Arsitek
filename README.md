@@ -5,7 +5,7 @@ MRS ARCHITECTS - KELOMPOK 3 - KELAS D - BACKEND DEVELOPMENT
 - George Weilis Junior - 535220173
 
 ## Penggunaan Website
-- User harus melakukan "php artisan serve" untuk menjalankan website dan melakukan "localhost:8000"
+- User harus melakukan "php artisan serve" untuk menjalankan website dan melakukan "localhost:8000" pada URL
 - Dikarenakan database local, User dapat melihat database MRS Architects dengan mengunduh file database (".sql") dan melakukan "restore" pada PGAdmin 4 database kosong yang telah dibuat.
 - User memiliki fungsi yang di limitasi jika tidak melakukan registrasi akun.
 - User dapat melihat dan mencari segala projects yang tersedia dengan mengunjungi website "Projects" pada sidebar menu.
