@@ -13,16 +13,22 @@
 
 .project-details-desc {
     margin-left: 20px;
+    width: 30%;
 }
 
 .project-details-carousel-image {
-    height: 400px; /* Adjust the height as needed */
+    width: 600px; /* Fixed width */
+    height: 400px; /* Fixed height */
     object-fit: cover; /* Ensures images are resized and cropped to fit */
 }
+
 .project-details-carousel-indicators li {
     background-color: rgb(31, 31, 31); /* Color for the bullets */
 }
+
 .project-details-carousel-control-prev-icon,
 .project-details-carousel-control-next-icon {
     background-color: rgb(30, 30, 30); /* Doesn't work right now */
 }
+
+
