@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.project-details-favorite-btn').forEach(function(button) {
         button.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default action
+            e.preventDefault(); // biar enggak default
 
             if (isAuthenticated) {
                 const projectId = button.getAttribute('data-project-id');
