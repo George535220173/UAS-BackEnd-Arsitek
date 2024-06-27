@@ -51,7 +51,7 @@
         
         document.querySelectorAll('.favorite-btn').forEach(function(button) {
             button.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent default action
+                e.preventDefault();
 
                 if (isAuthenticated) {
                     const projectId = button.getAttribute('data-project-id');
@@ -74,7 +74,7 @@
                             } else {
                                 icon.classList.remove('text-warning');
                                 icon.classList.add('text-muted');
-                                // Refresh the page when a project is unfavorited
+                               
                                 location.reload();
                             }
                         }
