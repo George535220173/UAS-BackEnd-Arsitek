@@ -1,16 +1,19 @@
 <header>
     <nav class="navbar fade-in">
+        <!--Hamburger-->
         <div class="left-nav">
             <div id="hamburger-menu" class="hamburger-menu">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
+            <!-- Logo -->
             <div class="logo">
                 <a href="{{ url('/') }}"><img src="{{ asset('img/MRSwhite.png') }}" width="70px" height="70px"></a>
             </div>
         </div>
 
+        <!-- Jika belum login akan bernama login, jika sudah login akan bernama get started -->
         @guest
             <a href="{{ route('login') }}" class="cta"><button>Login</button></a>
         @else
@@ -22,7 +25,7 @@
 <!-- Overlay -->
 <div id="overlay" class="overlay"></div>
 
-<!-- Main Sidebar Menu -->
+<!-- Menu sidebar utama -->
 <div id="sidebar-menu" class="sidebar-menu">
     <ul>
         <li><a href="{{ url('/') }}">Home</a></li>
@@ -46,7 +49,7 @@
     </ul>
 </div>
 
-<!-- Secondary Sidebar Menu -->
+<!-- Menu sub sidebar -->
 <div id="projects-submenu" class="projects-submenu">
     <ul>
         <li><a href="{{ url('/projects/architecture') }}">Architecture</a></li>

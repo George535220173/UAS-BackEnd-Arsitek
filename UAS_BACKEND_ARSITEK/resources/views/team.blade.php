@@ -17,7 +17,7 @@
     <div class="main-team">
         <section class="team-details">
             <div class="team-container">
-                <!-- Principal Architect -->
+                <!-- Bagian Principal Architect -->
                 <div class="team-column">
                     <div class="team-member-full-width">
                         <div class="pa-info">
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Other Team Members -->
+                <!-- Untuk Team Members lainnya-->
                 <div class="team-main-column">
                     <div class="team-row">
                         <div class="team-sub-column">

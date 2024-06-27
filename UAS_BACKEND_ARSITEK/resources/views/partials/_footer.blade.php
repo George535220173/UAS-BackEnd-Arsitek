@@ -15,6 +15,7 @@
             </ul>
         </div>
     </div>
+    <!--Footer dengan nama nama-->
     <div class="footer-bottom">
         <p>MRS Architects Company Profile Website</p>
         <p>Created by: George Weilis Junior [535220173], Ryan Satria [535220190], Tiga Wira Prasidya [535220227]</p>

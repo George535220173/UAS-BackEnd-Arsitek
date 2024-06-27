@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1 class="my-4">{{ $mainCategory }} Projects</h1>
-    
+    <!-- Sorting search segala disini-->
     <form method="GET" action="{{ url()->current() }}" class="mb-4 d-flex flex-column form-inline">
         <div class="d-flex w-100 mb-2">
             <div class="input-group mr-2 sort-group">
@@ -21,6 +21,7 @@
                 </span>
             </div>
         </div>
+        <!-- Kategori-->
         <div class="input-group category-group mt-2">
             <select name="category" class="form-control" onchange="this.form.submit()">
                 <option value="">All Categories</option>
@@ -34,6 +35,7 @@
     </form>
 
     <div class="row">
+        <!-- Menampilkan gambar-->
         @foreach($projects as $project)
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100 d-flex flex-column">
@@ -57,7 +59,7 @@
                         @else
                             <p class="card-text">Invalid Date</p>
                         @endif
-                        <!-- Favorite Icon -->
+                        <!-- Favorites-->
                         <div class="mt-auto">
                             <button class="favorite-btn" data-project-id="{{ $project->id }}">
                                 @if(in_array($project->id, session('favorites', [])))
