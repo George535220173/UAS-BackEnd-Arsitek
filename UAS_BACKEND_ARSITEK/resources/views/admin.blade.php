@@ -18,77 +18,33 @@
         <!-- Tabs content -->
         <div class="tab-content" id="adminTabsContent">
             <div class="tab-pane fade show active" id="projects" role="tabpanel" aria-labelledby="projects-tab">
-                <h1 class="admin-h1">Add Project Category</h1>
-                <div class="admin-smaller-content">
-                <form action="{{ route('admin.categories.store') }}" method="POST">
-                    @csrf
-                    <div class="admin-form-group">
-                        <label for="add_main_category">Main Category</label>
-                        <select id="add_main_category" name="main_category" required>
-                            <option value="">Select Main Category</option>
-                            @foreach($mainCategories as $mainCategory)
-                                <option value="{{ $mainCategory }}">{{ $mainCategory }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="category_name">Category Name</label>
-                        <input type="text" id="category_name" name="name" required>
-                    </div>
-                    <button type="submit" class="admin-button">Add Category</button>
-                </form>
+                <div class="admin-category-content">
+                    <h1 class="admin-h1">Add Project Category</h1>
 
-                <h1 class="admin-h1">Projects Addins</h1>
-                <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data" id="projectForm">
-                    @csrf
-                    <div class="admin-form-group">
-                        <label for="project_name">Project Name</label>
-                        <input type="text" id="project_name" name="project_name" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="client">Client</label>
-                        <input type="text" id="client" name="client" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="time_taken">Project Duration</label>
-                        <input type="text" id="time_taken" name="time_taken" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="location">Location</label>
-                        <input type="text" id="location" name="location" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="description">Description</label>
-                        <textarea id="description" name="description" required></textarea>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="main_category_select">Main Category</label>
-                        <select id="main_category_select" name="main_category" required>
-                            <option value="">Select Main Category</option>
-                            @foreach($mainCategories as $mainCategory)
-                                <option value="{{ $mainCategory }}">{{ $mainCategory }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="sub_category_select">Sub Category</label>
-                        <select id="sub_category_select" name="category_id" required>
-                            <option value="">Select Sub Category</option>
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}" data-main-category="{{ $category->main_category }}">{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="images">Project Images</label>
-                        <input type="file" id="images" name="images[]" accept="image/*" multiple required>
-                    </div>
-                    <button type="submit" class="admin-button">Add Project</button>
-                </form>
-            </div>
+                    <form action="{{ route('admin.categories.store') }}" method="POST">
+                        @csrf
+                        <div class="admin-form-group">
+                            <label for="add_main_category">Main Category</label>
+                            <select id="add_main_category" name="main_category" required>
+                                <option value="">Select Main Category</option>
+                                @foreach($mainCategories as $mainCategory)
+                                    <option value="{{ $mainCategory }}">{{ $mainCategory }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="category_name">Category Name</label>
+                            <input type="text" id="category_name" name="name" required>
+                        </div>
+                        <button type="submit" class="admin-button">Add Category</button>
+                    </form>
 
+                </div>
+
+                <div class="admin-content">
                     <h1 class="admin-h1">Projects Addins</h1>
-                    <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data"
+                        id="projectForm">
                         @csrf
                         <div class="admin-form-group">
                             <label for="project_name">Project Name</label>
@@ -125,8 +81,7 @@
                                 <option value="">Select Sub Category</option>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}" data-main-category="{{ $category->main_category }}">
-                                        {{ $category->name }}
-                                    </option>
+                                        {{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -137,6 +92,7 @@
                         <button type="submit" class="admin-button">Add Project</button>
                     </form>
                 </div>
+
                 <h2 class="admin-h2">Projects List</h2>
                 <table class="admin-table">
                     <thead>
@@ -248,29 +204,31 @@
             </div>
 
             <div class="tab-pane fade" id="articles" role="tabpanel" aria-labelledby="articles-tab">
-                <div class="admin-article-smaller">          
-                <h1 class="admin-h1">Articles Addins</h1>
-                <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data" id="articleForm">
-                    @csrf
-                    <div class="admin-form-group">
-                        <label for="article_title">Title</label>
-                        <input type="text" id="article_title" name="article_title" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="article_author">Author</label>
-                        <input type="text" id="article_author" name="article_author" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="thumbnail">Thumbnail Image</label>
-                        <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="article_link">Article Link</label>
-                        <input type="text" id="article_link" name="article_link" required>
-                    </div>
-                    <button type="submit" class="admin-button">Add Article</button>
-                </form>
-              </div>
+                <div class="admin-content">
+                    <h1 class="admin-h1">Articles Addins</h1>
+                    <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data"
+                        id="articleForm">
+                        @csrf
+                        <div class="admin-form-group">
+                            <label for="article_title">Title</label>
+                            <input type="text" id="article_title" name="article_title" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="article_author">Author</label>
+                            <input type="text" id="article_author" name="article_author" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="thumbnail">Thumbnail Image</label>
+                            <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="article_link">Article Link</label>
+                            <input type="text" id="article_link" name="article_link" required>
+                        </div>
+                        <button type="submit" class="admin-button">Add Article</button>
+                    </form>
+                </div>
+
                 <h2 class="admin-h2">Articles List</h2>
                 <table class="admin-table">
                     <thead>
@@ -287,7 +245,7 @@
                         @foreach($articles as $article)
                             <tr>
                                 <td class="admin-td">{{ $loop->iteration }}</td>
-                                <td class="admin-td"><img src="{{ asset('storage/' . $article->thumbnail) }}"
+                                <td class="admin-td"><img src="{{ asset('img/Article/' . basename($article->thumbnail)) }}"
                                         alt="Thumbnail Image" width="100"></td>
                                 <td class="admin-td"><a href="{{ $article->article_link }}"
                                         target="_blank">{{ $article->article_title }}</a></td>
@@ -387,5 +345,4 @@
         mainCategorySelect.dispatchEvent(new Event('change'));
     });
 </script>
-
 @endsection
