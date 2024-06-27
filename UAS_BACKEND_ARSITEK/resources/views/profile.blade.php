@@ -14,7 +14,7 @@
         <p>
             <strong>Phone:</strong> <span id="phone-display">{{ Auth::user()->phone }}</span>
             <button type="button" id="change-phone-btn" class="btn btn-secondary" data-route-change-phone="{{ route('profile.change-phone') }}">Change Phone</button>
-            <form action="{{ route('profile.delete-optional-fields') }}" method="POST">
+            <form action="{{ route('profile.delete-optional-fields') }}" method="POST" class="delete-optional-field-form">
                 @csrf
                 <input type="hidden" name="field" value="phone">
                 <button type="submit" class="btn btn-danger btn-sm">Delete Phone</button>
@@ -24,7 +24,7 @@
         <!--Alamat-->
         <p><strong>Address:</strong> <span id="address-display">{{ Auth::user()->address }}</span>
             <button type="button" id="change-address-btn" class="btn btn-secondary" data-route-change-address="{{ route('profile.change-address') }}">Change Address</button>
-            <form action="{{ route('profile.delete-optional-fields') }}" method="POST" style="display:inline;">
+            <form action="{{ route('profile.delete-optional-fields') }}" method="POST" class="delete-optional-field-form" style="display:inline;">
                 @csrf
                 <input type="hidden" name="field" value="address">
                 <button type="submit" class="btn btn-danger btn-sm">Delete Address</button>
@@ -34,7 +34,7 @@
         <!--Jenis Kelamin -->
         <p><strong>Gender:</strong> <span id="gender-display">{{ Auth::user()->gender }}</span>
             <button type="button" id="change-gender-btn" class="btn btn-secondary" data-route-change-gender="{{ route('profile.change-gender') }}">Change Gender</button>
-            <form action="{{ route('profile.delete-optional-fields') }}" method="POST" style="display:inline;">
+            <form action="{{ route('profile.delete-optional-fields') }}" method="POST" class="delete-optional-field-form" style="display:inline;">
                 @csrf
                 <input type="hidden" name="field" value="gender">
                 <button type="submit" class="btn btn-danger btn-sm">Delete Gender</button>
@@ -73,3 +73,41 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Handle delete optional fields form submission
+        document.querySelectorAll('.delete-optional-field-form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                const url = this.getAttribute('action');
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Field deleted successfully');
+                        location.reload();
+                    } else {
+                        alert('Error deleting field');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error deleting field');
+                });
+            });
+        });
+    });
+</script>
+@endpush
