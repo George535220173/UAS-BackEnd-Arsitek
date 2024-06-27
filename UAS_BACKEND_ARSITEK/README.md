@@ -7,6 +7,17 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Penggunaan Website
+- User memiliki fungsi yang di limitasi jika tidak melakukan registrasi akun.
+- User dapat melihat dan mencari segala projects yang tersedia dengan mengunjungi website "Projects" pada sidebar menu.
+- User dapat melihat dan mengunjungi source page dari artikel yang tampil pada halaman utama
+- User dapat mengubah informasi profile pada bagian "Profile"
+- User dapat melakukan fitur searching, sorting, dan filter dari kategori pada projects yang tersedia dan melihat detail project lebih lanjut.
+- User dapat melihat tim yang bekerja pada perushaan MRS Architects
+- User dapat melakukan favorites pada projects yang disukai dan dapat melihat favorited projects pada website "Favorites"
+- User dapat mengakses halaman admin dengan melakukan registrasi akun bernama "mrsadminteam@gmail.com" dengan password yang bebas, lalu melakukan routing /admin pada URL
+- User dapat menambah projects dan articles jika sudah terlogin sebagai admin.
+  
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -64,14 +75,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-## Penggunaan Website
-- User memiliki fungsi yang di limitasi jika tidak melakukan registrasi akun.
-- User dapat melihat dan mencari segala projects yang tersedia dengan mengunjungi website "Projects" pada sidebar menu.
-- User dapat melihat dan mengunjungi source page dari artikel yang tampil pada halaman utama
-- User dapat mengubah informasi profile pada bagian "Profile"
-- User dapat melakukan fitur searching, sorting, dan filter dari kategori pada projects yang tersedia dan melihat detail project lebih lanjut.
-- User dapat melihat tim yang bekerja pada perushaan MRS Architects
-- User dapat melakukan favorites pada projects yang disukai dan dapat melihat favorited projects pada website "Favorites"
-- User dapat mengakses halaman admin dengan melakukan registrasi akun bernama "mrsadminteam@gmail.com" dengan password yang bebas, lalu melakukan routing /admin pada URL
-- User dapat menambah projects dan articles jika sudah terlogin sebagai admin.
