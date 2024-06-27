@@ -80,14 +80,17 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
 
     function showNextSlide() {
+        slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
-        slides.forEach((slide, index) => {
-            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
-        });
+        slides[currentSlide].classList.add('active');
     }
 
     setInterval(showNextSlide, 4000); // Change slide every 4 seconds
+
+    // Initially activate the first slide
+    slides[currentSlide].classList.add('active');
 });
+
 
 // fade up animation
 document.addEventListener('DOMContentLoaded', function() {
