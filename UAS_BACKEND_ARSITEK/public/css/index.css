@@ -697,10 +697,14 @@ html {
 }
 
 .index-sidebar {
-    width: 25%;
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-left: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 400px; /* Adjust this value to fit your layout */
 }
 
 .index-sidebar h3 {
@@ -709,16 +713,16 @@ html {
 }
 
 .index-articles-container {
-    max-height: 300px;
-    overflow-y: auto;
-    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .index-article-snippet {
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    align-items: center;
+    margin-bottom: 10px;
 }
+
 
 .index-article-snippet img {
     width: 100px;
