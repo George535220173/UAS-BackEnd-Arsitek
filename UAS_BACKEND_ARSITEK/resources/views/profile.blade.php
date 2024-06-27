@@ -7,8 +7,8 @@
         <img src="{{ asset('img/userlogo.png') }}" width="300px" height="400px">
     </div>
     <div class="profile-info">
-        <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
-        <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+        <p class="profile-info-name"><strong>Name:</strong> {{ Auth::user()->name }}</p>
+        <p class="profile-info-name"><strong>Email:</strong> {{ Auth::user()->email }}</p>
 
         <p>
             <strong>Phone:</strong> <span id="phone-display">{{ Auth::user()->phone }}</span>
