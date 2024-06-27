@@ -9,7 +9,8 @@
     </div>
     <div class="index-overlay-index"></div>
     <div class="index-content-index">
-        <h1 class="index-h1">Professional Architecture With MRS</h1>
+        <h1 class="index-h1">Professional Architecture With <br>
+            <img src="{{ asset('img/MRSwhite.png') }}" width="200px" height="200px" alt=""></h1>
         <p class="index-p">"To promote the achievement of exellence in the building industry through professionalism in expediting our sevices at every stage and level of the project to satisfactory completion"</p>
     </div>
 </div>
@@ -166,7 +167,7 @@
     <div class="index-team-container">
         <a href="/team" class="index-team-link fade-up">
             <div class="index-team-member">
-                <img src="{{ asset('img/PakMaman.png') }}" alt="">
+                <img src="{{ asset('img/PakMaman.png') }}" width="200px" height="200px"  alt="">
                 <h3>Ir. Maman R. Samadi, IAI</h3>
                 <p>Principal Architect</p>
             </div>

@@ -134,7 +134,7 @@ html {
     left: 0;
     top: 0;
     font-size: 16px; /* Adjust the size as needed */
-    color: #ff9c00; /* Adjust the color as needed */
+    color: #222222; /* Adjust the color as needed */
     margin-top: 2px; /* Adjust to align the checkmark vertically */
 }
 
@@ -622,7 +622,8 @@ html {
 
 .index-contact-details {
     text-align: left;
-    margin-left: 150px;
+    margin-top: 40px;
+    margin-left: 100px;
 }
 
 .index-contact-details p {
