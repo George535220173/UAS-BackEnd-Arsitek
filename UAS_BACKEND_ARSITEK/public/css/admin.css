@@ -66,6 +66,14 @@
     justify-content: center;
 }
 
+.admin-article-smaller{
+    margin-left: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+
 .articles-container {
     width: 700px;
     margin: 30px;

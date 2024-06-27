@@ -199,28 +199,29 @@
             </div>
 
             <div class="tab-pane fade" id="articles" role="tabpanel" aria-labelledby="articles-tab">
-                <h1 class="admin-h1">Articles Addins</h1>
-                <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="admin-form-group">
-                        <label for="article_title">Title</label>
-                        <input type="text" id="article_title" name="article_title" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="article_author">Author</label>
-                        <input type="text" id="article_author" name="article_author" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="thumbnail">Thumbnail Image</label>
-                        <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="article_link">Article Link</label>
-                        <input type="text" id="article_link" name="article_link" required>
-                    </div>
-                    <button type="submit" class="admin-button">Add Article</button>
-                </form>
-
+                <div class="admin-article-smaller">
+                    <h1 class="admin-h1">Articles Addins</h1>
+                    <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="admin-form-group">
+                            <label for="article_title">Title</label>
+                            <input type="text" id="article_title" name="article_title" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="article_author">Author</label>
+                            <input type="text" id="article_author" name="article_author" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="thumbnail">Thumbnail Image</label>
+                            <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="article_link">Article Link</label>
+                            <input type="text" id="article_link" name="article_link" required>
+                        </div>
+                        <button type="submit" class="admin-button">Add Article</button>
+                    </form>
+                </div>
                 <h2 class="admin-h2">Articles List</h2>
                 <table class="admin-table">
                     <thead>
