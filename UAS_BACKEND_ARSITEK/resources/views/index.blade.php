@@ -134,28 +134,28 @@
     </div>
     <div class="index-portfolio-container">
         <div class="index-portfolio-item fade-up" data-category="app">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
+            <img src="{{ asset('img/Project/Masterplan 1.png') }}" alt="Portfolio Item">
         </div>
         <div class="index-portfolio-item fade-up" data-category="card">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
+            <img src="{{ asset('img/Project/Masterplan yanglain 2.png') }}" alt="Portfolio Item">
         </div>
         <div class="index-portfolio-item fade-up" data-category="web">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
+            <img src="{{ asset('img/Project/Office and headquarters 1.png') }}" alt="Portfolio Item">
         </div>
         <div class="index-portfolio-item fade-up" data-category="app">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
+            <img src="{{ asset('img/Project/Residential 1.png') }}" alt="Portfolio Item">
         </div>
         <div class="index-portfolio-item fade-up" data-category="card">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
+            <img src="{{ asset('img/Project/Rumah 1.png') }}" alt="Portfolio Item">
         </div>
         <div class="index-portfolio-item fade-up" data-category="web">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
+            <img src="{{ asset('img/Project/Rumah sakit 2.png') }}" alt="Portfolio Item">
         </div>
         <div class="index-portfolio-item fade-up" data-category="app">
-            <img src="{{ asset('img/husky.jpg') }}" alt="Portfolio Item">
+            <img src="{{ asset('img/Project/Company 1.png') }}" alt="Portfolio Item">
         </div>
         <div class="index-portfolio-item fade-up" data-category="card">
-            <img src="{{ asset('img/puppy-ai.jpg') }}" alt="Portfolio Item">
+            <img src="{{ asset('img/Project/Masterplan 3.png') }}" alt="Portfolio Item">
         </div>
     </div>
 </section>

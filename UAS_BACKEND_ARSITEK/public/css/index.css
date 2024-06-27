@@ -48,7 +48,7 @@ html {
     z-index: 2;
     text-align: center;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) ;
 }
 
 
@@ -417,12 +417,15 @@ html {
 }
 
 .index-portfolio-item img {
-    width: 100%;
+    transform: scale(1.2);
+    width: 400px; /* or your desired width */
+    height: 200px; /* or your desired height */
+    object-fit: cover; /* Ensures the image covers the entire area */
     transition: transform 0.3s;
 }
 
 .index-portfolio-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
 
 .index-rating-carousel {
