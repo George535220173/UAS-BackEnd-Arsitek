@@ -16,6 +16,11 @@ button {
     margin: 10px 0;
 }
 
+.profile-info-name {
+    font-size: 32px;
+    font-weight: 500;
+}
+
 .left-info {
     margin: 40px;
     display: flex;

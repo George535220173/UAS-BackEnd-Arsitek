@@ -16,7 +16,8 @@
                 </select>
             </div>
             <div class="input-group flex-grow-1 search-group">
-                <input type="text" name="search" class="form-control" placeholder="Search projects..." value="{{ request('search') }}">
+                <input type="text" name="search" class="form-control" placeholder="Search projects..."
+                    value="{{ request('search') }}">
                 <span class="input-group-append">
                     <button class="btn btn-primary" type="submit">Search</button>
                 </span>
@@ -37,17 +38,18 @@
 
     <div class="row">
         @foreach($projects as $project)
-            <div class="card h-100 d-flex flex-column">
-                <a href="{{ route('projects.show', $project->id) }}">
-                @if($project->images->isNotEmpty())
-                    <img class="card-img-top" src="{{ asset('img/Project/' . basename($project->images->first()->path)) }}" alt="Project Image">
-                @else
-                    <img class="card-img-top" src="path/to/default/image.jpg" alt="No Image Available">
-                @endif
-                </a>
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">{{ $project->project_name }}</h5>
-                    <p class="card-text">{{ $project->client }}</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="{{ route('projects.show', $project->id) }}">
+                        @if($project->images->isNotEmpty())
+                            <img class="card-img-top" src="{{ asset('img/Project/' . basename($project->images->first()->path)) }}"
+                                alt="Project Image">
+                        @else
+                            <img class="card-img-top" src="path/to/default/image.jpg" alt="No Image Available">
+                        @endif
+                    </a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ $project->project_name }}</h5>
+                        <p class="card-text">{{ $project->client }}</p>
                         @php
                             $dateRange = explode(' - ', $project->time_taken);
                             $startDate = \Carbon\Carbon::createFromFormat('d F Y', $dateRange[0] ?? null);
@@ -72,19 +74,19 @@
                 </div>
             </div>
         @endforeach
-    </div>
-    
-    <!-- Pagination Links -->
-    {{ $projects->links() }}
+</div>
+
+<!-- Pagination Links -->
+{{ $projects->links() }}
 </div>
 
 <!-- Script here -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const isAuthenticated = {{ Auth::check() ? 'true' : 'false' }};
-        
-        document.querySelectorAll('.favorite-btn').forEach(function(button) {
-            button.addEventListener('click', function(e) {
+
+        document.querySelectorAll('.favorite-btn').forEach(function (button) {
+            button.addEventListener('click', function (e) {
                 e.preventDefault(); // Prevent default action
 
                 if (isAuthenticated) {
@@ -99,19 +101,19 @@
                         },
                         body: JSON.stringify({ project_id: projectId })
                     })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (icon) {
-                            if (data.status === 'added') {
-                                icon.classList.remove('text-muted');
-                                icon.classList.add('text-warning');
-                            } else {
-                                icon.classList.remove('text-warning');
-                                icon.classList.add('text-muted');
+                        .then(response => response.json())
+                        .then(data => {
+                            if (icon) {
+                                if (data.status === 'added') {
+                                    icon.classList.remove('text-muted');
+                                    icon.classList.add('text-warning');
+                                } else {
+                                    icon.classList.remove('text-warning');
+                                    icon.classList.add('text-muted');
+                                }
                             }
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
+                        })
+                        .catch(error => console.error('Error:', error));
                 } else {
                     alert('You need to be logged in to add to favorites.');
                 }
