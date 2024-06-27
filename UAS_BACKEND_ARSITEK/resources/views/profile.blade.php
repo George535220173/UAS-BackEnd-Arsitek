@@ -2,14 +2,18 @@
 
 @section('content')
 <div class="container-profile">
-    <h1>Profile</h1>
+    <div class="left-info">
+        <h1>Profile</h1>
+        <img src="{{ asset('img/userlogo.png') }}" width="300px" height="400px">
+    </div>
     <div class="profile-info">
         <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
         <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
 
-        <p><strong>Phone:</strong> <span id="phone-display">{{ Auth::user()->phone }}</span>
+        <p>
+            <strong>Phone:</strong> <span id="phone-display">{{ Auth::user()->phone }}</span>
             <button type="button" id="change-phone-btn" class="btn btn-secondary" data-route-change-phone="{{ route('profile.change-phone') }}">Change Phone</button>
-            <form action="{{ route('profile.delete-optional-fields') }}" method="POST" style="display:inline;">
+            <form action="{{ route('profile.delete-optional-fields') }}" method="POST">
                 @csrf
                 <input type="hidden" name="field" value="phone">
                 <button type="submit" class="btn btn-danger btn-sm">Delete Phone</button>

@@ -7,7 +7,7 @@
                 <div class="bar3"></div>
             </div>
             <div class="logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('img/MRS1.png') }}" width="70px" height="70px"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('img/MRSwhite.png') }}" width="70px" height="70px"></a>
             </div>
         </div>
 
@@ -34,7 +34,7 @@
             <li><a href="{{ url('/favorites') }}">Favorites</a></li>
             <li><a href="{{ route('profile') }}">Profile</a></li>
             <li>
-                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                <form action="{{ route('logout') }}" method="POST" style="display: inline; color: #fff">
                     @csrf
                     <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">Logout</button>
                 </form>
