@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Initialize date range picker for the main input
     $('#time_taken').daterangepicker({
         locale: {
             format: 'DD MMMM YYYY'
@@ -8,7 +7,7 @@ $(document).ready(function () {
         showDropdowns: true
     });
 
-    // Initialize date range pickers for each project edit form
+    // insialisasi data range
     $.each(projectDates, function (id, dateRange) {
         $('#time_taken' + id).daterangepicker({
             locale: {
@@ -29,7 +28,7 @@ $(document).ready(function () {
         });
     });
 
-    // Validate date range for the main input
+    // validasi tanggal range untuk main input
     $('#time_taken').on('apply.daterangepicker', function (ev, picker) {
         var startDate = picker.startDate;
         var endDate = picker.endDate;
@@ -41,7 +40,7 @@ $(document).ready(function () {
     });
 });
 
-// Validate image files and article link before submitting the form
+// validasi image files dan article link sebelum submit ke form
 function validateForm(event) {
     const form = event.target;
     const fileInputs = form.querySelectorAll('input[type="file"]');
@@ -49,7 +48,7 @@ function validateForm(event) {
     let valid = true;
     let errorMessage = '';
 
-    // Validate image files
+    // validasi image files
     fileInputs.forEach(input => {
         const files = input.files;
         for (const file of files) {
@@ -61,7 +60,7 @@ function validateForm(event) {
         }
     });
 
-    // Validate URL
+    // validasi url
     if (valid && urlInput) {
         const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/[a-zA-Z0-9-._~:\/?#[\]@!$&'()*+,;=]*)?$/;
         if (!urlPattern.test(urlInput.value)) {

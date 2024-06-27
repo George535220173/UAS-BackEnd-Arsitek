@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let requestBody = {
                 password: password.value
             };
-            requestBody[newValue.name] = newValue.value.replace(/-/g, ''); // Send numeric value to server
+            requestBody[newValue.name] = newValue.value.replace(/-/g, ''); // Memberikan angka numerik ke server
             if (authCode) {
                 requestBody.auth_code = authCode.value;
             }

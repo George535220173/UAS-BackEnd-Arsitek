@@ -1,4 +1,4 @@
-        // Carousel functionality
+        // fungsi carousel
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-image img');
         const dots = document.querySelectorAll('.carousel-indicators .dot');
@@ -22,8 +22,8 @@
             });
         });
 
-        // Initialize the carousel
+      
         showSlide(currentSlide);
 
-        // Auto-rotate the carousel every 5 seconds
+     
         setInterval(nextSlide, 5000);

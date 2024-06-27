@@ -4,26 +4,26 @@
 }
 
 .container-kosong {
-    height: calc(100vh - 200px); /* Adjust this value based on your layout */
+    height: calc(100vh - 200px);
 }
 
-p{
+p {
     font-size: 22px;
     font-weight: 300;
     font-style: oblique;
 }
 
-.container-kosong-kaloada{
+.container-kosong-kaloada {
     height: 20px;
 }
 
 .favorite-btn-container {
     padding-left: 20px;
-    padding-bottom: 10px; /* Adjust this value to move the star to the right */
+    padding-bottom: 10px;
 }
 
 .fixed-size-img-favorites {
     width: 100%;
-    height: 200px; /* Adjust the height as needed */
+    height: 200px;
     object-fit: cover;
 }
