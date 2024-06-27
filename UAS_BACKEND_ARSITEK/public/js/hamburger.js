@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         this.classList.toggle('active');
         sidebarMenu.classList.toggle('active');
         overlay.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
+        document.body.classList.toggle('no-scroll'); // Prevent scrolling
     });
 
     overlay.addEventListener('click', function() {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         sidebarMenu.classList.remove('active');
         projectsSubmenu.classList.remove('show');
         this.classList.remove('active');
-        document.body.classList.remove('no-scroll');
+        document.body.classList.remove('no-scroll'); // Enable scrolling
     });
 
     projectsMenuItem.addEventListener('mouseenter', function() {
