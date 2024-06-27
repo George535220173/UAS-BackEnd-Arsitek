@@ -1,5 +1,6 @@
 .container-profile {
-    max-width: 800px;
+    display: flex;
+    width: 1200px;
     margin: 50px auto;
     padding: 20px;
     background: #f9f9f9;
@@ -8,10 +9,18 @@
 
 .profile-info p {
     font-size: 1.2em;
+    font-style: normal;
 }
 
 button {
     margin: 10px 0;
+}
+
+.left-info {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Popup Modal */

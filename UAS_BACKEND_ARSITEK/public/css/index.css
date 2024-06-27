@@ -134,7 +134,7 @@ html {
     left: 0;
     top: 0;
     font-size: 16px; /* Adjust the size as needed */
-    color: #ff9c00; /* Adjust the color as needed */
+    color: #222222; /* Adjust the color as needed */
     margin-top: 2px; /* Adjust to align the checkmark vertically */
 }
 
@@ -177,7 +177,7 @@ html {
     transform: translateX(-50%);
     width: 50px; /* Width of the underline */
     height: 3px; /* Height of the underline */
-    background-color: #ff9c00; /* Color of the underline */
+    background-color: #333333; /* Color of the underline */
 }
 
 
@@ -282,7 +282,7 @@ html {
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background-color: #ff9c00;
+    background-color: #333333;
 }
 
 .index-services-container {
@@ -382,7 +382,7 @@ html {
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background-color: #ff9c00;
+    background-color: #333333;
 }
 
 .index-portfolio-filters {
@@ -524,7 +524,7 @@ html {
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background-color: #ff9c00;
+    background-color: #333333;
 }
 
 .index-team-container {
@@ -591,7 +591,7 @@ html {
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background-color: #ff9c00;
+    background-color: #333333;
 }
 
 .index-contact-container {
@@ -599,6 +599,7 @@ html {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
+    padding: 40px;
 }
 
 .index-contact-info {
@@ -621,7 +622,8 @@ html {
 
 .index-contact-details {
     text-align: left;
-    margin-left: 58px;
+    margin-top: 40px;
+    margin-left: 100px;
 }
 
 .index-contact-details p {
@@ -658,7 +660,7 @@ html {
 }
 
 .index-contact-form button {
-    background-color: #ff9c00;
+    background-color: #2c2c2c;
     color: white;
     padding: 10px 20px;
     font-size: 1rem;
