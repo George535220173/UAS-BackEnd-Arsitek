@@ -295,51 +295,5 @@
     var projectDates = @json($projects->mapWithKeys(function ($project) {
         return [$project->id => $project->time_taken];
     }));
-
-    // Subkategori dinamis berdasarkan kategori utama
-    document.addEventListener('DOMContentLoaded', function () {
-        const mainCategorySelect = document.querySelectorAll('[id^="main_category_"]');
-        const subCategorySelect = document.querySelectorAll('[id^="sub_category_select"]');
-
-        mainCategorySelect.forEach(mainCategory => {
-            mainCategory.addEventListener('change', function () {
-                const selectedMainCategory = this.value;
-                subCategorySelect.forEach(subCategory => {
-                    const options = subCategory.querySelectorAll('option');
-                    options.forEach(option => {
-                        if (option.getAttribute('data-main-category') === selectedMainCategory || option.value === '') {
-                            option.style.display = 'block';
-                        } else {
-                            option.style.display = 'none';
-                        }
-                    });
-                    subCategory.value = ''; // Reset pilihan subkategori
-                });
-            });
-
-            // Memicu event change untuk memfilter subkategori saat halaman dimuat
-            mainCategory.dispatchEvent(new Event('change'));
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Ambil tab aktif dari localStorage
-        let activeTab = localStorage.getItem('activeTab');
-
-        // Kalau ada tab yang tersimpan, aktifkan
-        if (activeTab) {
-            const tab = document.querySelector(`[href="#${activeTab}"]`);
-            if (tab) {
-                tab.click();
-            }
-        }
-
-        // Simpan tab aktif ke localStorage saat diklik
-        document.querySelectorAll('.nav-link').forEach(tab => {
-            tab.addEventListener('click', function () {
-                localStorage.setItem('activeTab', this.getAttribute('href').substring(1));
-            });
-        });
-    });
 </script>
 @endsection
