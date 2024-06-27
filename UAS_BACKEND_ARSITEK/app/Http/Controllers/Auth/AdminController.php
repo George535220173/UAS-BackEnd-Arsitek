@@ -59,8 +59,8 @@ class AdminController extends Controller
         }
     
         return redirect()->route('admin.dashboard')->with('error', 'Failed to upload thumbnail');
-    }    
-
+    }
+    
     public function store_projects(Request $request)
     {
         $request->validate([
@@ -90,7 +90,7 @@ class AdminController extends Controller
     
         return redirect()->route('admin.dashboard')->with('success', 'Project added successfully');
     }
-    
+        
     public function storeCategory(Request $request)
     {
         $request->validate([

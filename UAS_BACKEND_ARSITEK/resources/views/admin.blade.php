@@ -36,7 +36,7 @@
                 </form>
 
                 <h1 class="admin-h1">Projects Addins</h1>
-                <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data" id="projectForm">
                     @csrf
                     <div class="admin-form-group">
                         <label for="project_name">Project Name</label>
@@ -180,7 +180,7 @@
 
             <div class="tab-pane fade" id="articles" role="tabpanel" aria-labelledby="articles-tab">
                 <h1 class="admin-h1">Articles Addins</h1>
-                <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data" id="articleForm">
                     @csrf
                     <div class="admin-form-group">
                         <label for="article_title">Title</label>
