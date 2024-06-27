@@ -12,13 +12,16 @@ class RegisterController extends Controller
 {
     use RegistersUsers;
 
+    // Redirect ke halaman profile setelah register
     protected $redirectTo = '/profile';
 
+    // Cek kalau user belum login
     public function __construct()
     {
         $this->middleware('guest');
     }
 
+    // Validasi data yang dikirim saat register
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -28,6 +31,7 @@ class RegisterController extends Controller
         ]);
     }
 
+    // Buat user baru setelah validasi sukses
     protected function create(array $data)
     {
         return User::create([

@@ -1,7 +1,5 @@
 <?php
 
-// App\Models\User.php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,6 +10,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    // Field yang bisa diisi secara massal
     protected $fillable = [
         'name',
         'email',
@@ -21,13 +20,15 @@ class User extends Authenticatable
         'gender'
     ];
 
+    // Field yang disembunyikan dari array atau JSON
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
+    // Casting field ke tipe data tertentu
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'password' => 'hashed', // Menggunakan hashing untuk password
     ];
 }

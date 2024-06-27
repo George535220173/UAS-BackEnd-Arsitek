@@ -10,10 +10,10 @@ class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $details;
+    public $details; // Detail dari form kontak
 
     /**
-     * Create a new message instance.
+     * Buat instance pesan baru.
      *
      * @return void
      */
@@ -23,13 +23,13 @@ class ContactMail extends Mailable
     }
 
     /**
-     * Build the message.
+     * Bangun pesan email.
      *
      * @return $this
      */
     public function build()
     {
-        return $this->subject('Contact Form Submission')
-                    ->view('emails.contact');
+        return $this->subject('Contact Form Submission') // Judul email
+                    ->view('emails.contact'); // View yang digunakan untuk email
     }
 }
