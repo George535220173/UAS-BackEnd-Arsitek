@@ -28,7 +28,6 @@ button {
     align-items: center;
 }
 
-/* Popup Modal */
 .popup-modal {
     display: none;
     position: fixed;

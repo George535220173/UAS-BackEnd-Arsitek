@@ -4,7 +4,7 @@
     align-items: center;
     padding: 10px 20px;
     background-color: #333;
-    z-index: 2000; /* Ensure the navbar has a higher z-index than the sidebar menu and overlay */
+    z-index: 2000;
 }
 
 .no-scroll {
@@ -21,7 +21,7 @@
     display: inline-block;
     cursor: pointer;
     transition: transform 0.3s;
-    margin-right: 20px; /* Add some space between the hamburger menu and the logo */
+    margin-right: 20px;
 }
 
 .hamburger-menu div {
@@ -30,7 +30,7 @@
     background-color: #fff;
     margin: 4px 0;
     transition: all 0.3s;
-    transform-origin: center center; /* Ensure the transform is centered */
+    transform-origin: center center;
 }
 
 .hamburger-menu.active .bar1 {
@@ -47,16 +47,16 @@
 
 .sidebar-menu {
     position: fixed;
-    top: 60px; /* Adjust this value to the height of your navbar */
+    top: 60px;
     left: -250px;
     width: 180px;
-    height: calc(55% - 60px); /* Adjust this value to the height of your navbar */
+    height: calc(55% - 60px);
     background-color: #333;
     color: white;
     transition: left 0.3s;
-    z-index: 1001; /* Main sidebar */
-    padding-top: 20px; /* Adjust as needed for spacing */
-    overflow-y: auto; /* Ensure it is scrollable if content exceeds the height */
+    z-index: 1001;
+    padding-top: 20px;
+    overflow-y: auto;
     border: 1px solid #444;
     border-radius: 3%;
 }
@@ -74,11 +74,11 @@
 .sidebar-menu ul li a {
     color: white;
     text-decoration: none;
-    display: block; /* Make the link cover the entire li area */
+    display: block;
 }
 
 .sidebar-menu ul li:hover {
-    background-color: #444; /* Change to a brighter color on hover */
+    background-color: #444;
 }
 
 .sidebar-menu.active {
@@ -87,35 +87,35 @@
 
 .projects-submenu {
     position: fixed;
-    left: 180px; /* Position to the right of the main sidebar */
+    left: 180px;
     width: 180px;
     background-color: #444;
     color: white;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    z-index: 1000; /* Ensure it is just below the main sidebar */
-    padding-top: 0; /* Remove padding to ensure full height coverage */
-    overflow-y: auto; /* Ensure it is scrollable if content exceeds the height */
+    z-index: 1000;
+    padding-top: 0;
+    overflow-y: auto;
     border: 1px solid #555;
     border-radius: 3%;
-    opacity: 0; /* Initial opacity */
-    pointer-events: none; /* Make it not interactable */
-    transform: translateX(-250px); /* Hide off screen initially */
-    height: calc(31% - 120px); /* Increase the height of the secondary sidebar */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-250px);
+    height: calc(31% - 120px);
 }
 
 .projects-submenu ul {
     list-style: none;
     padding: 0;
-    margin: 0; /* Remove margin to ensure full height coverage */
-    height: 100%; /* Ensure the ul takes the full height of the sidebar */
+    margin: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Start items from the top */
+    justify-content: flex-start;
 }
 
 .projects-submenu ul li {
-    flex: none; /* Make each item take a fixed height */
-    height: 50px; /* Adjust the height of each item */
+    flex: none;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,11 +127,11 @@
     text-decoration: none;
     display: block;
     width: 100%;
-    text-align: center; /* Center the text */
-    height: 100%; /* Ensure the link covers the full height of the li */
+    text-align: center;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the text vertically */
+    justify-content: center;
 }
 
 .projects-submenu ul li:hover {
@@ -141,7 +141,7 @@
 .projects-submenu.show {
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(0); /* Slide into view */
+    transform: translateX(0);
 }
 
 .overlay {
@@ -154,7 +154,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
-    z-index: 999; /* Overlay */
+    z-index: 999;
 }
 
 .overlay.active {
@@ -177,7 +177,6 @@
     color: #333;
 }
 
-/* Animation for the hover effect */
 .nav-links a {
     position: relative;
 }

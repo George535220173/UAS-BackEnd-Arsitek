@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -6,14 +7,15 @@ body, html {
 }
 
 html {
-    
+
     scroll-behavior: smooth;
 }
 
 .index-hero-section {
     position: relative;
     height: 100vh;
-    overflow: hidden; /* Ensure the background carousel doesn't overflow */
+    overflow: hidden;
+ 
     color: white;
 }
 
@@ -74,7 +76,7 @@ html {
     z-index: 2;
     text-align: center;
     top: 50%;
-    transform: translateY(-50%) ;
+    transform: translateY(-50%);
 }
 
 
@@ -120,7 +122,8 @@ html {
     display: flex;
     padding: 100px;
     background-color: #f9f9f9;
-    color: #333; /* Change the text color to black */
+    color: #333;
+ 
     gap: 40px;
 }
 
@@ -132,14 +135,16 @@ html {
 .index-text-container h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #333; /* Ensure the heading is black */
+    color: #333;
+ 
 }
 
 .index-text-container p {
     font-size: 1rem;
     margin-bottom: 20px;
     line-height: 1.5;
-    color: #333; /* Ensure the paragraphs are black */
+    color: #333;
+ 
 }
 
 .index-text-container ul {
@@ -150,35 +155,45 @@ html {
 
 
 .index-text-container ul li {
-    position: relative; /* Needed to position the custom checkmark */
-    padding-left: 25px; /* Space for the custom checkmark */
+    position: relative;
+ 
+    padding-left: 25px;
+ 
 }
 
 .index-text-container ul li::before {
-    content: "\2713"; /* Unicode for checkmark */
+    content: "\2713";
+ 
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 16px; /* Adjust the size as needed */
-    color: #222222; /* Adjust the color as needed */
-    margin-top: 2px; /* Adjust to align the checkmark vertically */
+    font-size: 16px;
+ 
+    color: #222222;
+ 
+    margin-top: 2px;
+ 
 }
 
 .index-text-container ul li i {
-    margin-right: 20px !important; /* Use !important to prioritize this style */
+    margin-right: 20px !important;
+ 
 }
 
 .index-image-container {
-    flex: 0 0 300px; /* Fixed width for the image container */
+    flex: 0 0 300px;
+ 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 20px; /* Margin to create space around the image */
+    margin: 0 20px;
+ 
 }
 
 .index-image-container img {
     width: 100%;
-    max-width: 300px; /* Ensure the image doesn't exceed its container */
+    max-width: 300px;
+ 
     height: auto;
     border-radius: 10px;
 }
@@ -189,7 +204,8 @@ html {
 }
 
 .index-clients-header h2 {
-    display: inline-block; /* Make sure the h2 is inline-block for centering */
+    display: inline-block;
+ 
     position: relative;
     font-size: 2rem;
     margin: 0;
@@ -198,12 +214,16 @@ html {
 .index-clients-header h2::before {
     content: '';
     position: absolute;
-    bottom: -10px; /* Adjust to position the underline */
+    bottom: -10px;
+ 
     left: 50%;
     transform: translateX(-50%);
-    width: 50px; /* Width of the underline */
-    height: 3px; /* Height of the underline */
-    background-color: #333333; /* Color of the underline */
+    width: 50px;
+ 
+    height: 3px;
+ 
+    background-color: #333333;
+ 
 }
 
 
@@ -211,11 +231,14 @@ html {
     padding: 50px;
     background-color: #fff;
     text-align: center;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent line breaks */
+    overflow-x: auto;
+ 
+    white-space: nowrap;
+ 
     display: flex;
     justify-content: center;
-    align-items: center; /* Center logos vertically */
+    align-items: center;
+ 
 }
 
 .index-clients-logos {
@@ -229,7 +252,8 @@ html {
     max-width: 100px;
     max-height: 100px;
     margin: 20px;
-    display: inline-block; /* Keep images in a single line */
+    display: inline-block;
+ 
 }
 
 .index-feature-section {
@@ -313,7 +337,8 @@ html {
 
 .index-services-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    grid-template-columns: repeat(3, 1fr);
+ 
     gap: 20px;
 }
 
@@ -444,9 +469,12 @@ html {
 
 .index-portfolio-item img {
     transform: scale(1.2);
-    width: 400px; /* or your desired width */
-    height: 200px; /* or your desired height */
-    object-fit: cover; /* Ensures the image covers the entire area */
+    width: 400px;
+ 
+    height: 200px;
+ 
+    object-fit: cover;
+ 
     transition: transform 0.3s;
 }
 
@@ -502,7 +530,7 @@ html {
 }
 
 .index-star-rating .fas {
-    color: #ff9c00 ;
+    color: #ff9c00;
 }
 
 .index-rating-text {
@@ -520,12 +548,18 @@ html {
 }
 
 .index-team-link {
-    text-decoration: none; /* Remove underline from links */
-    color: inherit; /* Inherit text color */
-    display: flex; /* Ensure the link wraps around the entire card */
-    flex: 1 0 21%; /* Adjust width and make it a flex item */
-    max-width: 21%; /* Ensure the cards stay within a reasonable width */
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    text-decoration: none;
+ 
+    color: inherit;
+ 
+    display: flex;
+ 
+    flex: 1 0 21%;
+ 
+    max-width: 21%;
+ 
+    box-sizing: border-box;
+ 
 }
 
 .index-team-section {
@@ -569,12 +603,15 @@ html {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease; /* Added transition for smooth zoom effect */
-    width: 100%; /* Ensure the team member div takes full width inside the link */
+    transition: transform 0.3s ease;
+ 
+    width: 100%;
+ 
 }
 
 .index-team-member:hover {
-    transform: scale(1.05); /* Zoom effect on hover */
+    transform: scale(1.05);
+ 
 }
 
 .index-team-member img {
@@ -733,7 +770,8 @@ html {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-    max-height: 400px; /* Adjust this value to fit your layout */
+    max-height: 400px;
+ 
 }
 
 .index-sidebar h3 {

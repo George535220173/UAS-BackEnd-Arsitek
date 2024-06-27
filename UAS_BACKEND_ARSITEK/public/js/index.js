@@ -36,14 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
 
-            // If the sidebar is open, close it
+            // kalo sidebar kebuka, ditutup
             document.getElementById('sidebar-menu').classList.remove('open');
             document.getElementById('overlay').classList.remove('open');
         });
     });
 });
 
-// Scrolling to section
+// skrol the bagian
 document.addEventListener('DOMContentLoaded', function () {
     // Mendengarkan klik pada semua tautan jangkar
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -91,8 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     slides[currentSlide].classList.add('active');
 });
 
-
-// fade up animation
 document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.fade-up');
     

@@ -10,10 +10,10 @@ class AuthCodeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $code;
+    public $code; // Kode autentikasi yang akan dikirim
 
     /**
-     * Create a new message instance.
+     * Buat instance pesan baru.
      *
      * @return void
      */
@@ -23,13 +23,13 @@ class AuthCodeMail extends Mailable
     }
 
     /**
-     * Build the message.
+     * Bangun pesan email.
      *
      * @return $this
      */
     public function build()
     {
-        return $this->subject('Your Authentication Code')
-                    ->view('emails.authcode');
+        return $this->subject('Your Authentication Code') // Judul email
+                    ->view('emails.authcode'); // View yang digunakan untuk email
     }
 }
