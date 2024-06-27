@@ -82,6 +82,14 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
+                const field = this.querySelector('input[name="field"]').value;
+                const value = document.querySelector(`#${field}-display`).textContent.trim();
+
+                if (!value) {
+                    alert('Delete failed: Field is already empty');
+                    return;
+                }
+
                 const formData = new FormData(this);
                 const url = this.getAttribute('action');
 
