@@ -73,5 +73,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - User dapat melakukan fitur searching, sorting, dan filter dari kategori pada projects yang tersedia dan melihat detail project lebih lanjut.
 - User dapat melihat tim yang bekerja pada perushaan MRS Architects
 - User dapat melakukan favorites pada projects yang disukai dan dapat melihat favorited projects pada website "Favorites"
-- User dapat mengakses halaman admin dengan melakukan registrasi akun bernama "mrsadminteam@gmail.com" dengan password yang bebas, lalu melakukan routing /admin
+- User dapat mengakses halaman admin dengan melakukan registrasi akun bernama "mrsadminteam@gmail.com" dengan password yang bebas, lalu melakukan routing /admin pada URL
 - User dapat menambah projects dan articles jika sudah terlogin sebagai admin.
