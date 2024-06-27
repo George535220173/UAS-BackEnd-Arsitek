@@ -8,6 +8,8 @@
 </p>
 
 ## Penggunaan Website
+- User harus melakukan "php artisan serve" untuk menjalankan website dan melakukan "localhost:8000"
+- Dikarenakan database local, User dapat melihat database MRS Architects dengan mengunduh file database (".sql") dan melakukan "restore" pada PGAdmin 4 database kosong yang telah dibuat.
 - User memiliki fungsi yang di limitasi jika tidak melakukan registrasi akun.
 - User dapat melihat dan mencari segala projects yang tersedia dengan mengunjungi website "Projects" pada sidebar menu.
 - User dapat melihat dan mengunjungi source page dari artikel yang tampil pada halaman utama
