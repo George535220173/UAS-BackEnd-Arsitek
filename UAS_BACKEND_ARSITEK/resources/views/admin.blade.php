@@ -20,7 +20,6 @@
             <div class="tab-pane fade show active" id="projects" role="tabpanel" aria-labelledby="projects-tab">
                 <div class="admin-category-content">
                     <h1 class="admin-h1">Add Project Category</h1>
-                    <div class="admin-smaller-content">
                         <form action="{{ route('admin.categories.store') }}" method="POST">
                             @csrf
                             <div class="admin-form-group">
@@ -38,7 +37,6 @@
                             </div>
                             <button type="submit" class="admin-button">Add Category</button>
                         </form>
-                    </div>
                 </div>
 
                 <div class="admin-content">
@@ -321,6 +319,26 @@
 
             // Trigger change event to filter subcategories on page load
             mainCategory.dispatchEvent(new Event('change'));
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the active tab from localStorage
+        let activeTab = localStorage.getItem('activeTab');
+
+        // If there's a saved tab, activate it
+        if (activeTab) {
+            const tab = document.querySelector(`[href="#${activeTab}"]`);
+            if (tab) {
+                tab.click();
+            }
+        }
+
+        // Save the active tab to localStorage on click
+        document.querySelectorAll('.nav-link').forEach(tab => {
+            tab.addEventListener('click', function () {
+                localStorage.setItem('activeTab', this.getAttribute('href').substring(1));
+            });
         });
     });
 </script>
