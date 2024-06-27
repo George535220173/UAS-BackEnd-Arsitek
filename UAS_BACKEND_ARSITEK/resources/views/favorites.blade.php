@@ -5,6 +5,7 @@
     <div class="container">
         <h1 class="my-4">My Favorites</h1>
         <div class="row">
+            <!--Menampilkan semua project yang di favorite dengan style mereka -->
             @forelse($favorites as $project)
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 d-flex flex-column">
@@ -42,6 +43,7 @@
     </div>
 </div>
 @endsection
+<!--Skript yang dibutuhkan untuk favorite -->
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function() {

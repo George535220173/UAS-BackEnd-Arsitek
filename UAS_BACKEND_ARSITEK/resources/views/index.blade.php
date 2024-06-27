@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<!--Carousel utama main page -->
 <div class="index-hero-section fade-in">
     <div class="carousel-background">
         <div class="carousel-slide" style="background-image: url('img/MainPage/Foto1MainPage.png');"></div>
@@ -15,6 +16,7 @@
     </div>
 </div>
 
+<!--Penjelasan website -->
 <div class="index-main-content-container fade-up" id="article-section">
     <section class="index-info-section">
         <div class="index-content-and-sidebar">
@@ -34,6 +36,7 @@
                 <img src="{{ asset('img/MRS1.png') }}" alt="">
             </div>
         </div>
+        <!--Artikel ditampilkan disini-->
         <div class="index-sidebar">
             <h3>Recent Articles</h3>
             <div class="index-articles-container">
@@ -50,6 +53,7 @@
         </div>
     </section>
 </div>
+<!--Logo-logo-->
 <div class="index-clients-header fade-up"><h2>Our Clients</h2></div>
 <section class="index-clients-section">
     <div class="index-clients-logos fade-up">
@@ -83,7 +87,7 @@
         
     </div>
 </section>
-<!-- resources/views/index.blade.php -->
+<!-- Awards yang didapat-->
 <section class="index-services-section">
     <div class="index-services-header">
         <h2>CHECK OUR AWARDS</h2>
@@ -122,12 +126,13 @@
     </div>
 </section>
 
-<!-- Fullscreen Overlay -->
+<!-- Overlay secara penuh jika gambar diklik-->
 <div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen()">
     <span class="close-btn" onclick="closeFullscreen()">×</span>
     <img id="fullscreen-image" class="fullscreen-image" src="">
 </div>
 
+<!--Projects yang dikerjakan akan ditampilkan disini-->
 <section class="index-portfolio-section">
     <div class="index-portfolio-header fade-up">
         <h2>CHECK OUR PROJECTS</h2>
@@ -160,6 +165,7 @@
     </div>
 </section>
 
+<!--Team member yang ada di MRS Architects -->
 <section class="index-team-section" id="team-section">
     <div class="index-team-header fade-up">
         <h2>OUR TEAM</h2>
@@ -196,7 +202,7 @@
     </div>
 </section>
 
-
+<!--Contact -->
 <section class="index-contact-section" id="contact">
     <div class="index-contact-header fade-up">
         <h2>CONTACT US</h2>
@@ -212,7 +218,7 @@
                 <p><i class="fas fa-envelope"></i> Email Us<br>3asrium@gmail.com</p>
             </div>
         </div>
-        <!-- Contact Form -->
+        <!-- Form contact-->
         <div class="index-contact-form fade-up">
             <form action="/send-email" method="POST">
                 @csrf

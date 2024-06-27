@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="my-4">Our Projects</h1>
     
-    <!-- Search Form and Sorting Dropdown -->
+    <!-- Search dan sorting disini -->
     <form method="GET" action="{{ route('projects.index') }}" class="mb-4 d-flex flex-column form-inline">
         <div class="d-flex w-100 mb-2">
             <div class="input-group mr-2 sort-group">
@@ -23,7 +23,7 @@
                 </span>
             </div>
         </div>
-        <!-- Category Dropdown -->
+        <!-- Category disini -->
         <div class="input-group category-group mt-2">
             <select name="category" class="form-control" onchange="this.form.submit()">
                 <option value="">All Categories</option>
@@ -36,6 +36,7 @@
         </div>
     </form>
 
+    <!-- Menampilkan project -->
     <div class="row">
         @foreach($projects as $project)
                 <div class="card h-100 d-flex flex-column">
@@ -60,7 +61,7 @@
                         @else
                             <p class="card-text">Invalid Date</p>
                         @endif
-                        <!-- Favorite Icon -->
+                        <!-- Icon favorites-->
                         <div class="mt-auto">
                             <button class="favorite-btn" data-project-id="{{ $project->id }}">
                                 @if(in_array($project->id, session('favorites', [])))
@@ -76,11 +77,11 @@
         @endforeach
 </div>
 
-<!-- Pagination Links -->
+<!-- link untuk pagination -->
 {{ $projects->links() }}
 </div>
 
-<!-- Script here -->
+<!-- Skript untuk favorite -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const isAuthenticated = {{ Auth::check() ? 'true' : 'false' }};

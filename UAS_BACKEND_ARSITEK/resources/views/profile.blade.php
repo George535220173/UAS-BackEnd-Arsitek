@@ -10,6 +10,7 @@
         <p class="profile-info-name"><strong>Name:</strong> {{ Auth::user()->name }}</p>
         <p class="profile-info-name"><strong>Email:</strong> {{ Auth::user()->email }}</p>
 
+        <!--Nomor Hp -->
         <p>
             <strong>Phone:</strong> <span id="phone-display">{{ Auth::user()->phone }}</span>
             <button type="button" id="change-phone-btn" class="btn btn-secondary" data-route-change-phone="{{ route('profile.change-phone') }}">Change Phone</button>
@@ -20,6 +21,7 @@
             </form>
         </p>
 
+        <!--Alamat-->
         <p><strong>Address:</strong> <span id="address-display">{{ Auth::user()->address }}</span>
             <button type="button" id="change-address-btn" class="btn btn-secondary" data-route-change-address="{{ route('profile.change-address') }}">Change Address</button>
             <form action="{{ route('profile.delete-optional-fields') }}" method="POST" style="display:inline;">
@@ -29,6 +31,7 @@
             </form>
         </p>
 
+        <!--Jenis Kelamin -->
         <p><strong>Gender:</strong> <span id="gender-display">{{ Auth::user()->gender }}</span>
             <button type="button" id="change-gender-btn" class="btn btn-secondary" data-route-change-gender="{{ route('profile.change-gender') }}">Change Gender</button>
             <form action="{{ route('profile.delete-optional-fields') }}" method="POST" style="display:inline;">
@@ -38,6 +41,7 @@
             </form>
         </p>
 
+        <!--Untuk mengubah username, email, dan password -->
         <p><strong>Created At:</strong> {{ Auth::user()->created_at }}</p>
 
         <button id="change-username-btn" class="btn btn-secondary"
@@ -55,7 +59,7 @@
         </form>
     </div>
 
-    <!-- Popup Modal -->
+    <!-- Modal untuk popup -->
     <div id="popup-modal" class="popup-modal">
         <div class="popup-content">
             <span class="close-btn">&times;</span>
@@ -63,7 +67,6 @@
             <form id="popup-form" method="POST" action="#">
                 @csrf
                 <div id="popup-inputs">
-                    <!-- Dynamic content goes here -->
                 </div>
             </form>
         </div>

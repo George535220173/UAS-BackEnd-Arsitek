@@ -6,13 +6,14 @@
     <div class="project-inside-container">
         @if($project->images->isNotEmpty())
             <div id="projectCarousel" class="carousel slide project-details-carousel" data-ride="carousel" data-interval="5000">
-                <!-- Indicators -->
+                <!-- Indikator -->
                 <ol class="carousel-indicators project-details-carousel-indicators">
                     @foreach($project->images as $key => $image)
                         <li data-target="#projectCarousel" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}"></li>
                     @endforeach
                 </ol>
 
+                <!-- Menampilkan image atau gambar -->
                 <div class="carousel-inner project-details-carousel-inner">
                     @foreach($project->images as $key => $image)
                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
@@ -20,6 +21,7 @@
                         </div>
                     @endforeach
                 </div>
+                <!-- Kontroller carousel -->
                 <a class="carousel-control-prev project-details-carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -32,6 +34,7 @@
         @else
             <p>No images available for this project.</p>
         @endif
+        <!-- Detail dari project -->
         <div class="project-details-desc">
             <p><strong>Client:</strong> {{ $project->client }}</p>
             <p><strong>Time Taken:</strong> {{ $project->time_taken }}</p>
